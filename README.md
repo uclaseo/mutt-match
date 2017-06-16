@@ -21,7 +21,8 @@ git checkout -b feat/FEATURE_NAME
 git push -u origin feat/BRANCH_NAME
 ```
 2. add your shit (prefix changes with (ADD), (EDIT), (DELETE)
--e.. (EDIT) Update dog service's fetch method to update the closure array upon completion
+
+-e.g. (EDIT) Update dog service's fetch method to update the closure array upon completion
 
 want to make pull request:
 1. checkout your master (not feature branch)
