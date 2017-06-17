@@ -41,6 +41,7 @@ Follows: https://scotch.io/tutorials/creating-an-angularjs-application-with-sequ
 1. Install dependencies:
 ```bash
 npm install --save sequelize sequelize-cli mysql2
+npm install -g sequelize-cli
 ```
 2. Make a .sequelizerc file:
 ```javascript
