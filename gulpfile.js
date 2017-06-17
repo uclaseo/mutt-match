@@ -1,8 +1,9 @@
 const gulp = require('gulp'),
       eslint = require('gulp-eslint'),
-      gls = require('gulp-live-server'),
-      nodemon = require('gulp-nodemon')
-      watch = require('gulp-watch');
+      nodemon = require('gulp-nodemon'),
+      exec = require('child_process').exec,
+      watch = require('gulp-watch'),
+      gutil = require('gulp-util');
 
 const paths = {
   server: './server/index.js',
@@ -28,6 +29,12 @@ gulp.task('start', () => {
 
 gulp.task('watch', () => {
   return watch(paths.public, { ignoreInitial: false });
+});
+
+gulp.task('build', () => {
+  return exec('./bin/build.sh', (error, stdout, stderr) => {
+    gutil.log('completed build', stdout, gutil.colors.magenta('cleaned, built and seeded tables'));
+  });
 });
 
 //default
