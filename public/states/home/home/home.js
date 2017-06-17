@@ -4,5 +4,5 @@ angular.module('mutt-match')
   bindings: {},
   controller: 'HomeCtrl',
   restrict: 'E',
-  templateUrl: './pages/home/home/home.html'
+  templateUrl: './states/home/home/home.html'
 });

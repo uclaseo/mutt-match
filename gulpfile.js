@@ -3,11 +3,15 @@ const gulp = require('gulp'),
       nodemon = require('gulp-nodemon'),
       exec = require('child_process').exec,
       watch = require('gulp-watch'),
-      gutil = require('gulp-util');
+      gutil = require('gulp-util'),
+      glr = require('gulp-livereload'),
+      notify = require('gulp-notify');
 
 const paths = {
-  server: './server/index.js',
-  public: './public/**/*.js'
+  entry: './server/index.js',
+  public: './public/**/*.js',
+  server: '/server/**/*.js',
+  html: '/public/**/*.html'
 };
 
 gulp.task('lint', function() {
@@ -20,15 +24,26 @@ gulp.task('lint', function() {
 
 //nodemon task
 gulp.task('start', () => {
+
+  // glr.listen();
+
   return nodemon({
-    script: paths.server, 
+    script: paths.entry, 
     watch: [paths.server],
     env: { 'NODE_ENV': 'development' }
-  });
+  })
+  // .on('restart', () => {
+	// 	// when the app has restarted, run livereload.
+	// 	gulp.src(paths.server)
+	// 		.pipe(glr.reload)
+	// 		.pipe(notify('Reloading page, please wait...'));
+	// })
 });
 
 gulp.task('watch', () => {
-  return watch(paths.public, { ignoreInitial: false });
+  glr.listen();
+  gulp.watch(paths.public, glr.reload);
+  gulp.watch(paths.html, glr.reload);
 });
 
 gulp.task('build', () => {
