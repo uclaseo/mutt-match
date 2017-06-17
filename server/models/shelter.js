@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-        models.Shelter.hasMany(models.Dog { targetKey: 'shelter' });
+        models.Shelter.hasMany(models.Dog, { targetKey: 'shelter' });
       }
     }
   });

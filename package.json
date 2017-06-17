@@ -4,6 +4,10 @@
   "description": "Node for back-end, mysql for database, Angular 1 for front-end. \r Additionally, we use redux for state-management, ui-router for routing, angular-material for styling, and passport for authentication.",
   "main": "index.js",
   "scripts": {
+    "clean": "sequelize db:migrate:undo:all",
+    "migrate": "sequelize db:migrate",
+    "seed": "sequelize db:seed:all",
+    "build": "bin/build.sh",
     "start": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
