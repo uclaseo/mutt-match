@@ -1,6 +1,16 @@
 # mutt-match
 find hot local mutts in your area
 
+## Repo use:
+Clean, migrate and seed database named "mutt_match":
+```bash
+gulp build
+```
+Start server:
+```bash
+gulp
+```
+
 ## General tech stack:
 Node for back-end, mysql for database, Angular 1 for front-end. 
 Additionally, we use redux for state-management, ui-router for routing, angular-material for styling, and passport for authentication.
