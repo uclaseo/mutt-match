@@ -24,10 +24,10 @@ var usersData = [{
   "grooming": 3,
   "size": 3,
   "noise": 1,
-  "experienceReq": true,
-  "childFriendly": false,
-  "dogFriendly": false,
-  "petFriendly": true
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 2,
   "name": "Osmond Filyashin",
@@ -37,10 +37,10 @@ var usersData = [{
   "grooming": 1,
   "size": 4,
   "noise": 4,
-  "experienceReq": false,
-  "childFriendly": true,
-  "dogFriendly": true,
-  "petFriendly": false
+  "petExperience": false,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 3,
   "name": "Elfie Farres",
@@ -50,10 +50,10 @@ var usersData = [{
   "grooming": 4,
   "size": 5,
   "noise": 3,
-  "experienceReq": true,
-  "childFriendly": false,
-  "dogFriendly": false,
-  "petFriendly": true
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 4,
   "name": "Laverne Ralfe",
@@ -63,10 +63,10 @@ var usersData = [{
   "grooming": 2,
   "size": 2,
   "noise": 2,
-  "experienceReq": true,
-  "childFriendly": false,
-  "dogFriendly": true,
-  "petFriendly": false
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 5,
   "name": "Edouard Colebourne",
@@ -76,10 +76,10 @@ var usersData = [{
   "grooming": 2,
   "size": 4,
   "noise": 4,
-  "experienceReq": true,
-  "childFriendly": true,
-  "dogFriendly": false,
-  "petFriendly": true
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 6,
   "name": "Fabian Kimber",
@@ -89,10 +89,10 @@ var usersData = [{
   "grooming": 2,
   "size": 1,
   "noise": 3,
-  "experienceReq": true,
-  "childFriendly": true,
-  "dogFriendly": true,
-  "petFriendly": false
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 7,
   "name": "Neda Andryushchenko",
@@ -102,10 +102,10 @@ var usersData = [{
   "grooming": 1,
   "size": 1,
   "noise": 5,
-  "experienceReq": true,
-  "childFriendly": false,
-  "dogFriendly": true,
-  "petFriendly": false
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 8,
   "name": "Bernarr Tranckle",
@@ -115,10 +115,10 @@ var usersData = [{
   "grooming": 5,
   "size": 2,
   "noise": 5,
-  "experienceReq": true,
-  "childFriendly": true,
-  "dogFriendly": false,
-  "petFriendly": true
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 9,
   "name": "Vaclav Ditch",
@@ -128,10 +128,10 @@ var usersData = [{
   "grooming": 4,
   "size": 4,
   "noise": 2,
-  "experienceReq": false,
-  "childFriendly": true,
-  "dogFriendly": true,
-  "petFriendly": true
+  "petExperience": false,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 10,
   "name": "Marie-jeanne Hardwich",
@@ -141,10 +141,10 @@ var usersData = [{
   "grooming": 5,
   "size": 3,
   "noise": 5,
-  "experienceReq": true,
-  "childFriendly": false,
-  "dogFriendly": false,
-  "petFriendly": true
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 11,
   "name": "Bert Salvadore",
@@ -154,10 +154,10 @@ var usersData = [{
   "grooming": 3,
   "size": 5,
   "noise": 5,
-  "experienceReq": true,
-  "childFriendly": false,
-  "dogFriendly": true,
-  "petFriendly": true
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 12,
   "name": "Marlin Regi",
@@ -167,10 +167,10 @@ var usersData = [{
   "grooming": 4,
   "size": 2,
   "noise": 4,
-  "experienceReq": true,
-  "childFriendly": true,
-  "dogFriendly": true,
-  "petFriendly": false
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 13,
   "name": "Marcel Favell",
@@ -180,10 +180,10 @@ var usersData = [{
   "grooming": 1,
   "size": 3,
   "noise": 4,
-  "experienceReq": false,
-  "childFriendly": false,
-  "dogFriendly": false,
-  "petFriendly": false
+  "petExperience": false,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 14,
   "name": "Madelaine Philpin",
@@ -193,10 +193,10 @@ var usersData = [{
   "grooming": 5,
   "size": 4,
   "noise": 1,
-  "experienceReq": false,
-  "childFriendly": true,
-  "dogFriendly": true,
-  "petFriendly": true
+  "petExperience": false,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 15,
   "name": "Cal Uff",
@@ -206,10 +206,10 @@ var usersData = [{
   "grooming": 5,
   "size": 1,
   "noise": 2,
-  "experienceReq": true,
-  "childFriendly": true,
-  "dogFriendly": true,
-  "petFriendly": true
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 16,
   "name": "Wilmer Steane",
@@ -219,10 +219,10 @@ var usersData = [{
   "grooming": 5,
   "size": 4,
   "noise": 4,
-  "experienceReq": false,
-  "childFriendly": false,
-  "dogFriendly": false,
-  "petFriendly": false
+  "petExperience": false,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 17,
   "name": "Nadia Gallagher",
@@ -232,10 +232,10 @@ var usersData = [{
   "grooming": 3,
   "size": 4,
   "noise": 5,
-  "experienceReq": false,
-  "childFriendly": true,
-  "dogFriendly": true,
-  "petFriendly": true
+  "petExperience": false,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 18,
   "name": "D'arcy Flanaghan",
@@ -245,10 +245,10 @@ var usersData = [{
   "grooming": 3,
   "size": 2,
   "noise": 2,
-  "experienceReq": true,
-  "childFriendly": true,
-  "dogFriendly": true,
-  "petFriendly": true
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 19,
   "name": "Ogdon Lack",
@@ -258,10 +258,10 @@ var usersData = [{
   "grooming": 5,
   "size": 5,
   "noise": 5,
-  "experienceReq": false,
-  "childFriendly": true,
-  "dogFriendly": false,
-  "petFriendly": false
+  "petExperience": false,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 20,
   "name": "Bryan Sirmond",
@@ -271,10 +271,10 @@ var usersData = [{
   "grooming": 3,
   "size": 5,
   "noise": 5,
-  "experienceReq": true,
-  "childFriendly": false,
-  "dogFriendly": false,
-  "petFriendly": false
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 21,
   "name": "Forest Mole",
@@ -284,10 +284,10 @@ var usersData = [{
   "grooming": 4,
   "size": 3,
   "noise": 4,
-  "experienceReq": true,
-  "childFriendly": true,
-  "dogFriendly": true,
-  "petFriendly": false
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 22,
   "name": "Georgianne Shay",
@@ -297,10 +297,10 @@ var usersData = [{
   "grooming": 2,
   "size": 1,
   "noise": 4,
-  "experienceReq": true,
-  "childFriendly": true,
-  "dogFriendly": false,
-  "petFriendly": false
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 23,
   "name": "Phylis Baglin",
@@ -310,10 +310,10 @@ var usersData = [{
   "grooming": 1,
   "size": 1,
   "noise": 1,
-  "experienceReq": false,
-  "childFriendly": true,
-  "dogFriendly": false,
-  "petFriendly": true
+  "petExperience": false,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 24,
   "name": "Calida Lantry",
@@ -323,10 +323,10 @@ var usersData = [{
   "grooming": 4,
   "size": 3,
   "noise": 2,
-  "experienceReq": false,
-  "childFriendly": false,
-  "dogFriendly": true,
-  "petFriendly": false
+  "petExperience": false,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 25,
   "name": "Bink Canning",
@@ -336,10 +336,10 @@ var usersData = [{
   "grooming": 3,
   "size": 5,
   "noise": 2,
-  "experienceReq": false,
-  "childFriendly": false,
-  "dogFriendly": true,
-  "petFriendly": false
+  "petExperience": false,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 26,
   "name": "Aeriell Vipan",
@@ -349,10 +349,10 @@ var usersData = [{
   "grooming": 4,
   "size": 4,
   "noise": 2,
-  "experienceReq": false,
-  "childFriendly": false,
-  "dogFriendly": false,
-  "petFriendly": true
+  "petExperience": false,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 27,
   "name": "Beaufort Rowan",
@@ -362,10 +362,10 @@ var usersData = [{
   "grooming": 5,
   "size": 4,
   "noise": 4,
-  "experienceReq": true,
-  "childFriendly": false,
-  "dogFriendly": true,
-  "petFriendly": true
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 28,
   "name": "Karalynn Thatcham",
@@ -375,10 +375,10 @@ var usersData = [{
   "grooming": 2,
   "size": 4,
   "noise": 1,
-  "experienceReq": false,
-  "childFriendly": true,
-  "dogFriendly": false,
-  "petFriendly": false
+  "petExperience": false,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 29,
   "name": "Alyce Khotler",
@@ -388,10 +388,10 @@ var usersData = [{
   "grooming": 1,
   "size": 3,
   "noise": 2,
-  "experienceReq": true,
-  "childFriendly": false,
-  "dogFriendly": false,
-  "petFriendly": false
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }, {
   "id": 30,
   "name": "Wallis Parmiter",
@@ -401,8 +401,8 @@ var usersData = [{
   "grooming": 3,
   "size": 5,
   "noise": 5,
-  "experienceReq": true,
-  "childFriendly": true,
-  "dogFriendly": false,
-  "petFriendly": true
+  "petExperience": true,
+  "children": true,
+  "currentDogs": false,
+  "currentPets": true
 }];
