@@ -1,14 +1,19 @@
-angular.module('mutt-match')
+angular.module('mutt-match', /*['ngMaterial']*/)
 
-.controller('QuestCtrl', [function() {
-  // this.user = {
-  //   title: 'Developer',
-  //   email: '',
-  //   firstName: '',
-  //   lastName: '',
-  //   city: '',
-  //   postalCode: ''
-  // };
+.controller('QuestCtrl', [function($mdDialog) {
+  /*this.showPrompt = function(ev) {
+    var confirm = $mdDialog.prompt()
+      .title('Are you an active person?')
+      .targetEvent(ev)
+      .ok('Pretty active')
+      .cancel('Not so much');
+
+      $mdDialog.show(confirm).then(() => {
+        this.status = 'Active is good for dogs!';
+      }, function() {
+        this.status = 'No sweat for you!';
+      });
+  };*/
 }]);
   // .config(function($mdThemingProvider) {
 

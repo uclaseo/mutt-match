@@ -18,46 +18,38 @@
     <div>
       <form name="userForm">
 
-        <div layout-gt-xs="row">
-          <md-input-container>
-            <label>Enter date</label>
-            <md-datepicker ng-model="$ctrl.user.submissionDate"></md-datepicker>
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <input ng-model="$ctrl.user.firstName" placeholder="First Name">
+            <input ng-model="$ctrl.user.lastName" placeholder="Last Name">
           </md-input-container>
         </div>
 
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm>
-            <label>First name</label>
-            <input ng-model="$ctrl.user.firstName">
+            <input ng-model="$ctrl.user.city" placeholder="city">
           </md-input-container>
 
           <md-input-container class="md-block" flex-gt-sm>
-            <label>Last name</label>
-            <input ng-model="$ctrl.user.lastName">
-          </md-input-container>
-        </div>
-
-        <div layout-gt-sm="row">
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>City</label>
-            <input ng-model="$ctrl.user.city">
-          </md-input-container>
-
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>Postal Code</label>
-            <input name="postalCode" ng-model="$ctrl.user.postalCode" placeholder="12345"
+            <input name="postalCode" ng-model="$ctrl.user.postalCode" placeholder="postal code"
                    required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
-
-            <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
-              <div ng-message="required" class="my-message">You must supply a postal code.</div>
-              <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
-                code.
-              </div>
-              <div ng-message="md-maxlength" class="my-message">
-                No long form needed!
-              </div>
-            </div>
           </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+              <md-list-item class="md-5-line">
+                <div class="md-list-item-text" layout="column">
+                    <p>Active</p>
+                    <p>Grooming</p>
+                    <p>Size</p>
+                    <p>Noise</p>
+                    <p>Experience</p>
+                </div>
+             </md-list-item>
+          </md-input-container>
+        </div>
+
+        <div class="questionnaire prompt" layout="row" layout-wrap layout-margin layout-align="center">
+            <md-button class="md-primary md-raised" ng-click="showPrompt($event)" >questionnaire prompt</md-button>
         </div>
 
 
