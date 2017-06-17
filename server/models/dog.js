@@ -1,24 +1,25 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define('User', {
+  var Dog = sequelize.define('Dog', {
     name: DataTypes.STRING,
-    password: DataTypes.STRING,
-    googleId: DataTypes.STRING,
-    email: DataTypes.STRING,
+    age: DataTypes.INTEGER,
+    // shelterId: DataTypes.INTEGER,
     active: DataTypes.INTEGER,
     grooming: DataTypes.INTEGER,
     size: DataTypes.INTEGER,
     noise: DataTypes.INTEGER,
-    petExperience: DataTypes.BOOLEAN,
-    children: DataTypes.BOOLEAN,
-    currentDogs: DataTypes.BOOLEAN,
-    currentPets: DataTypes.BOOLEAN
+    experienceReq: DataTypes.BOOLEAN,
+    childFriendly: DataTypes.BOOLEAN,
+    dogFriendly: DataTypes.BOOLEAN,
+    petFriendly: DataTypes.BOOLEAN
   }, {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
+        models.Dog.belongsTo(models.Shelter, { foreignKey:'shelter' });
+
       }
     }
   });
-  return User;
+  return Dog;
 };
