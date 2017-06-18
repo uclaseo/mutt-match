@@ -2,20 +2,15 @@ const express = require('express'),
       parser = require('body-parser'),
       morgan = require('morgan'),
       path = require('path'),
-      db = require('./models')
-      passport = require('./utils/passport');
-      cookie-parser = require('cookie-parser');
-      express-session = require('express-session');
+      db = require('./models');
 
 const app = express();
 
 app.use(parser.json())
-   .use(bodyParser.urlencoded({ extended: true }));
+   .use(parser.urlencoded({ extended: true }))
    .use(morgan(':method :url :status :res[content-length] - :response-time ms'))
-   .use(require('cookie-parser')()),
-   .use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false })),
-   .use(passport.initialize()),
-   .use(passport.session()),
+   .use(require('cookie-parser')())
+   .use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }))
    .use(express.static(path.join(__dirname, '../public')))
    .use(express.static(path.join(__dirname, '../node_modules')))
    .use('/', require('./routes'));

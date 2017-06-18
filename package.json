@@ -19,6 +19,9 @@
   "homepage": "https://github.com/max-hoffman/mutt-match.git#readme",
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-auth0": "^2.0.0-beta.2",
+    "auth0-js": "^8.7.0",
+    "bcrypt-as-promised": "^1.1.0",
     "body-parser": "^1.17.2",
     "connect-ensure-login": "^0.1.1",
     "cookie-parser": "^1.4.3",
