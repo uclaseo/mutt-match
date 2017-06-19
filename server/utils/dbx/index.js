@@ -10,13 +10,7 @@ var dbx = new Dropbox({ accessToken: config.ACCESS_TOKEN });
 module.exports = {
   getLinks: (path) => {
     path = path || '';
-    dbx.filesListFolder({path: path})
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    return dbx.filesListFolder({path: path});
   },
   upload: () => {
     var promises;
@@ -29,7 +23,6 @@ module.exports = {
     .then(files => {
         // paths contains an array of FileList
       var promises = files.map(file => {
-        console.log('file name', file);
         return fs.readFileAsync(`${directory}/${file}`)
         .then(image => dbx.filesUpload({ path: `/${file}`, contents: image }));
       });
@@ -42,12 +35,10 @@ module.exports = {
 
   },
   download: (filePath) => {
-    dbx.filesGetThumbnail({
+    return dbx.filesGetThumbnail({
       path: filePath,
       size: 'w640h480'
-    })
-    .then(console.log)
-    .catch(console.log);
+    });
   }
 };
 
