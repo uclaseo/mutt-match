@@ -12,7 +12,7 @@ angular.module('mutt-match')
           setSession(authResult);
           $state.go('home');
         }
-      )
+      })
       .catch(error => {
         $timeout(function() {
           $state.go('home');

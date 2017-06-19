@@ -40,9 +40,18 @@ module.exports = {
     })
     .catch(error => console.log('error', error));
 
+  },
+  download: (filePath) => {
+    dbx.filesGetThumbnail({
+      path: filePath,
+      size: 'w640h480'
+    })
+    .then(console.log)
+    .catch(console.log);
   }
 };
 
   //upload links
 
-  module.exports.upload('');
+  module.exports.download('/doggo1.jpg');
+  // module.exports.getLinks();
