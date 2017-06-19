@@ -3,6 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   var Dog = sequelize.define('Dog', {
     name: DataTypes.STRING,
     age: DataTypes.INTEGER,
+    imageLink: DataTypes.STRING,
     shelter: DataTypes.INTEGER,
     active: DataTypes.INTEGER,
     grooming: DataTypes.INTEGER,

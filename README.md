@@ -6,6 +6,8 @@ Clean, migrate and seed database named "mutt_match":
 ```bash
 gulp build
 ```
+** note: this fails sometimes when osx messes with the linux carriage return character, or if for some reason your computer defualts restricting access to bash scripts.  edit in vim and run ":set fileformat=unix" for the first, and chmod +x ./bin/build.sh should take care of the second
+
 Start server:
 ```bash
 gulp
