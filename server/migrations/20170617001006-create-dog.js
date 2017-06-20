@@ -16,6 +16,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
+      imageLink: {
+        allowNull: true,
+        type: Sequelize.STRING
+      },
       shelter: {
         allowNull: false,
         type: Sequelize.INTEGER
