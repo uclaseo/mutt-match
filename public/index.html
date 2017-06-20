@@ -4,14 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <base href="/">
   <title>Document</title>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-  <!--ui-router-->
+  <!--angular-->
   <script src="angular/angular.js"></script>
+  <!--ui-router-->
   <script src="//unpkg.com/angular-ui-router@1.0.0-rc.1/release/angular-ui-router.js"></script>
+  <!--auth-o-->
+  <script type="text/javascript" src="auth0-js/build/auth0.js"></script>
+  <script type="text/javascript" src="angular-auth0/dist/angular-auth0.js"></script>
+  <!--dropbox-->
+  <script src="https://unpkg.com/dropbox/dist/Dropbox-sdk.min.js"></script>
 </head>
 <body ng-app="mutt-match">
   <script src="index.js"></script>
+  <script src="services/auth.js"></script>
+  <script src="services/images.js"></script>
+  <script src="services/dbx.js"></script>
   <script src="states/home/home/home.js"></script>
   <script src="states/home/home/HomeCtrl.js"></script>
   <script src="states/login/login.js"></script>
