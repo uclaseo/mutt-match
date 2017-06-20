@@ -1,6 +1,6 @@
 const router = require('express').Router(),
       dbx = require('./dbx');
 
-router.get('/', dbx.findAllLinksCtrl);
+router.get('/images', dbx.findAllLinksCtrl);
 
- module.exports = router;
+module.exports = router;

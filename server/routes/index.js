@@ -8,7 +8,7 @@ const router = require('express').Router(),
 
 router.use('/users/:id/matches', matchesRouter);
 router.use('/users', usersRouter);
-router.use('/dogs/:id/images', imagesRouter);
+router.use('/dogs/:id/image', imagesRouter);
 router.use('/dogs', dogsRouter);
 router.use('/shelters', sheltersRouter);
 router.use('/dropbox', dbxRouter);

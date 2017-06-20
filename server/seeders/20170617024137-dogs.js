@@ -5,11 +5,9 @@ module.exports = {
   up: function (queryInterface, Sequelize) {
     return dbx.getLinks()
     .then(results => {
-      console.log('image links', results);
       results.entries.forEach((image, idx) => {
         dogsData[idx].imageLink = image.path_lower;
       });
-      console.log('dogs data', dogsData[0]);
       return queryInterface.bulkInsert('Dogs', dogsData);
     })
   },

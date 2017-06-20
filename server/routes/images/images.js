@@ -4,10 +4,11 @@ const db = require('../../models'),
 module.exports = {
   downloadOneCtrl: (req, res) => {
     db.Dog.findOne({ where: {id: req.params.id }})
-    .then(dog => {
-      return dbx.download(dog.imageLink);
+    .then(dog => dbx.download(dog.imageLink))
+    .then(image => {
+      res.writeHead(200, {'Content-Type': 'image/jpeg'});
+      res.end(image.fileBinary, 'binary');
     })
-    .then(res.send)
     .catch(error => res.sendStatus(409, error));
   }
 };

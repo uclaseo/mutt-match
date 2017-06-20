@@ -41,9 +41,3 @@ module.exports = {
     });
   }
 };
-
-  //upload links
-
-  // module.exports.download('/doggo1.jpg');
-  module.exports.getLinks()
-  .then(console.log);
