@@ -1,3 +1,3 @@
-exports.modules = {
+module.exports = {
   ACCESS_TOKEN: ""
 };
