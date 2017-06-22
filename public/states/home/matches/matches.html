@@ -1,0 +1,30 @@
+<!-- header -->
+<header class="intro-header" style="background-image: url('img/d5.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1>Mutt Match</h1>
+          <hr class="small">
+          <span class="subheading"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- main -->
+<div class="post-preview" ng-repeat="dog in $ctrl.dogs">
+  <header></header>
+  <ol>
+    <a href="post.html">
+      <h2 class="post-title">
+          {{$index + 1}}.  {{ dog.name }} <span class="match">{{dog.match}}</span>
+      </h2>
+      <h3 class="post-subtitle">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, quasi ea eligendi in numquam natus atque quo quis error, deleniti voluptatum.
+      </h3>
+    </a>
+    <p class="post-meta">{{dog.shelter}}, {{dog.sheterAddress}}</p>
+  </ol>
+</div>
+<hr>
