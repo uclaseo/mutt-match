@@ -14,10 +14,9 @@ module.exports = {
           }
         }
       })
-      .then(results => res.status(200).send(results))
+      .then(results => res.status(200).json(results))
       .catch(error => res.sendStatus(500, error));
   }
-
 
 
 };

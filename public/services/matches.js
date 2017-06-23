@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('mutt-match', [$http])
+angular.module('mutt-match')
 
 .service('getMatches', [$http, id, function($http, id) {
   id = id || 8;
@@ -15,4 +15,6 @@ angular.module('mutt-match', [$http])
     })
     .catch(err => console.log('err', err));
 
-}])
+}]);
+
+
