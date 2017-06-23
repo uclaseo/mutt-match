@@ -1,20 +1,17 @@
 'use strict'
 
-angular.module('mutt-match')
+angular.module('mutt-match', [$http])
 
-.service('getMatches', [$http, function($http) {
-
-  //where to store the matches
+.service('getMatches', [$http, id, function($http, id) {
+  id = id || 8;
   let matches = [];
+  let url = 'http://localhost:3000/users/' + 'id' + '/matches';
+  console.log(url);
 
-  //url base
-  let urlBase = 'http://localhost:3000/';
-
-  //get
-  $http.get(urlBase + 'matches')
+  $http.get(url)
     .then(resp => {
       matches = resp;
-      console.log('Successful get', resp);
+      console.log('Successful get', matches);
     })
     .catch(err => console.log('err', err));
 
