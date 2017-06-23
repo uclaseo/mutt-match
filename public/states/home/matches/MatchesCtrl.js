@@ -1,9 +1,7 @@
 angular.module('mutt-match')
 
-.controller('MatchesCtrl', ['$log', 'getMatches', function('$log', 'getMatches') {
-  let matches = [];
+.controller('MatchesCtrl', ['matchService', function(matchService) {
 
-  $log('!!!!!', matches);
-  matches = getMatches();
+  matchService.getMatches();
 
 }]);

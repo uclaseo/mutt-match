@@ -14,9 +14,12 @@ angular.module('mutt-match', ['ui.router', 'auth0.auth0'])
       url: '/callback',
       component: 'callback'
     })
-    .state('users/id/matches', {
-      url: '/users/id/matches',
-      component: 'matches'
+    .state('matches', {
+      url: '/matches',
+      component: 'matches',
+      resolve: {
+        
+      }
     });
 
 

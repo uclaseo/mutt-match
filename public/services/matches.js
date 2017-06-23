@@ -1,20 +1,37 @@
-'use strict'
-
 angular.module('mutt-match')
 
-.service('getMatches', [$http, id, function($http, id) {
-  id = id || 8;
-  let matches = [];
-  let url = 'http://localhost:3000/users/' + 'id' + '/matches';
-  console.log(url);
+.service('matchService', ['$http', '$log', function($http, $log) {
 
-  $http.get(url)
-    .then(resp => {
-      matches = resp;
-      console.log('Successful get', matches);
-    })
-    .catch(err => console.log('err', err));
+  $log.log('%%% matchService firing!!! %%%');
+
+  let _events = {};
+  let _state = {
+    matches: [],
+  };
+
+  this.getMatches = function(id) {
+    // return $http.get(`/users/${id}/matches`)
+    return $http.get(`http://localhost:3000/users/${id}/matches`)
+
+      .then(resp => {
+        this.set('matches', resp.data.results);
+        $log.log('%%% getMatches firing!!! %%%');
+        return this.get('matches');
+      })
+      .catch(err => console.log('err', err));
+
+  };
+
+  this.get = function(prop) {
+    return _state[prop];
+  };
+
+  this.set = function(prop, val) {
+    _state[prop] = val;
+    _events[prop].forEach(cb => {
+      cb(val);
+    });
+    return val;
+  };
 
 }]);
-
-
