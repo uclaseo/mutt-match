@@ -5,7 +5,7 @@ angular.module('mutt-match', ['ui.router', 'auth0.auth0'])
   $stateProvider
     .state('home', {
       url: '/',
-      component: 'home',
+      component: 'matches',
       resolve: {
         login: (auth) => auth.login
       }
@@ -15,7 +15,7 @@ angular.module('mutt-match', ['ui.router', 'auth0.auth0'])
       component: 'callback'
     })
     .state('matches', {
-      url: '/matches',
+      url: '/users/id/matches',
       component: 'matches',
       resolve: {
         
