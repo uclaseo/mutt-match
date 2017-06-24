@@ -11,6 +11,11 @@ module.exports = {
     .then(user => res.send(user))
     .catch(error => res.sendStatus(500, error));
   },
+  createUserCtrl: function(req, res) {
+    db.User.create(req.body)
+    .then(user => res.sendStatus(201, user))
+    .catch(error => res.sendStatus(500, error));
+  },
   updateUserCtrl: function(req,res) {
     db.User.update(req.body, { where: {id: req.params.id }})
     .then(user => res.sendStatus(201, user))
