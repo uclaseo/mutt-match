@@ -18,7 +18,10 @@ angular.module('mutt-match', ['ui.router', 'auth0.auth0'])
     })
     .state('matches', {
       url: '/users/8/matches',
-      component: 'matches'
+      component: 'matches',
+      // resolve: {
+      //   matches: (matchesService) => matchesService.get('matches')
+      // }
     })
     .state('about', {
       url: '/about',

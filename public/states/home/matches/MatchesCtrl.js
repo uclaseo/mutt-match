@@ -1,6 +1,7 @@
 angular.module('mutt-match')
   .controller('MatchesCtrl', ['$log', 'matchesService', function($log, matchesService) {
-    this.matches = matchesService.get('matches');
+
+    this.somethings = ['thing1', 'thing2', 'thing3'];
 
     matchesService.fetchMatches()
       .then((matches) => $log.log('!!!!!', matches))
@@ -8,4 +9,6 @@ angular.module('mutt-match')
         this.matches = matches;
       })
       .catch(err => console.error(err));
+
+    $log.log('%%%', this.matches);
 }]);

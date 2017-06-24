@@ -5,6 +5,8 @@ angular.module('mutt-match')
 
   $log.log('*** matchesService firing!!! ***');
 
+  let matches = [];
+
   let _state = {
     matches: []
   };
