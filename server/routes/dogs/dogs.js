@@ -11,5 +11,4 @@ module.exports = {
   findOneDogCtrl: function(req, res) {
 
   }
-  x
 };
