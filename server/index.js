@@ -9,8 +9,6 @@ const app = express();
 app.use(parser.json())
    .use(parser.urlencoded({ extended: true }))
    .use(morgan(':method :url :status :res[content-length] - :response-time ms'))
-   .use(require('cookie-parser')())
-   .use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }))
    .use(express.static(path.join(__dirname, '../public')))
    .use(express.static(path.join(__dirname, '../node_modules')))
    .use('/', require('./routes'));
@@ -25,4 +23,3 @@ db.sequelize
   .catch(function(error) {
     console.log("Error creating connection:", error);
   });
-      
