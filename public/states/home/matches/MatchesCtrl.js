@@ -3,7 +3,7 @@ angular.module('mutt-match')
 
     this.somethings = ['thing1', 'thing2', 'thing3'];
 
-    matchesService.fetchMatches()
+    this.matches = matchesService.fetchMatches()
       .then((matches) => $log.log('!!!!!', matches))
       .then(matches => {
         this.matches = matches;

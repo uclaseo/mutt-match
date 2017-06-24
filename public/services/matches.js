@@ -7,23 +7,25 @@ angular.module('mutt-match')
 
   let matches = [];
 
-  let _state = {
-    matches: []
-  };
+  // let _state = {
+  //   matches: []
+  // };
 
-  this.get = function(prop) {
-    return _state[prop];
-  };
+  // this.get = function(prop) {
+  //   return _state[prop];
+  // };
 
-  this.set = function(prop, val) {
-    _state[prop] = val
-  };
+  // this.set = function(prop, val) {
+  //   _state[prop] = val
+  // };
 
   this.fetchMatches = function() {
     return $http.get(`/users/${id}/matches`) //hard-coded id for now
       .then((resp) => {
-        this.set('matches', resp.data);
-        return this.get('matches');
+        // this.set('matches', resp.data);
+        matches = resp.data;
+        return matches;
+        // return this.get('matches');
       })
   };
 
