@@ -1,5 +1,5 @@
 {
-  "name": "hrla15-greenfield",
+  "name": "mutt-match",
   "version": "1.0.0",
   "description": "Node for back-end, mysql for database, Angular 1 for front-end. \r Additionally, we use redux for state-management, ui-router for routing, angular-material for styling, and passport for authentication.",
   "main": "index.js",
