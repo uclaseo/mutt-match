@@ -34,6 +34,10 @@
   <script src="index.js"></script>
   <script src="states/home/home/home.js"></script>
   <script src="states/home/home/HomeCtrl.js"></script>
+  <script src="states/home/contact/contact.js"></script>
+  <script src="states/home/contact/ContactCtrl.js"></script>
+  <script src="states/home/about/about.js"></script>
+  <script src="states/home/about/AboutCtrl.js"></script>
   <script src="states/home/matches/matches.js"></script>
   <script src="states/home/matches/MatchesCtrl.js"></script>
   <script src="states/login/login.js"></script>
@@ -42,7 +46,11 @@
   <script src="services/images.js"></script>
   <script src="services/dbx.js"></script>
   <script src="services/matches.js"></script>
+  <navbar ng-include="'states/home/navbar/navbar.html'">
+  </navbar>
   <ui-view></ui-view>
+  <footer ng-include="'states/home/footer/footer.html'">
+  </footer>
 </body>
 <!--material js-->
 <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>-->

@@ -23,6 +23,14 @@ h6 {
   font-weight: 800;
 }
 
+h1 {
+  padding-top: 100px;
+  color: white: ;
+  /*color: #A92836;*/
+  /*background-color: black;*/
+  /*border: solid 1px black;*/
+}
+
 a {
   color: #333333;
 }
@@ -259,12 +267,11 @@ hr.small {
   color: #0085A1;
 }
 
-.post-preview > a > .post-title{
+.post-preview > a > .post-title {
   font-size: 30px;
   margin-top: 30px;
   margin-bottom: 10px;
 }
-
 
 .post-preview > a > .post-subtitle {
   margin: 0;
