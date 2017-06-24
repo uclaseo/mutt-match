@@ -1,5 +1,5 @@
 angular.module('mutt-match')
 
-.controller('HomeCtrl', [function() {
+.controller('HomeCtrl', [ function() {
 
 }]);
