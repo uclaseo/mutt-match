@@ -3,9 +3,7 @@ const db = require('../../models');
 module.exports = {
 
   findAllMatchesCtrl: function(req, res) {
-    console.log('*** findAllMatchesCtrl fired ***');
     let id = req.params.id;
-
     db.Match.findAll({
         where: {
           user: id,
@@ -14,11 +12,8 @@ module.exports = {
           }
         }
       })
-      .then(results => {
-        res.status(200).json(results)
-      })
+      .then(results => res.status(200).json(results))
       .catch(error => res.sendStatus(500, error));
   }
-
 
 };

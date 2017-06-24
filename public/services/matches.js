@@ -10,16 +10,20 @@ angular.module('mutt-match')
 
   this.fetchMatches = function() {
     return $http.get(`/users/${id}/matches`) //hard-coded id for now
-      .then((resp) => {
+      .then(resp => {
         matches = resp.data;
         return matches;
       })
+      .catch(err => $log.log('err', err));
   };
 
   this.fetchDogs = function() {
-    return $http.get()
-      .then()
-      .catch();
+    return $http.get(`/dogs`)
+      .then(resp => {
+        dogs = resp.data;
+        return dogs;
+      })
+      .catch(err => $log.log('err', err));
   }
 
 }]);
