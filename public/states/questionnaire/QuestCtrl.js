@@ -2,12 +2,7 @@ angular.module('mutt-match', /*['ngMaterial']*/)
 
 .controller('QuestCtrl', [function() {
 
-  this.active = {
-    val1: true
-  },
-  this.nonActive = {
-    val1: false
-  };
+  this.active = '';
   /*this.showPrompt = function(ev) {
     var confirm = $mdDialog.prompt()
       .title('Are you an active person?')
