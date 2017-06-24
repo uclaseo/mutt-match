@@ -2,6 +2,7 @@ angular.module('mutt-match', ['ui.router', 'auth0.auth0'])
 
 .config(['$stateProvider', '$urlServiceProvider', 'angularAuth0Provider', '$locationProvider', function($stateProvider, $urlServiceProvider, angularAuth0Provider, $locationProvider) {
 
+<<<<<<< HEAD
   $urlServiceProvider.rules.otherwise({ state: 'home' });
 
   $stateProvider
@@ -32,6 +33,19 @@ angular.module('mutt-match', ['ui.router', 'auth0.auth0'])
       component: 'contact'
     })
 
+=======
+  $stateProvider.state('home', {
+    url: '/',
+    component: 'home',
+    resolve: {
+      login: (auth) => auth.login
+    }
+  })
+  .state('callback', {
+    url: '/callback',
+    component: 'callback'
+  });
+>>>>>>> cab0ec63aa637200a4f9c2f4bed4c7788e9b0789
 
   angularAuth0Provider.init({
     clientID: 'R6TjzEfP3EdjIfAAcLMOxnsFYzYua1nY',
@@ -47,5 +61,10 @@ angular.module('mutt-match', ['ui.router', 'auth0.auth0'])
     enabled: true,
     requireBase: false
   });
+<<<<<<< HEAD
 
 }]);
+=======
+  $urlServiceProvider.rules.otherwise({ state: 'home' });
+}]);
+>>>>>>> cab0ec63aa637200a4f9c2f4bed4c7788e9b0789
