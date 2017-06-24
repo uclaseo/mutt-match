@@ -1,8 +1,8 @@
-angular.module('mutt-match', /*['ngMaterial']*/)
+angular.module('mutt-match' /*['ngMaterial']*/)
 
-.controller('QuestCtrl', [function() {
+ .controller('QuestCtrl', [function() {
 
-  this.active = '';
+   this.active = '';
   /*this.showPrompt = function(ev) {
     var confirm = $mdDialog.prompt()
       .title('Are you an active person?')
@@ -16,7 +16,7 @@ angular.module('mutt-match', /*['ngMaterial']*/)
         this.status = 'No sweat for you!';
       });
   };*/
-}]);
+ }]);
   // .config(function($mdThemingProvider) {
 
   //   // Configure a dark theme with primary foreground yellow

@@ -1,7 +1,15 @@
 'use strict';
+const dbx = require('../utils/dbx');
+
 module.exports = {
   up: function (queryInterface, Sequelize) {
-    return queryInterface.bulkInsert('Dogs', dogsData);
+    return dbx.getLinks()
+    .then(results => {
+      results.entries.forEach((image, idx) => {
+        dogsData[idx].imageLink = image.path_lower;
+      });
+      return queryInterface.bulkInsert('Dogs', dogsData);
+    })
   },
 
   down: function (queryInterface, Sequelize) {

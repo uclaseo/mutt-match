@@ -1,5 +1,5 @@
-angular.module('mutt_match')
-  .service('questService', [$http, function($http) {
+angular.module('mutt-match')
+  .service('questService', ['$http', function($http) {
       let questionnaire = {};
       return {
           put: () => users,
