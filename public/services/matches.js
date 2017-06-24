@@ -6,27 +6,20 @@ angular.module('mutt-match')
   $log.log('*** matchesService firing!!! ***');
 
   let matches = [];
-
-  // let _state = {
-  //   matches: []
-  // };
-
-  // this.get = function(prop) {
-  //   return _state[prop];
-  // };
-
-  // this.set = function(prop, val) {
-  //   _state[prop] = val
-  // };
+  let dogs = [];
 
   this.fetchMatches = function() {
     return $http.get(`/users/${id}/matches`) //hard-coded id for now
       .then((resp) => {
-        // this.set('matches', resp.data);
         matches = resp.data;
         return matches;
-        // return this.get('matches');
       })
   };
+
+  this.fetchDogs = function() {
+    return $http.get()
+      .then()
+      .catch();
+  }
 
 }]);
