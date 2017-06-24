@@ -5,6 +5,4 @@ router.get('/', users.findAllUsersCtrl);
 router.get('/:id', users.findOneUserCtrl);
 router.put('/:id/', users.updateUserCtrl);
 
-
-
- module.exports = router;
+module.exports = router;

@@ -12,9 +12,6 @@ router.use('/dogs/:id/image', imagesRouter);
 router.use('/dogs', dogsRouter);
 router.use('/shelters', sheltersRouter);
 router.use('/dropbox', dbxRouter);
-
-
-//fill these out right later... just avoiding a 404 for now
 router.use('/about', router.get('/', (req, res) => {}));
 router.use('/contact', router.get('/', (req, res) => {}));
 

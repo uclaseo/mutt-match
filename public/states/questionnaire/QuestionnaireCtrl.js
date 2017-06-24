@@ -1,8 +1,12 @@
 angular.module('mutt-match' /*['ngMaterial']*/)
 
- .controller('QuestCtrl', [function() {
+ .controller('QuestionnaireCtrl', ['questionnaireService', function(questionnaireService) {
 
    this.active = '';
+  //  this.onClick = () => {
+  //    questionnaireService.update(currentUser.get(), this.userData)
+  //  }
+
   /*this.showPrompt = function(ev) {
     var confirm = $mdDialog.prompt()
       .title('Are you an active person?')
