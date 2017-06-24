@@ -1,7 +1,9 @@
 angular.module('mutt-match')
 
 .component('questionnaire', {
-  bindings: {},
+  bindings: {
+    submit: '<'
+  },
   controller: 'QuestCtrl',
   restrict: 'E',
   templateUrl: './states/questionnaire/quest.html'

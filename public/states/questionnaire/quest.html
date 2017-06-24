@@ -1,59 +1,57 @@
 <div ng-controller="QuestCtrl" layout="column" ng-cloak class="md-inline-form">
-
-  <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
-    <div>
-      <md-input-container>
-        <label>Title</label>
-        <input ng-model="$ctrl.user.title">
-      </md-input-container>
-
-      <md-input-container>
-        <label>Email</label>
-        <input ng-model="$ctrl.user.email" type="email">
-      </md-input-container>
-    </div>
-  </md-content>
-
   <md-content layout-padding>
     <div>
-      <form name="userForm">
+      <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <input ng-model="$ctrl.user.firstName" placeholder="First Name">
+          <input ng-model="$ctrl.user.lastName" placeholder="Last Name">
+        </md-input-container>
+      </div>
 
-        <div layout-gt-sm="row">
-          <md-input-container class="md-block" flex-gt-sm>
-            <input ng-model="$ctrl.user.firstName" placeholder="First Name">
-            <input ng-model="$ctrl.user.lastName" placeholder="Last Name">
-          </md-input-container>
-        </div>
+      <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <input ng-model="$ctrl.user.city" placeholder="city">
+        </md-input-container>
 
-        <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <input name="postalCode" ng-model="$ctrl.user.postalCode" placeholder="postal code"
+                  required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+        </md-input-container>
+        <div ng-controller="QuestCtrl" >
           <md-input-container class="md-block" flex-gt-sm>
-            <input ng-model="$ctrl.user.city" placeholder="city">
-          </md-input-container>
-
-          <md-input-container class="md-block" flex-gt-sm>
-            <input name="postalCode" ng-model="$ctrl.user.postalCode" placeholder="postal code"
-                   required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
-          </md-input-container>
-
-          <md-input-container class="md-block" flex-gt-sm>
+            <ng-form name="userForm">
               <md-list-item class="md-5-line">
                 <div class="md-list-item-text" layout="column">
-                    <p>Active</p>
-                    <p>Grooming</p>
-                    <p>Size</p>
-                    <p>Noise</p>
-                    <p>Experience</p>
+                    <label>Are you pretty active?(3 - 5 days/week) </label>
+                      <label>True:
+                        <input type="checkbox" ng-model="active">
+                      </label><br/>  
+                      <label>False:
+                        <input type="checkbox" ng-model="nonActive">
+                      </label><br/>  
+                    <p>Do you want long hair or short hair?(Grooming)</p>
+                      <input type="text">
+                    <p>Do you prefer big or small dog?(Size)</p>
+                      <input type="text">
+                    <p>Does noise bother you?(Noise)</p>
+                      <input type="text">
+                    <p>Have you owned a dog before?(Experience)</p>
+                      <input type="text">
+                    <ui-view></ui-view>
                 </div>
-             </md-list-item>
-          </md-input-container>
+              </md-list-item>
+            </ng-form>
+         </md-input-container>
         </div>
+      </div>
 
-        <div class="questionnaire prompt" layout="row" layout-wrap layout-margin layout-align="center">
-            <md-button class="md-primary md-raised" ng-click="showPrompt($event)" >questionnaire prompt</md-button>
-        </div>
-
-
-      </form>
+      <div class="questionnaire prompt" layout="row" layout-wrap layout-margin layout-align="center">
+          <ul class="pager">
+            <li class="next">
+              <a href="#" ng-submit="$ctrl.submit()">Submit &rarr;</a>
+            </li>
+          </ul>
+      </div>
     </div>
   </md-content>
 
