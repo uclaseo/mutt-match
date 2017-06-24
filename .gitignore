@@ -28,4 +28,5 @@ dist/
 node_modules/
 bower_components/
 dropbox.config.js
+config/dropbox.config.js
 package-lock.json

@@ -2,7 +2,8 @@ const express = require('express'),
   parser = require('body-parser'),
   morgan = require('morgan'),
   path = require('path'),
-  db = require('./models');
+  db = require('./models'),
+  cookieParser = require('cookie-parser');
 
 const app = express();
 

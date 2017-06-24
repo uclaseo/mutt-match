@@ -31,6 +31,10 @@ angular.module('mutt-match', ['ui.router', 'auth0.auth0'])
       url: '/contact',
       component: 'contact'
     })
+    .state('questionnaire', {
+    url: '/questionnaire',
+    component: 'questionnaire'
+    });
 
   angularAuth0Provider.init({
     clientID: 'R6TjzEfP3EdjIfAAcLMOxnsFYzYua1nY',
