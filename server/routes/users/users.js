@@ -7,6 +7,12 @@ module.exports = {
       .catch(err => console.log(err))
   },
   findOneUserCtrl: function(req, res) {
-
+    console.log('*** findOneUserCtrl fired ***');
+    let id = req.params.id;
+    db.User.find(id)
+      .then(results => {
+        res.status(200).json(results)
+      })
+      .catch(err => console.log(err))
   }
 }

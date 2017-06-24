@@ -1,23 +1,28 @@
 angular.module('mutt-match')
 
 .service('matchesService', ['$http', '$log', function($http, $log) {
+  let id = 8;
 
-  $log.log('*** matchService firing!!! ***');
+  $log.log('*** matchesService firing!!! ***');
 
-  let matches = [];
-  
-  //until we get a users service
-  id = id || 8;
-
-  return {
-    get: () => matches,
-    fetch: (id) => {
-      $http.get(`/users/${id}/matches`)
-        .then((results) => matches = results.data)
-        .then(() => $log.log(matches))
-        .catch(err => $log.log('err', err));
-    }
+  let _state = {
+    matches: []
   };
 
+  this.get = function(prop) {
+    return _state[prop];
+  };
+
+  this.set = function(prop, val) {
+    _state[prop] = val
+  };
+
+  this.fetchMatches = function() {
+    return $http.get(`/users/${id}/matches`) //hard-coded id for now
+      .then((resp) => {
+        this.set('matches', resp.data);
+        return this.get('matches');
+      })
+  };
 
 }]);
