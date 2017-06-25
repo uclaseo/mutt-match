@@ -415,6 +415,7 @@ form .row:first-child .floating-label-form-group {
 
 .pager {
   margin: 20px 0 0;
+  text-align: center;
 }
 
 .pager li > a,
@@ -478,4 +479,12 @@ body {
 
 .homeTeaser {
   text-align: center;
+}
+
+#loginBtn {
+  text-align: center;
+}
+
+#spinner {
+  
 }
