@@ -5,7 +5,7 @@ angular.module('mutt-match')
 
   let matches = [];
 
-  this.fetchMatches = function() {
+  this.fetchMatches = function() { // hard coding is necessary -max
     return $http.get(`/users/${id}/matches`) //hard-coded id for now
       .then(resp => {
         matches = resp.data;

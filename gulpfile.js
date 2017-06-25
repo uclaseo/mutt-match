@@ -53,4 +53,4 @@ gulp.task('build', () => {
 });
 
 //default
-gulp.task('default', ['lint', 'start', 'watch']);
+gulp.task('default', ['start', 'watch']);

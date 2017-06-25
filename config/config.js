@@ -4,7 +4,7 @@ module.exports = {
     "password": null,
     "database": "mutt_match",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
   },
   "test": {
     "username": "root",
@@ -15,9 +15,10 @@ module.exports = {
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "password": "password",
+    "database": "mutt_match",
+    "host": process.env.DB_PORT_3306_TCP_ADDR,
+    "dialect": "mysql",
+    "socketPath": "/var/run/mysqld/mysqld.sock"
   }
 };
