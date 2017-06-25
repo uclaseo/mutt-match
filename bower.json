@@ -1,0 +1,21 @@
+{
+  "name": "mutt-match",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Max Hoffman <maximilian.wolfgang1@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/max-hoffman/mutt-match",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "public/bower_components"
+  ],
+  "dependencies": {
+    "angular-lock": "^2.0.2"
+  }
+}

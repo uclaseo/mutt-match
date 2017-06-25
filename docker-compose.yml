@@ -1,0 +1,54 @@
+version: "3"
+services:
+  web:
+    image: maxhoffman/muttmatch:latest
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    deploy: 
+      replicas: 5
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+    ports: 
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      NODE_ENV: production
+    networks:
+      - webnet
+  db:
+    image: mysql
+    ports:
+      - "8999:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=root
+      - MYSQL_DB=mutt_match
+    volumes: 
+      - data:/var/lib/mysql
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - webnet
+  # visualizer:
+  #   image: dockersamples/visualizer:stable
+  #   ports:
+  #     - "5000:5000"
+  #   volumes:
+  #     - "/var/run/docker.sock:/var/run/docker.sock"
+  #   deploy:
+  #     placement:
+  #       constraints: [node.role == manager]
+  #   networks:
+  #     - webnet
+networks: 
+  webnet:
+volumes:
+  data:
+    external: true
