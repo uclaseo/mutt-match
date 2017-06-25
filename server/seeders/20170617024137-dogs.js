@@ -26,7 +26,7 @@ module.exports = {
 var dogsData = [{
   "id": 1,
   "name": "Sòng",
-  "age": true,
+  "age": 6,
   "shelter": 6,
   "active": 3,
   "grooming": 2,
@@ -39,7 +39,7 @@ var dogsData = [{
 }, {
   "id": 2,
   "name": "Pénélope",
-  "age": false,
+  "age": 3,
   "shelter": 1,
   "active": 1,
   "grooming": 2,
@@ -52,7 +52,7 @@ var dogsData = [{
 }, {
   "id": 3,
   "name": "Hélèna",
-  "age": true,
+  "age": 6,
   "shelter": 5,
   "active": 2,
   "grooming": 2,
@@ -65,7 +65,7 @@ var dogsData = [{
 }, {
   "id": 4,
   "name": "Pò",
-  "age": false,
+  "age": 2,
   "shelter": 10,
   "active": 5,
   "grooming": 2,
@@ -78,7 +78,7 @@ var dogsData = [{
 }, {
   "id": 5,
   "name": "Bérengère",
-  "age": false,
+  "age": 2,
   "shelter": 7,
   "active": 1,
   "grooming": 2,
@@ -91,7 +91,7 @@ var dogsData = [{
 }, {
   "id": 6,
   "name": "Fèi",
-  "age": true,
+  "age": 1,
   "shelter": 10,
   "active": 2,
   "grooming": 3,
@@ -104,7 +104,7 @@ var dogsData = [{
 }, {
   "id": 7,
   "name": "Agnès",
-  "age": false,
+  "age": 5,
   "shelter": 3,
   "active": 4,
   "grooming": 4,
@@ -117,7 +117,7 @@ var dogsData = [{
 }, {
   "id": 8,
   "name": "Célia",
-  "age": true,
+  "age": 3,
   "shelter": 1,
   "active": 4,
   "grooming": 2,
@@ -130,7 +130,7 @@ var dogsData = [{
 }, {
   "id": 9,
   "name": "Crééz",
-  "age": false,
+  "age": 6,
   "shelter": 3,
   "active": 4,
   "grooming": 2,
@@ -143,7 +143,7 @@ var dogsData = [{
 }, {
   "id": 10,
   "name": "Yénora",
-  "age": true,
+  "age": 6,
   "shelter": 5,
   "active": 4,
   "grooming": 3,
@@ -156,7 +156,7 @@ var dogsData = [{
 }, {
   "id": 11,
   "name": "Lyséa",
-  "age": false,
+  "age": 6,
   "shelter": 3,
   "active": 3,
   "grooming": 1,
@@ -169,7 +169,7 @@ var dogsData = [{
 }, {
   "id": 12,
   "name": "Nuó",
-  "age": false,
+  "age": 6,
   "shelter": 4,
   "active": 2,
   "grooming": 4,
@@ -182,7 +182,7 @@ var dogsData = [{
 }, {
   "id": 13,
   "name": "Thérèse",
-  "age": false,
+  "age": 8,
   "shelter": 3,
   "active": 3,
   "grooming": 1,
@@ -195,7 +195,7 @@ var dogsData = [{
 }, {
   "id": 14,
   "name": "Amélie",
-  "age": true,
+  "age": 6,
   "shelter": 10,
   "active": 4,
   "grooming": 3,
@@ -208,7 +208,7 @@ var dogsData = [{
 }, {
   "id": 15,
   "name": "Marie-hélène",
-  "age": false,
+  "age": 1,
   "shelter": 9,
   "active": 1,
   "grooming": 5,
@@ -221,7 +221,7 @@ var dogsData = [{
 }, {
   "id": 16,
   "name": "Kallisté",
-  "age": false,
+  "age": 9,
   "shelter": 4,
   "active": 5,
   "grooming": 2,
@@ -234,7 +234,7 @@ var dogsData = [{
 }, {
   "id": 17,
   "name": "Mà",
-  "age": true,
+  "age": 6,
   "shelter": 3,
   "active": 4,
   "grooming": 2,
@@ -247,7 +247,7 @@ var dogsData = [{
 }, {
   "id": 18,
   "name": "Cléopatre",
-  "age": false,
+  "age": 2,
   "shelter": 2,
   "active": 1,
   "grooming": 2,
@@ -260,7 +260,7 @@ var dogsData = [{
 }, {
   "id": 19,
   "name": "Dà",
-  "age": true,
+  "age": 1,
   "shelter": 2,
   "active": 5,
   "grooming": 2,
@@ -273,7 +273,7 @@ var dogsData = [{
 }, {
   "id": 20,
   "name": "Eléonore",
-  "age": true,
+  "age": 6,
   "shelter": 4,
   "active": 5,
   "grooming": 2,
@@ -286,7 +286,7 @@ var dogsData = [{
 }, {
   "id": 21,
   "name": "Angèle",
-  "age": true,
+  "age": 3,
   "shelter": 5,
   "active": 3,
   "grooming": 1,
@@ -299,7 +299,7 @@ var dogsData = [{
 }, {
   "id": 22,
   "name": "Börje",
-  "age": false,
+  "age": 3,
   "shelter": 4,
   "active": 2,
   "grooming": 3,
@@ -312,7 +312,7 @@ var dogsData = [{
 }, {
   "id": 23,
   "name": "Maïly",
-  "age": false,
+  "age": 6,
   "shelter": 7,
   "active": 1,
   "grooming": 1,
@@ -325,7 +325,7 @@ var dogsData = [{
 }, {
   "id": 24,
   "name": "Adèle",
-  "age": false,
+  "age": 2,
   "shelter": 8,
   "active": 4,
   "grooming": 3,
@@ -338,7 +338,7 @@ var dogsData = [{
 }, {
   "id": 25,
   "name": "Cléopatre",
-  "age": true,
+  "age": 3,
   "shelter": 5,
   "active": 1,
   "grooming": 2,
@@ -351,7 +351,7 @@ var dogsData = [{
 }, {
   "id": 26,
   "name": "Méghane",
-  "age": true,
+  "age": 6,
   "shelter": 4,
   "active": 2,
   "grooming": 3,
@@ -364,7 +364,7 @@ var dogsData = [{
 }, {
   "id": 27,
   "name": "Noémie",
-  "age": false,
+  "age": 7,
   "shelter": 1,
   "active": 4,
   "grooming": 4,
@@ -377,7 +377,7 @@ var dogsData = [{
 }, {
   "id": 28,
   "name": "Séréna",
-  "age": false,
+  "age": 3,
   "shelter": 2,
   "active": 2,
   "grooming": 3,
@@ -390,7 +390,7 @@ var dogsData = [{
 }, {
   "id": 29,
   "name": "Marie-josée",
-  "age": false,
+  "age": 11,
   "shelter": 9,
   "active": 2,
   "grooming": 1,
@@ -403,7 +403,7 @@ var dogsData = [{
 }, {
   "id": 30,
   "name": "Nuó",
-  "age": false,
+  "age": 4,
   "shelter": 3,
   "active": 5,
   "grooming": 2,
