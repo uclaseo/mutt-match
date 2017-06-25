@@ -15,7 +15,8 @@ angular.module('mutt-match', ['ui.router', 'auth0.lock'])
     })
     .state('callback', {
       url: '/:jwt',
-      component: 'callback'
+      component: 'callback',
+      params: { jwt: null }
     })
     .state('matches', {
       url: '/users/8/matches',
@@ -45,23 +46,22 @@ angular.module('mutt-match', ['ui.router', 'auth0.lock'])
       oidcConformant: true,
       autoclose: true,
       auth: {
-        responseType: 'token id_token',
+        responseType: 'id_token token',
         audience: 'https://max-hoffman.auth0.com/userinfo',
         redirectUrl: 'http://localhost:3000/',
         params: {
-          scope: 'openid name email picture'
+          scope: 'openid profile email'
         }
       }       
     }
   });
 
-  $locationProvider.hashPrefix('');
+  // $locationProvider.hashPrefix('');
 
   // $locationProvider.html5Mode({
   //   enabled: true,
   //   requireBase: false
   // });
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
 
 }]);
-

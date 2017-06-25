@@ -4,8 +4,8 @@
 
   angular.module('mutt-match')
   
-  .run([ 'auth', function(auth) {
-    auth.handleAuthentication();
+  .run([ 'authService', function(authService) {
+    authService.handleAuthentication();
   }]);
   
 })();
