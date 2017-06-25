@@ -19,7 +19,7 @@ angular.module('mutt-match')
   //   _state[prop] = val
   // };
 
-  this.fetchMatches = function() {
+  this.fetchMatches = function() {           // hard coding is necessary -max
     return $http.get(`/users/${id}/matches`) //hard-coded id for now
       .then((resp) => {
         // this.set('matches', resp.data);

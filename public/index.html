@@ -26,8 +26,12 @@
   <!--ui-router-->
   <script src="//unpkg.com/angular-ui-router@1.0.0-rc.1/release/angular-ui-router.js"></script>
   <!--auth-o-->
-  <script type="text/javascript" src="auth0-js/build/auth0.js"></script>
+  <!--<script type="text/javascript" src="auth0-js/build/auth0.js"></script>-->
+  <!--<script src="https://cdn.auth0.com/js/lock/10.16/lock.min.js"></script>-->
+  <script type="text/javascript" src="bower_components/auth0.js/build/auth0.js"></script>
   <script type="text/javascript" src="angular-auth0/dist/angular-auth0.js"></script>
+  <script type="text/javascript" src="bower_components/auth0-lock/build/lock.js"></script>
+  <script type="text/javascript" src="bower_components/angular-lock/dist/angular-lock.js"></script>
   <!--dropbox-->
   <script src="https://unpkg.com/dropbox/dist/Dropbox-sdk.min.js"></script>
 </head>
@@ -42,8 +46,8 @@
   <script src="states/home/about/AboutCtrl.js"></script>
   <script src="states/home/matches/matches.js"></script>
   <script src="states/home/matches/MatchesCtrl.js"></script>
-  <script src="states/login/login.js"></script>
-  <script src="states/login/LoginCtrl.js"></script>
+  <script src="states/login/callback.js"></script>
+  <script src="states/login/CallbackCtrl.js"></script>
   <script src="states/questionnaire/questionnaire.js"></script>
   <script src="states/questionnaire/QuestionnaireCtrl.js"></script>
   <script src="services/auth.js"></script>

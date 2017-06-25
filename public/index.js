@@ -1,6 +1,6 @@
-angular.module('mutt-match', ['ui.router', 'auth0.auth0'])
+angular.module('mutt-match', ['ui.router', 'auth0.lock'])
 
-.config(['$stateProvider', '$urlServiceProvider', 'angularAuth0Provider', '$locationProvider', function($stateProvider, $urlServiceProvider, angularAuth0Provider, $locationProvider) {
+.config(['$stateProvider', '$urlServiceProvider', '$locationProvider', 'lockProvider', function($stateProvider, $urlServiceProvider, $locationProvider, lockProvider) {
 
   $urlServiceProvider.rules.otherwise({ state: 'home' });
 
@@ -9,11 +9,12 @@ angular.module('mutt-match', ['ui.router', 'auth0.auth0'])
       url: '/',
       component: 'home',
       resolve: {
-        login: (auth) => auth.login
+        login: (authService) => authService.login,
+        isAuthenticated: (authService) => authService.isAuthenticated
       }
     })
     .state('callback', {
-      url: '/callback',
+      url: '/:jwt',
       component: 'callback'
     })
     .state('matches', {
@@ -36,20 +37,31 @@ angular.module('mutt-match', ['ui.router', 'auth0.auth0'])
     component: 'questionnaire'
     });
 
-  angularAuth0Provider.init({
+  // auth0 setup
+  lockProvider.init({
     clientID: 'R6TjzEfP3EdjIfAAcLMOxnsFYzYua1nY',
     domain: 'max-hoffman.auth0.com',
-    responseType: 'token id_token',
-    audience: 'https://max-hoffman.auth0.com/userinfo',
-    redirectUri: 'http://localhost:3000/callback',
-    scope: 'openid'
+    options: {
+      oidcConformant: true,
+      autoclose: true,
+      auth: {
+        responseType: 'token id_token',
+        audience: 'https://max-hoffman.auth0.com/userinfo',
+        redirectUrl: 'http://localhost:3000/',
+        params: {
+          scope: 'openid name email picture'
+        }
+      }       
+    }
   });
 
   $locationProvider.hashPrefix('');
-  $locationProvider.html5Mode({
-    enabled: true,
-    requireBase: false
-  });
+
+  // $locationProvider.html5Mode({
+  //   enabled: true,
+  //   requireBase: false
+  // });
+  $locationProvider.html5Mode(true);
 
 }]);
 

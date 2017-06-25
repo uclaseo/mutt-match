@@ -2,22 +2,20 @@
 
 angular.module('mutt-match')
 
-.service('auth', [ '$state', 'angularAuth0', '$timeout', function($state, angularAuth0, $timeout) {
+.service('authService', [ '$state', '$timeout', '$location', 'lock', function($state, $timeout, $location, lock) {
   return {
-    login: () => angularAuth0.authorize(),
+    login: () => lock.show(),
     handleAuthentication: () => {
-      angularAuth0.parseHash()
-      .then(authResult => {
+      lock.on('authenticated', function(authResult) {
         if (authResult && authResult.accessToken && authResult.idToken) {
           setSession(authResult);
-          $state.go('home');
+          $state.go('callback');
         }
-      })
-      .catch(error => {
-        $timeout(function() {
-          $state.go('home');
-        });
-        console.log(error);
+      });
+      lock.on('authorization_error', function(err) {
+        $state.go('callback');
+        console.log(err);
+        alert('Error: ' + err.error + '. Check the console for further details.');
       });
     },
     setSession: (authResult) => {
@@ -30,6 +28,7 @@ angular.module('mutt-match')
       localStorage.removeItem('access_token');
       localStorage.removeItem('id_token');
       localStorage.removeItem('expires_at');
+      $state.go('home');
     },
     isAuthenticated: () => {
       let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
