@@ -266,6 +266,7 @@ hr.small {
 }
 
 .post-preview > a > .post-title {
+  text-align: center;
   font-size: 30px;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -473,4 +474,8 @@ body {
 .match {
   color: red;
   padding-left: 40px;
+}
+
+.homeTeaser {
+  text-align: center;
 }
