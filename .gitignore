@@ -32,3 +32,4 @@ config/dropbox.config.js
 package-lock.json
 .vscode/
 public/bower_components/
+bower
