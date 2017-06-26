@@ -28,6 +28,11 @@ module.exports = {
     // "port": 5432,
     // "dialect": "postgres"
     url: process.env.DATABASE_URL || 'postgres://postgres:password@localhost:5432/muttmatch',
+    // "username": process.env.POSTGRES_USER,
+    // "password": process.env.POSTGRES_PASSWORD,
+    // "database": process.env.DB_NAME,
+    // "host": process.env.DB_PORT_5432_TCP_ADDR,
+    // "port": process.env.DB_PORT_5432_TCP_PORT,
     dialect: 'postgres'
   }
 };
