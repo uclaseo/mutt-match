@@ -2,7 +2,7 @@ angular.module('mutt-match')
 
 .component('questionnaire', {
   bindings: {
-    submit: '<'
+    questionnaireData: '<'
   },
   controller: 'QuestionnaireCtrl',
   restrict: 'E',

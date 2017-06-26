@@ -1,32 +1,18 @@
-angular.module('mutt-match' /*['ngMaterial']*/)
+angular.module('mutt-match')
 
- .controller('QuestionnaireCtrl', ['questionnaireService', function(questionnaireService) {
+ .controller('QuestionnaireCtrl', ['questionnaireService','userService', '$log', '$state', function(questionnaireService, userService, $log, $state) {  
 
-   this.active = '';
-  //  this.onClick = () => {
-  //    questionnaireService.update(currentUser.get(), this.userData)
-  //  }
-
-  /*this.showPrompt = function(ev) {
-    var confirm = $mdDialog.prompt()
-      .title('Are you an active person?')
-      .targetEvent(ev)
-      .ok('Pretty active')
-      .cancel('Not so much');
-
-      $mdDialog.show(confirm).then(() => {
-        this.status = 'Active is good for dogs!';
-      }, function() {
-        this.status = 'No sweat for you!';
+  this.submit = () => {
+    $state.go('fetching');
+    let user = JSON.parse(localStorage.getItem('profile'));
+    questionnaireService.update(user, this.questionnaireData)
+      .then(user => {
+        localStorage.setItem('profile', user.data);
+        $state.go('matches');
+      })
+      .catch(error => {
+        console.error(error);
+        $state.go('questionnaire');
       });
-  };*/
+  };
  }]);
-  // .config(function($mdThemingProvider) {
-
-  //   // Configure a dark theme with primary foreground yellow
-
-  //   $mdThemingProvider.theme('docs-dark', 'default')
-  //     .primaryPalette('yellow')
-  //     .dark();
-
-  // });
