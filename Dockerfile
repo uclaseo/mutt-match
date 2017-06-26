@@ -5,4 +5,4 @@ RUN npm install
 
 EXPOSE 80
 
-CMD ["node", "server/index.js"]
+# CMD ["node", "server/index.js"]

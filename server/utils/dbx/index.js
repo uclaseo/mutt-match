@@ -39,5 +39,8 @@ module.exports = {
       path: filePath,
       size: 'w640h480'
     });
+  },
+  delete: (filePath) => {
+    return dbx.filesDelete({path: filePath});
   }
 };
