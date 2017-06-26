@@ -22,16 +22,28 @@
             <ng-form name="userForm">
               <md-list-item class="md-5-line">
                 <div class="md-list-item-text" layout="column">
-                    <p>Are you pretty active?(3 - 5 days/week) </p>
+                    <div>
+                      <p>Are you pretty active?(3 - 5 days/week) </p>
                       <input type="text" name="active" ng-model="questionnaireData.active">  
-                    <p>Do you want long hair or short hair?(Grooming)</p>
+                    </div>
+                    <div>
+                      <p>Do you want long hair or short hair?(Grooming)</p>
                       <input type="text" name="grooming" ng-model="questionnaireData.grooming">
-                    <p>Do you prefer big or small dog?(Size)</p>
+                    </div>
+                    <div>
+                      <p>Do you prefer big or small dog?(Size)</p>
                       <input type="text" name="dogSize" ng-model="questionnaireData.dogSize">
-                    <p>Does noise bother you?(Noise)</p>
-                      <input type="text" name="noise" ng-model="questionnaireData.noise">
-                    <p>Have you owned a dog before?(Experience)</p>
-                      <input type="text" name="experience" ng-model="questionnaireData.experience">
+                    </div>
+                    <div>
+                      <p>Does noise bother you?(Noise)</p>
+                        <input type="checkbox" name="noise" ng-model="questionnaireData.noise.yes">
+                        <input type="checkbox" name="noise" ng-model="questionnaireData.noise.no">
+                    </div>
+                    <div>
+                      <p>Have you owned a dog before?(Experience)</p>
+                      <input type="checkbox" name="experience" ng-model="questionnaireData.experience.yes">
+                      <input type="checkbox" name="experience" ng-model="questionnaireData.experience.no">
+                    </div>
                     <ui-view></ui-view>
                     <pre>
                       {{questionnaireData}}
@@ -46,7 +58,7 @@
       <div class="questionnaire prompt" layout="row" layout-wrap layout-margin layout-align="center">
           <ul class="pager">
             <li class="next">
-              <a href="#" ng-click="$ctrl.submit()">Submit &rarr;</a>
+              <a href="#" ng-click="submit()">Submit &rarr;</a>
             </li>
           </ul>
       </div>
