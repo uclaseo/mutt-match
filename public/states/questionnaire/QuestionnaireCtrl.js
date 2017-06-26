@@ -1,32 +1,18 @@
-angular.module('mutt-match' /*['ngMaterial']*/)
+angular.module('mutt-match')
 
- .controller('QuestionnaireCtrl', ['questionnaireService', function(questionnaireService) {
+ .controller('QuestionnaireCtrl', ['questionnaireService','userService', '$log', function(questionnaireService, userService, $log) {
+   this.questionnaireData = {
+     active: '',
+     grooming: '',
+     dogSize: '',
+     noise: '',
+     experience: ''
+   };
 
-   this.active = '';
-  //  this.onClick = () => {
-  //    questionnaireService.update(currentUser.get(), this.userData)
-  //  }
+  $log.log('questionnaireService in QuestionnaireCtrl', questionnaireService.update(userService.get(this.userData)));
+   this.onClick = () => {
+     $log.log('inside click function QuestionnaireCtrl');
+     questionnaireService.update(userService.get(), this.userData)
+   }
 
-  /*this.showPrompt = function(ev) {
-    var confirm = $mdDialog.prompt()
-      .title('Are you an active person?')
-      .targetEvent(ev)
-      .ok('Pretty active')
-      .cancel('Not so much');
-
-      $mdDialog.show(confirm).then(() => {
-        this.status = 'Active is good for dogs!';
-      }, function() {
-        this.status = 'No sweat for you!';
-      });
-  };*/
  }]);
-  // .config(function($mdThemingProvider) {
-
-  //   // Configure a dark theme with primary foreground yellow
-
-  //   $mdThemingProvider.theme('docs-dark', 'default')
-  //     .primaryPalette('yellow')
-  //     .dark();
-
-  // });

@@ -17,27 +17,30 @@
           <input name="postalCode" ng-model="$ctrl.user.postalCode" placeholder="postal code"
                   required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
         </md-input-container>
-        <div ng-controller="QuestionnaireCtrl" >
+        <!--<div ng-controller="QuestionnaireCtrl" >-->
           <md-input-container class="md-block" flex-gt-sm>
             <ng-form name="userForm">
               <md-list-item class="md-5-line">
                 <div class="md-list-item-text" layout="column">
                     <p>Are you pretty active?(3 - 5 days/week) </p>
-                      <input type="text" ng-model="active">  
+                      <input type="text" name="active" ng-model="questionnaireData.active">  
                     <p>Do you want long hair or short hair?(Grooming)</p>
-                      <input type="text">
+                      <input type="text" name="grooming" ng-model="questionnaireData.grooming">
                     <p>Do you prefer big or small dog?(Size)</p>
-                      <input type="text">
+                      <input type="text" name="dogSize" ng-model="questionnaireData.dogSize">
                     <p>Does noise bother you?(Noise)</p>
-                      <input type="text">
+                      <input type="text" name="noise" ng-model="questionnaireData.noise">
                     <p>Have you owned a dog before?(Experience)</p>
-                      <input type="text">
+                      <input type="text" name="experience" ng-model="questionnaireData.experience">
                     <ui-view></ui-view>
+                    <pre>
+                      {{questionnaireData}}
+                    </pre>
                 </div>
               </md-list-item>
             </ng-form>
          </md-input-container>
-        </div>
+        <!--</div>-->
       </div>
 
       <div class="questionnaire prompt" layout="row" layout-wrap layout-margin layout-align="center">
