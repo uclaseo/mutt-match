@@ -5,14 +5,8 @@ angular.module('mutt-match')
      active: '',
      grooming: '',
      dogSize: '',
-     noise: {
-       yes: true,
-       no: false
-     },
-     experience: {
-       yes: true,
-       no: false
-     }
+     noise: '',
+     experience: ''
    };
 
   $log.log('questionnaireService in QuestionnaireCtrl', questionnaireService.update(userService.get(this.userData)));
@@ -23,13 +17,9 @@ angular.module('mutt-match')
     questionnaireService.update(user, this.userData)
       .then(user => {
         localStorage.setItem('profile', user.data);
-        $state.go(MatchesCtrl.matches);
+        $state.go('matches');
       })
       .catch(error => console.error(error));
   }
-  //  this.onClick = () => {
-  //    $log.log('inside click function QuestionnaireCtrl');
-  //    questionnaireService.update(userService.get(), this.userData)
-  //  }
 
  }]);
