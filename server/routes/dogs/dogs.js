@@ -1,6 +1,7 @@
 const db = require('../../models');
 
 module.exports = {
+
   findAllDogsCtrl: function(req, res) {
     db.Dogs.findAll()
     .then(dog => res.sendStatus(201, dog))
@@ -11,4 +12,5 @@ module.exports = {
     .then(dog => res.sendStatus(201, dog))
     .catch(error => res.sendStatus(500, error));
   }
+  
 };
