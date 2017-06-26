@@ -1,16 +1,16 @@
 module.exports = {
   "development": {
-    // "username": "root",
-    // "password": null,
-    // "database": "mutt_match",
-    // "host": "127.0.0.1",
-    // "dialect": "mysql",
-    "username": "zsuvsyix",
-    "password": 'rVk8_mEu3qGGjx98r1JWIsmX9i2oRlVo',
-    "database": "zsuvsyix",
-    "host": "pellefant.db.elephantsql.com",
-    "port": 5432,
-    "dialect": "postgres"
+    "username": "root",
+    "password": null,
+    "database": "mutt_match",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    // "username": "zsuvsyix",
+    // "password": 'rVk8_mEu3qGGjx98r1JWIsmX9i2oRlVo',
+    // "database": "zsuvsyix",
+    // "host": "pellefant.db.elephantsql.com",
+    // "port": 5432,
+    // "dialect": "postgres"
   },
   "test": {
     "username": "root",
