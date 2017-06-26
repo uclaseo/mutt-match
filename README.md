@@ -1,6 +1,14 @@
 # mutt-match
 find hot local mutts in your area
 
+## General tech stack:
+Node for back-end, mysql for database, Angular 1 for front-end. 
+Extras:
+ - Dropbox API
+ - Auth0
+ - Gulp for auto-builds
+ - Docker-compose with postgres db on aws swarm
+
 ## Repo use:
 Clean, migrate and seed database named "mutt_match":
 ```bash
@@ -13,40 +21,11 @@ Start server:
 gulp
 ```
 
-## General tech stack:
-Node for back-end, mysql for database, Angular 1 for front-end. 
-Additionally, we use redux for state-management, ui-router for routing, angular-material for styling, and passport for authentication.
-
-## git workflow
-starting out:
-1. fork
-2. clone your fork
-3. set central repo as upstream remote
-
-starting feature:
-1. make feature branch:
+Add images to dropbox:
 ```bash
-git checkout -b feat/FEATURE_NAME
+node uploadToDropbox.js
 ```
-(optional) add the feature branch to your remote
-```bash
-git push -u origin feat/BRANCH_NAME
-```
-2. add your shit (prefix changes with (ADD), (EDIT), (DELETE)
-
--e.g. (EDIT) Updates dog service's fetch method to update the closure array upon completion
-
-want to make pull request:
-1. checkout your master (not feature branch)
-2. pull in any udpates from central repo
-```bash
-git pull --rebase upstream master
-```
-3. merge your feature
-```bash
-git merge feat/FEATURE_NAME
-```
-4 make pull request manually on github
+** note: sometimes throws error and only adds some in folder, have to check with findAllLinks to see
 
 ## Database setup:
 Follows: https://scotch.io/tutorials/creating-an-angularjs-application-with-sequelize-part-1
@@ -102,3 +81,4 @@ models.sequelize
   10. Check your database tables in the mysql terminal, and run server to verify the connection.
 
 ## Deployment
+If you want to play around with deployment, the stack is up on an AWS swarm managed by docker cloud, and built with the docker-compose.yml file.
