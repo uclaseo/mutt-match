@@ -13,10 +13,10 @@
   </div>
 </header>
 <!-- main content -->
-<div ng-controller="QuestionnaireCtrl" class="container">
+<div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <ng-form name="userForm" id="contactForm" novalidate>
+      <ng-ng- name="userForm" id="contactForm" novalidate>
         <!-- The basics -->
         <H2>The basics...</H2>
         <div class="row control-group">
@@ -77,35 +77,35 @@
         <div class="row control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label>Activity</label>
-            <input name="active" ng-model="questionnaireData.active" type="number" class="form-control" placeholder="How active are you?" id="name" required data-validation-required-message="Please fill this out">
+            <input name="active" ng-model="$ctrl.questionnaireData.active" type="number" class="form-control" placeholder="How active are you?" id="name" required data-validation-required-message="Please fill this out">
             <p class="help-block text-danger"></p>
           </div>
         </div>
         <div class="row control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label>Grooming</label>
-            <input name="grooming" ng-model="questionnaireData.grooming" type="number" class="form-control" placeholder="How much grooming are you willing to do? " id="name" required data-validation-required-message="Please fill this out">
+            <input name="grooming" ng-model="$ctrl.questionnaireData.grooming" type="number" class="form-control" placeholder="How much grooming are you willing to do? " id="name" required data-validation-required-message="Please fill this out">
             <p class="help-block text-danger"></p>
           </div>
         </div>
         <div class="row control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label>Size</label>
-            <input name="dogSize" ng-model="questionnaireData.dogSize" type="number" class="form-control" placeholder="Do you prefer a small(1) or big(5) dog?" id="name" required data-validation-required-message="Please fill this out">
+            <input name="dogSize" ng-model="$ctrl.questionnaireData.size" type="number" class="form-control" placeholder="Do you prefer a small(1) or big(5) dog?" id="name" required data-validation-required-message="Please fill this out">
             <p class="help-block text-danger"></p>
           </div>
         </div>
         <div class="row control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label>Noise</label>
-            <input name="noise" ng-model="questionnaireData.noise" type="number" class="form-control" placeholder="Does noise bother you?" id="name" required data-validation-required-message="Please fill this out">
+            <input name="noise" ng-model="$ctrl.questionnaireData.noise" type="number" class="form-control" placeholder="Does noise bother you?" id="name" required data-validation-required-message="Please fill this out">
             <p class="help-block text-danger"></p>
           </div>
         </div>
         <div class="row control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label>Experience</label>
-            <input name="experience" ng-model="questionnaireData.experience" type="number" class="form-control" placeholder="How much experience do you have?" id="name" required data-validation-required-message="Please fill this out">
+            <input name="experience" ng-model="$ctrl.questionnaireData.petExperience" type="number" class="form-control" placeholder="How much experience do you have?" id="name" required data-validation-required-message="Please fill this out">
             <p class="help-block text-danger"></p>
           </div>
         </div>
@@ -113,12 +113,14 @@
         <div id="success"></div>
         <div class="row">
           <div class="form-group col-xs-12">
-            <button ng-click="$ctrl.submit()" type="submit" ui-sref="fetching" class="btn btn-default">Submit</button>
+            <input ng-click="$ctrl.submit()" type="submit">
           </div>
         </div>
-        </form>
+        </ng-form>
     </div>
   </div>
   <hr>
 </div>
 
+<div>
+  <h1 ng-click="$ctrl.submit()">Click</h1>

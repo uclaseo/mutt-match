@@ -1,25 +1,18 @@
 angular.module('mutt-match')
 
- .controller('QuestionnaireCtrl', ['questionnaireService','userService', '$log', '$state', function(questionnaireService, userService, $log, $state) {
-   this.questionnaireData = {
-     active: '',
-     grooming: '',
-     dogSize: '',
-     noise: '',
-     experience: ''
-   };
-
-  $log.log('questionnaireService in QuestionnaireCtrl', questionnaireService.update(userService.get(this.userData)));
+ .controller('QuestionnaireCtrl', ['questionnaireService','userService', '$log', '$state', function(questionnaireService, userService, $log, $state) {  
 
   this.submit = () => {
-    let user = localStorage.getItem('profile');
-    $log.log('inside submit of questionnaireCtrl', questionnaireService);
-    questionnaireService.update(user, this.userData)
+    $state.go('fetching');
+    questionnaireService.update(user, this.questionnaireData)
       .then(user => {
+        let user = JSON.parse(localStorage.getItem('profile'));
         localStorage.setItem('profile', user.data);
         $state.go('matches');
       })
-      .catch(error => console.error(error));
-  }
-
+      .catch(error => {
+        console.error(error);
+        $state.go('questionnaire');
+      });
+  };
  }]);
