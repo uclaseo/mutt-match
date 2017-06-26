@@ -4,9 +4,9 @@ angular.module('mutt-match')
 
   this.submit = () => {
     $state.go('fetching');
+    let user = JSON.parse(localStorage.getItem('profile'));
     questionnaireService.update(user, this.questionnaireData)
       .then(user => {
-        let user = JSON.parse(localStorage.getItem('profile'));
         localStorage.setItem('profile', user.data);
         $state.go('matches');
       })
