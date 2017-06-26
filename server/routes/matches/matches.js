@@ -17,8 +17,9 @@ module.exports = {
       })
       .then(matches => {
         dogObjs = matches;
+        let scores = [];
         let promises = dogObjs.map(dogObj => {
-          let score = dogObj.dataValues.score;
+          scores.push(dogObj.dataValues.score);
 
           return db.Dog.findOne({
             where: {
@@ -26,10 +27,9 @@ module.exports = {
             }
           });
         });
+
+        promises.push(scores);
         return Promise.all(promises);
-      })
-      .then(results => {
-        return results;
       })
       .then(results => res.status(200).json(results))
       .catch(error => res.sendStatus(500, error));
