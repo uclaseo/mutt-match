@@ -21,9 +21,6 @@ angular.module('mutt-match', ['ui.router', 'auth0.lock'])
     .state('matches', {
       url: '/users/8/matches',
       component: 'matches',
-      // resolve: {
-      //   matches: (matchesService) => matchesService.get('matches')
-      // }
     })
     .state('about', {
       url: '/about',
@@ -33,9 +30,13 @@ angular.module('mutt-match', ['ui.router', 'auth0.lock'])
       url: '/contact',
       component: 'contact'
     })
+    .state('fetching', {
+      url: '/fetching',
+      component: 'fetching'
+    })
     .state('questionnaire', {
-    url: '/questionnaire',
-    component: 'questionnaire'
+      url: '/questionnaire',
+      component: 'questionnaire'
     });
 
   // auth0 setup
@@ -52,7 +53,7 @@ angular.module('mutt-match', ['ui.router', 'auth0.lock'])
         params: {
           scope: 'openid profile email'
         }
-      }       
+      }
     }
   });
 

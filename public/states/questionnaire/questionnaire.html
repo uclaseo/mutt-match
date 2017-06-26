@@ -1,3 +1,129 @@
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('img/d18.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-heading">
+          <h1>Tell us about you</h1>
+          <hr class="small">
+          <span class="subheading"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- main content NATE -->
+<div ng-controller="QuestionnaireCtrl" class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <ng-form name="userForm" id="contactForm" novalidate>
+        <!-- The basics -->
+        <H2>The basics...</H2>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>firstName</label>
+            <input ng-model="$ctrl.user.firstName" type="text" class="form-control" placeholder="Your first name" id="name" required data-validation-required-message="Please fill this out">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>lastName</label>
+            <input ng-model="$ctrl.user.lastName" type="text" class="form-control" placeholder="Your last Name" id="name" required data-validation-required-message="Please fill this out">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>city</label>
+            <input ng-model="$ctrl.user.city" type="text" class="form-control" placeholder="Your city" id="name" required data-validation-required-message="Please fill this out">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>zipcode</label>
+            <input ng-model="$ctrl.user.postalCode" required ng-pattern="/^[0-9]{5}$/" md-maxlength="5" type="text" class="form-control" placeholder="Your zipcode" id="name" required data-validation-required-message="Please fill this out">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <!-- yes or no -->
+        <H2>Please answer yes or no...</H2>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Children</label>
+            <input type="text" class="form-control" placeholder="Do you have children?" id="name" required data-validation-required-message="Please fill this out">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Other Dogs</label>
+            <input type="text" class="form-control" placeholder="Do you have other dogs?" id="name" required data-validation-required-message="Please fill this out">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Other pets</label>
+            <input type="text" class="form-control" placeholder="Do you have other pets?" id="name" required data-validation-required-message="Please fill this out">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <!-- scale of 1-5 -->
+        <H2>On a scale from 1 to 5...</H2>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Activity</label>
+            <input ng-model="active" type="text" class="form-control" placeholder="How active are you?" id="name" required data-validation-required-message="Please fill this out">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Grooming</label>
+            <input type="text" class="form-control" placeholder="How much grooming are you willing to do? " id="name" required data-validation-required-message="Please fill this out">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Size</label>
+            <input type="text" class="form-control" placeholder="Do you prefer big or small dog?" id="name" required data-validation-required-message="Please fill this out">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Noise</label>
+            <input type="text" class="form-control" placeholder="Does noise bother you?" id="name" required data-validation-required-message="Please fill this out">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Experience</label>
+            <input type="text" class="form-control" placeholder="How much experience do you have?" id="name" required data-validation-required-message="Please fill this out">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <div id="success"></div>
+        <div class="row">
+          <div class="form-group col-xs-12">
+            <button href="#" ui-sref="fetching" ng-click="$ctrl.submit()" type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+        </form>
+    </div>
+  </div>
+  <hr>
+</div>
+
+<!-- main content ADEWALE-->
+<!--
 <div ng-controller="QuestionnaireCtrl" layout="column" ng-cloak class="md-inline-form">
   <md-content layout-padding>
     <div>
@@ -7,47 +133,46 @@
           <input ng-model="$ctrl.user.lastName" placeholder="Last Name">
         </md-input-container>
       </div>
-
       <div layout-gt-sm="row">
         <md-input-container class="md-block" flex-gt-sm>
           <input ng-model="$ctrl.user.city" placeholder="city">
         </md-input-container>
-
         <md-input-container class="md-block" flex-gt-sm>
-          <input name="postalCode" ng-model="$ctrl.user.postalCode" placeholder="postal code"
-                  required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+          <input name="postalCode" ng-model="$ctrl.user.postalCode" placeholder="postal code" required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
         </md-input-container>
-        <div ng-controller="QuestionnaireCtrl" >
+        <div ng-controller="QuestionnaireCtrl">
           <md-input-container class="md-block" flex-gt-sm>
             <ng-form name="userForm">
               <md-list-item class="md-5-line">
-                <div class="md-list-item-text" layout="column">
-                    <p>Are you pretty active?(3 - 5 days/week) </p>
-                      <input type="text" ng-model="active">  
-                    <p>Do you want long hair or short hair?(Grooming)</p>
-                      <input type="text">
-                    <p>Do you prefer big or small dog?(Size)</p>
-                      <input type="text">
-                    <p>Does noise bother you?(Noise)</p>
-                      <input type="text">
-                    <p>Have you owned a dog before?(Experience)</p>
-                      <input type="text">
-                    <ui-view></ui-view>
+                <div class="md-list-item-text" class="row control-group" layout="column">
+                  <p class="help-block text-danger">Are you pretty active?(3 - 5 days/week) </p>
+                  <input type="text" ng-model="active">
+                  <p class="help-block text-danger">Do you want long hair or short hair?(Grooming)</p>
+                  <input type="text">
+                  <p class="help-block text-danger">Do you prefer big or small dog?(Size)</p>
+                  <input type="text">
+                  <p class="help-block text-danger">Does noise bother you?(Noise)</p>
+                  <input type="text">
+                  <p class="help-block text-danger">Have you owned a dog before?(Experience)</p>
+                  <input type="text">
+                  <ui-view></ui-view>
                 </div>
               </md-list-item>
             </ng-form>
-         </md-input-container>
+          </md-input-container>
         </div>
       </div>
-
+      -->
+<!-- submit button -->
+<!--
       <div class="questionnaire prompt" layout="row" layout-wrap layout-margin layout-align="center">
-          <ul class="pager">
-            <li class="next">
-              <a href="#" ng-click="$ctrl.submit()">Submit &rarr;</a>
-            </li>
-          </ul>
+        <ul class="pager">
+          <li class="next">
+            <a href="#" ng-click="$ctrl.submit()">Submit &rarr;</a>
+          </li>
+        </ul>
       </div>
     </div>
   </md-content>
-
 </div>
+-->

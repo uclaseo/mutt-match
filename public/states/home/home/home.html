@@ -1,14 +1,8 @@
-<!-- login -->
-    <!--<ul class="pager">
-      <li class="next">
-        <a href="#" ng-click="$ctrl.login()">Login &rarr;</a>
-      </li>
-    </ul>-->
 <!-- header -->
-<header class="intro-header" style="background-image: url('img/d2.jpg')">
+<header class="intro-header" style="background-image: url('img/d2 zoom.jpg')">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="site-heading">
           <h1>Mutt Match</h1>
           <hr class="small">
@@ -18,34 +12,29 @@
     </div>
   </div>
 </header>
-<!-- DELETE THIS LATER -->
-<ul class="pager">
-  <li class="next">
-    <a ui-sref="matches">FAKE BUTTON TO MATCHES</a>
-  </li>
-</ul>
 <!-- Main Content -->
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="post-preview">
         <a href="post.html">
-          <h2 class="post-title">
-                Somewhere there is a shelter dog waiting to meet their new best friend
+          <h2 class="post-title" class="homeTeaser">
+                Somewhere there is a shelter dog waiting to meet you
             </h2>
-          <h3 class="post-subtitle">
-                Could that friend be you?
-            </h3>
+          <br>
+          <h3 class="post-subtitle">Fill out our simple questionnaire and we'll search the local dog shelters to find just the right match.</h3>
+          <br>
         </a>
+        <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
+          <ul class="pager">
+            <li class="next">
+              <a id="login-btn" ng-click="$ctrl.login()">Get Started Here</a>
+            </li>
+<!--             <br> -->
+          </ul>
+        </div>
       </div>
-      <hr>
-      <!-- Pager -->
-      <ul class="pager">
-        <li class="next">
-          <a href="#" ng-click="$ctrl.login()">Find Your Match! &rarr;</a>
-        </li>
-      </ul>
+      <!--   <hr> -->
     </div>
   </div>
 </div>
-<hr>
