@@ -14,39 +14,41 @@ services:
           cpus: "0.1"
           memory: 50M
     ports: 
-      - "8080:80"
+      - "80:80"
     depends_on:
       - db
+    command: ["./bin/wait-for-it.sh", "db:5432", "--", "node", "server/index.js"]
     environment:
       NODE_ENV: production
+      DATABASE_URL: postgres://postgres:password@db:5432/muttmatch
     networks:
       - webnet
   db:
-    image: mysql
+    image: postgres:9.4
     ports:
-      - "8999:3306"
+      - "8998:5432"
     environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_USER=root
-      - MYSQL_DB=mutt_match
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: muttmatch
     volumes: 
-      - data:/var/lib/mysql
+      - data:/var/lib/postgresql/data
     deploy:
       placement:
         constraints: [node.role == manager]
     networks:
       - webnet
-  # visualizer:
-  #   image: dockersamples/visualizer:stable
-  #   ports:
-  #     - "5000:5000"
-  #   volumes:
-  #     - "/var/run/docker.sock:/var/run/docker.sock"
-  #   deploy:
-  #     placement:
-  #       constraints: [node.role == manager]
-  #   networks:
-  #     - webnet
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "5000:5000"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - webnet
 networks: 
   webnet:
 volumes:
