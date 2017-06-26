@@ -11,7 +11,7 @@ module.exports = {
         where: {
           user: id,
           score: {
-            $gte: 60
+            $gte: 40
           }
         }
       })

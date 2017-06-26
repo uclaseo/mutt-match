@@ -13,18 +13,36 @@
   </div>
 </header>
 <!-- main -->
-<div class="post-preview" ng-repeat="dog in $ctrl.dogs">
+<div class="post-preview" class="match-preview" ng-repeat="dog in $ctrl.dogs">
   <header></header>
-  <ol>
-    <a href="post.html">
-      <h2 class="post-title">
-          {{$index + 1}}.  {{ dog.name }} <span class="match">{{dog.score}}% match</span>
+  <a href="" ui-sref="">
+    <h2 class="post-title">
+    <!-- dog pic -->
+     <img class="dog-profile" src="../../img/d20.jpg" alt=""> 
+      <!-- dog name and match score -->
+        {{$index + 1}}.  {{ dog.name }} <span class="match">{{dog.score}}%</span>
       </h2>
-      <h3 class="post-subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, quasi ea eligendi in numquam natus atque quo quis error, deleniti voluptatum.
+    <h3 class="post-subtitle">
+      <!-- dog details -->
+      A <span ng-if="dog.age < 1">young </span><span ng-if="dog.age >= 1"> {{dog.age}} year old </span>
+      <span ng-if="dog.sex === 'male'"></span>male <span ng-if="dog.sex === 'female'">female </span>
+      <strong>{{dog.breed}}</strong> who is
+      <span ng-if="dog.child-friendly === false"><strong>not</strong></span> good with children,
+      <span ng-if="dog.dog-friendly === false"><strong>not</strong></span> good with other dogs, and 
+      <span ng-if="dog.pet-friendly === false"><strong>not</strong></span> good with small pets. 
+      <br>
+      <!-- more dog details -->
+      <span ng-if="dog.sex === 'male'">His </span><span ng-if="dog.sex === 'female'">Her </span>
+      <strong>activity</strong> level is {{dog.active}} out of 5.  
+      <span ng-if="dog.sex === 'male'">His </span><span ng-if="dog.sex === 'female'">Her </span>
+      <strong>grooming</strong> requirements are {{dog.grooming}} out of 5.  
+      <span ng-if="dog.sex === 'male'">His </span><span ng-if="dog.sex === 'female'">Her </span>
+      <strong>noisiness</strong> is {{dog.noise}} out of 5.  
+      <br>  
+      <!-- dog location -->
+      {{dog.name}} is at the ..., located at ...
       </h3>
-    </a>
-    <p class="post-meta">{{}} {{}}</p>
-  </ol>
-<hr>
+  </a>
+  <p class="post-meta">{{}} {{}}</p>
+  <hr>
 </div>

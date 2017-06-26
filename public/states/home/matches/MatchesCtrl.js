@@ -2,7 +2,7 @@ angular.module('mutt-match')
 
 .controller('MatchesCtrl', ['$log', 'matchesService', function($log, matchesService) {
 
-  this.dogs = [1];
+  this.dogs = [];
 
   matchesService.fetchMatches()
     .then(matches => this.dogs = matches)
