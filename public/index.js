@@ -65,8 +65,12 @@ angular.module('mutt-match', ['ui.router', 'ngMaterial', 'auth0', 'angular-stora
     })
     .state('questionnaire', {
       url: '/questionnaire',
-      component: 'questionnaire',
-    });
+      component: 'questionnaire'
+    })
+    .state('logout', {
+      url: '/logout',
+      component: 'logout'
+    })
 
   // auth0 setup
   // lockProvider.init({
