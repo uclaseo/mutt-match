@@ -1,29 +1,29 @@
-'use strict';
-const dbx = require('../utils/dbx');
+// 'use strict';
+// const dbx = require('../utils/dbx');
 
-module.exports = {
-  up: function (queryInterface, Sequelize) {
-    return dbx.getLinks()
-    .then(results => {
-      results.entries.forEach((image, idx) => {
-        dogsData[idx].imageLink = image.path_lower;
-      });
-      return queryInterface.bulkInsert('Dogs', dogsData);
-    })
-  },
+// module.exports = {
+//   up: function (queryInterface, Sequelize) {
+//     return dbx.getLinks()
+//     .then(results => {
+//       results.entries.forEach((image, idx) => {
+//         dogsData[idx].imageLink = image.path_lower;
+//       });
+//       return queryInterface.bulkInsert('Dogs', dogsData);
+//     })
+//   },
 
-  down: function (queryInterface, Sequelize) {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
+//   down: function (queryInterface, Sequelize) {
+//     /*
+//       Add reverting commands here.
+//       Return a promise to correctly handle asynchronicity.
 
-      Example:
-      return queryInterface.bulkDelete('Person', null, {});
-    */
-  }
-};
+//       Example:
+//       return queryInterface.bulkDelete('Person', null, {});
+//     */
+//   }
+// };
 
-var dogsData = [{
+var dogsDummy = [{
   "id": 1,
   "name": "Sòng",
   "age": 6,
@@ -414,3 +414,5 @@ var dogsData = [{
   "dogFriendly": true,
   "petFriendly": false
 }];
+
+module.exports = dogsDummy;

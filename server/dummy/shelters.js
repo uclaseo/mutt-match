@@ -1,21 +1,21 @@
-'use strict';
-module.exports = {
-  up: function (queryInterface, Sequelize) {
-    return queryInterface.bulkInsert('Shelters', sheltersData);
-  },
+// 'use strict';
+// module.exports = {
+//   up: function (queryInterface, Sequelize) {
+//     return queryInterface.bulkInsert('Shelters', sheltersData);
+//   },
 
-  down: function (queryInterface, Sequelize) {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
+//   down: function (queryInterface, Sequelize) {
+//     /*
+//       Add reverting commands here.
+//       Return a promise to correctly handle asynchronicity.
 
-      Example:
-      return queryInterface.bulkDelete('Person', null, {});
-    */
-  }
-};
+//       Example:
+//       return queryInterface.bulkDelete('Person', null, {});
+//     */
+//   }
+// };
 
-var sheltersData = [{
+var sheltersDummy = [{
   "id": 1,
   "name": "Runolfsson Inc",
   "address": "3429 Golf Course Trail"
@@ -56,3 +56,5 @@ var sheltersData = [{
   "name": "Jacobson, Gottlieb and Champlin",
   "address": "7402 Charing Cross Alley"
 }];
+
+module.exports = sheltersDummy;

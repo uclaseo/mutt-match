@@ -1,0 +1,220 @@
+// 'use strict';
+// module.exports = {
+//   up: function (queryInterface, Sequelize) {
+//     return queryInterface.bulkInsert('Matches', matchesData);
+//   },
+
+//   down: function (queryInterface, Sequelize) {
+//     /*
+//       Add reverting commands here.
+//       Return a promise to correctly handle asynchronicity.
+
+//       Example:
+//       return queryInterface.bulkDelete('Person', null, {});
+//     */
+//   }
+// };
+
+var matchesDummy = [{
+  "dogId": 13,
+  "userId": 8,
+  "score": 14
+}, {
+  "dogId": 25,
+  "userId": 13,
+  "score": 41
+}, {
+  "dogId": 6,
+  "userId": 25,
+  "score": 64
+}, {
+  "dogId": 21,
+  "userId": 27,
+  "score": 49
+}, {
+  "dogId": 21,
+  "userId": 9,
+  "score": 61
+}, {
+  "dogId": 30,
+  "userId": 14,
+  "score": 34
+}, {
+  "dogId": 11,
+  "userId": 19,
+  "score": 61
+}, {
+  "dogId": 23,
+  "userId": 27,
+  "score": 44
+}, {
+  "dogId": 24,
+  "userId": 20,
+  "score": 90
+}, {
+  "dogId": 6,
+  "userId": 19,
+  "score": 92
+}, {
+  "dogId": 28,
+  "userId": 15,
+  "score": 33
+}, {
+  "dogId": 26,
+  "userId": 27,
+  "score": 38
+}, {
+  "dogId": 9,
+  "userId": 8,
+  "score": 66
+}, {
+  "dogId": 14,
+  "userId": 16,
+  "score": 83
+}, {
+  "dogId": 29,
+  "userId": 8,
+  "score": 22
+}, {
+  "dogId": 10,
+  "userId": 18,
+  "score": 24
+}, {
+  "dogId": 14,
+  "userId": 12,
+  "score": 3
+}, {
+  "dogId": 15,
+  "userId": 14,
+  "score": 69
+}, {
+  "dogId": 25,
+  "userId": 17,
+  "score": 75
+}, {
+  "dogId": 26,
+  "userId": 18,
+  "score": 7
+}, {
+  "dogId": 29,
+  "userId": 4,
+  "score": 95
+}, {
+  "dogId": 27,
+  "userId": 8,
+  "score": 28
+}, {
+  "dogId": 4,
+  "userId": 1,
+  "score": 99
+}, {
+  "dogId": 26,
+  "userId": 4,
+  "score": 68
+}, {
+  "dogId": 20,
+  "userId": 23,
+  "score": 33
+}, {
+  "dogId": 29,
+  "userId": 28,
+  "score": 19
+}, {
+  "dogId": 28,
+  "userId": 19,
+  "score": 74
+}, {
+  "dogId": 7,
+  "userId": 26,
+  "score": 90
+}, {
+  "dogId": 14,
+  "userId": 8,
+  "score": 11
+}, {
+  "dogId": 25,
+  "userId": 12,
+  "score": 13
+}, {
+  "dogId": 26,
+  "userId": 15,
+  "score": 51
+}, {
+  "dogId": 8,
+  "userId": 7,
+  "score": 11
+}, {
+  "dogId": 7,
+  "userId": 8,
+  "score": 76
+}, {
+  "dogId": 10,
+  "userId": 14,
+  "score": 19
+}, {
+  "dogId": 7,
+  "userId": 12,
+  "score": 68
+}, {
+  "dogId": 16,
+  "userId": 23,
+  "score": 44
+}, {
+  "dogId": 17,
+  "userId": 24,
+  "score": 71
+}, {
+  "dogId": 5,
+  "userId": 1,
+  "score": 25
+}, {
+  "dogId": 21,
+  "userId": 28,
+  "score": 18
+}, {
+  "dogId": 22,
+  "userId": 1,
+  "score": 44
+}, {
+  "dogId": 29,
+  "userId": 5,
+  "score": 16
+}, {
+  "dogId": 11,
+  "userId": 17,
+  "score": 92
+}, {
+  "dogId": 25,
+  "userId": 6,
+  "score": 37
+}, {
+  "dogId": 11,
+  "userId": 29,
+  "score": 58
+}, {
+  "dogId": 28,
+  "userId": 16,
+  "score": 87
+}, {
+  "dogId": 23,
+  "userId": 21,
+  "score": 26
+}, {
+  "dogId": 10,
+  "userId": 17,
+  "score": 29
+}, {
+  "dogId": 7,
+  "userId": 20,
+  "score": 49
+}, {
+  "dogId": 7,
+  "userId": 2,
+  "score": 84
+}, {
+  "dogId": 9,
+  "userId": 7,
+  "score": 56
+}];
+
+module.exports = matchesDummy;
