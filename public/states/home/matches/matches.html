@@ -18,7 +18,7 @@
   <a href="" ui-sref="">
     <h2 class="post-title">
     <!-- dog pic -->
-     <img class="dog-profile" src="../../img/d20.jpg" alt=""> 
+      <img class="dog-profile" ng-src="../../mutts/{{dog.id}}.jpg">
       <!-- dog name and match score -->
         {{$index + 1}}.  {{ dog.name }} <span class="match">{{dog.score}}%</span>
       </h2>
