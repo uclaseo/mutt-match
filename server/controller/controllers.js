@@ -44,6 +44,20 @@ module.exports = {
       .catch(error => res.send(error));
   },
 
+  fetchUserByName: function(req, res) {
+    Table.User.find({
+      where: { name: req.params.name }
+    })
+      .then((user) => {
+        res.json({
+          results: user
+        })
+      })
+      .catch((err) => {
+        console.error('error retrieving user by name ', err);
+      })
+  },
+
   findAllMatchesCtrl: function(req, res) {
     Table.User.findAll({
       where: { id: req.params.id },
