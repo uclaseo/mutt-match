@@ -19,9 +19,11 @@
   "homepage": "https://github.com/max-hoffman/mutt-match.git#readme",
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-aria": "^1.6.4",
     "angular-auth0": "^2.0.0-beta.2",
     "angular-jwt": "^0.1.9",
     "angular-material": "^1.1.4",
+    "angular-messages": "^1.6.4",
     "angular-storage": "0.0.15",
     "auth0-angular": "^4.2.7",
     "auth0-js": "^8.8.0",
