@@ -1,8 +1,8 @@
 angular.module('mutt-match')
 
-.controller('CallbackCtrl', ['authService',function(authService) {
+.controller('CallbackCtrl', function() {
   this.$onInit = () => {
     // console.log('callback rendered');
     // authService.handleAuthentication();
   };
-}]);
+});

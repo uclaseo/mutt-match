@@ -1,5 +1,12 @@
 const router = require('express').Router();
 const controller = require('../controller/controllers');
+const jwt = require('express-jwt');
+
+
+const authCheck = jwt({
+  secret: new Buffer('dMgD4_I8pT7hYsAAGJHBsIfzMyYkzSsi5xuFDLuH8HUZk0BK_ctcEY-t3kRwz-Lu'),
+  audience: '5Ni7Cxf9IF24IJX51HVbNqlkY78UHP9O'
+});
 
 router.get('/users/:id', controller.findOneUserCtrl);
 router.get('/users/:name', controller.fetchUserByName);
