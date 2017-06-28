@@ -1,4 +1,4 @@
-angular.module('mutt-match', ['ui.router', 'ngMaterial'])
+angular.module('mutt-match', ['ui.router', 'ngMaterial', 'auth0', 'angular-storage', 'angular-jwt', 'ngMaterial'])
 
 .config(['$stateProvider', '$urlServiceProvider', '$locationProvider', '$provide', 'authProvider', '$urlRouterProvider', '$httpProvider', 'jwtInterceptorProvider',
   function($stateProvider, $urlServiceProvider, $locationProvider, $provide, authProvider, $urlRouterProvider, $httpProvider, jwtInterceptorProvider) {
@@ -92,5 +92,21 @@ angular.module('mutt-match', ['ui.router', 'ngMaterial'])
   //   requireBase: false
   // });
 
-}]);
+}])
 
+    .run(function($rootScope, auth, store, jwtHelper, $location) {
+
+      $rootScope.$on('$locationChangeStart', function() {
+        var token = store.get('id_token');
+        if (token) {
+          if (!jwtHelper.isTokenExpired(token)) {
+            if (!auth.isAuthenticated) {
+              auth.authenticate(store.get('profile'), token);
+            }
+          }
+        } else {
+          $location.path('/');
+        }
+      })
+      
+    });
