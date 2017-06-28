@@ -23,3 +23,13 @@ const router = require('express').Router(),
 // router.get('/logout', local.logoutCtrl);
 
 // router.post('/signup', local.signupCtrl)
+
+const jwt = require('express-jwt');
+
+
+const authCheck = jwt({
+  secret: new Buffer('dMgD4_I8pT7hYsAAGJHBsIfzMyYkzSsi5xuFDLuH8HUZk0BK_ctcEY-t3kRwz-Lu'),
+  audience: '5Ni7Cxf9IF24IJX51HVbNqlkY78UHP9O'
+});
+
+module.exports = authCheck;
