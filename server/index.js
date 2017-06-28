@@ -4,7 +4,11 @@ const express = require('express'),
   path = require('path'),
   db = require('./db'),
   cookieParser = require('cookie-parser');
-  Shelter = reui
+  Table = require('./models/tableModels');
+  sheltersDummy = require('./dummy/shelters');
+  dogsDummy = require('./dummy/dogs');
+  usersDummy = require('./dummy/users');
+  matchesDummy = require('./dummy/matches');
 
 const app = express();
 
@@ -16,7 +20,14 @@ app.use(parser.json())
    .use('/', require('./routes'));
 
 db.authenticate()
-
+  .then(() => Table.Shelter.sync({ force: true }))
+  .then(() => Table.Dog.sync({ force: true }))
+  .then(() => Table.User.sync({ force: true }))
+  .then(() => Table.Match.sync({ force: true }))
+  .then(() => Table.Shelter.bulkCreate(sheltersDummy))
+  .then(() => Table.Dog.bulkCreate(dogsDummy))
+  .then(() => Table.User.bulkCreate(usersDummy))
+  .then(() => Table.Match.bulkCreate(matchesDummy))
   .then(function() {
     console.log('Connection successful');
     const port = process.env.PORT || 3000;

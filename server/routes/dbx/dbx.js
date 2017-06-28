@@ -1,4 +1,4 @@
-const db = require('../../models'),
+const Table = require('../../models/tableModels');
       dbx = require('../../utils/dbx');
 
 module.exports = {

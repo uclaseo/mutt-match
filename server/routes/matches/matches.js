@@ -1,4 +1,4 @@
-const db = require('../../models');
+const Table = require('../../models/tableModels');
 
 module.exports = {
 
@@ -6,7 +6,7 @@ module.exports = {
     let id = req.params.id;
     let dogObjs = [];
 
-    db.Match.findAll({
+    Table.Match.findAll({
         attributes: ['dog', 'score'],
         where: {
           user: id,
@@ -21,7 +21,7 @@ module.exports = {
         let promises = dogObjs.map(dogObj => {
           scores.push(dogObj.dataValues.score);
 
-          return db.Dog.findOne({
+          return Table.Dog.findOne({
             where: {
               id: dogObj.dataValues.dog
             }
