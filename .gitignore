@@ -34,3 +34,4 @@ package-lock.json
 public/bower_components/
 bower
 /config.js
+.DS_Store

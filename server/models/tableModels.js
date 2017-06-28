@@ -3,7 +3,7 @@ const db = require('../db');
 
 
 
-const Shelter = db.define('Shelter', {
+const Shelter = db.define('shelter', {
   name: Sequelize.STRING,
   address: Sequelize.STRING
 
@@ -11,13 +11,12 @@ const Shelter = db.define('Shelter', {
 
 
 
-const Dog = db.define('Dog', {
+const Dog = db.define('dog', {
   name: Sequelize.STRING,
   age: Sequelize.INTEGER,
   breed: Sequelize.STRING,
   description: Sequelize.STRING,
   imageLink: Sequelize.STRING,
-  shelter: Sequelize.INTEGER,
   active: Sequelize.INTEGER,
   grooming: Sequelize.INTEGER,
   size: Sequelize.INTEGER,
@@ -26,12 +25,11 @@ const Dog = db.define('Dog', {
   childFriendly: Sequelize.BOOLEAN,
   dogFriendly: Sequelize.BOOLEAN,
   petFriendly: Sequelize.BOOLEAN
-
 });
 
 
 
-var User = db.define('User', {
+var User = db.define('user', {
   name: Sequelize.STRING,
   city: Sequelize.STRING,
   zipcode: Sequelize.INTEGER,
@@ -48,7 +46,12 @@ var User = db.define('User', {
   currentPets: Sequelize.BOOLEAN
 });
 
-const Match = db.define('Match', {
+const User_Dog = db.define('user_dog', {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
   // user: Sequelize.INTEGER,
   // dog: Sequelize.INTEGER,
   score: Sequelize.INTEGER
@@ -58,12 +61,12 @@ const Match = db.define('Match', {
 Shelter.hasMany(Dog);
 Dog.belongsTo(Shelter);
 
-User.hasMany(Match);
-Dog.hasMany(Match);
-Match.belongsTo(User);
-Match.belongsTo(Dog);
-
-
+User.belongsToMany(Dog, {
+  through: User_Dog
+});
+Dog.belongsToMany(User, {
+  through: User_Dog
+});
 
 
 
@@ -71,5 +74,5 @@ module.exports = {
   Shelter: Shelter,
   Dog: Dog,
   User: User,
-  Match: Match
+  User_Dog: User_Dog
 }

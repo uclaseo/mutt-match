@@ -9,6 +9,7 @@ const express = require('express'),
   dogsDummy = require('./dummy/dogs');
   usersDummy = require('./dummy/users');
   matchesDummy = require('./dummy/matches');
+  router = require('./routes/routes');
 
 const app = express();
 
@@ -17,17 +18,17 @@ app.use(parser.json())
    .use(morgan(':method :url :status :res[content-length] - :response-time ms'))
    .use(express.static(path.join(__dirname, '../public')))
    .use(express.static(path.join(__dirname, '../node_modules')))
-   .use('/', require('./routes'));
+   .use('/', router);
 
 db.authenticate()
   .then(() => Table.Shelter.sync({ force: true }))
   .then(() => Table.Dog.sync({ force: true }))
   .then(() => Table.User.sync({ force: true }))
-  .then(() => Table.Match.sync({ force: true }))
+  .then(() => Table.User_Dog.sync({ force: true }))
   .then(() => Table.Shelter.bulkCreate(sheltersDummy))
   .then(() => Table.Dog.bulkCreate(dogsDummy))
   .then(() => Table.User.bulkCreate(usersDummy))
-  .then(() => Table.Match.bulkCreate(matchesDummy))
+  .then(() => Table.User_Dog.bulkCreate(matchesDummy))
   .then(function() {
     console.log('Connection successful');
     const port = process.env.PORT || 3000;
