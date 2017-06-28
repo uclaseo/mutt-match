@@ -33,3 +33,4 @@ package-lock.json
 .vscode/
 public/bower_components/
 bower
+/config.js

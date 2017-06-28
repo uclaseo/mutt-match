@@ -1,3 +1,5 @@
+// this does fucking nothing
+
 const db = require('../../models');
 
 module.exports = {

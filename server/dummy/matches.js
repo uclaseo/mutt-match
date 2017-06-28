@@ -1,21 +1,21 @@
-'use strict';
-module.exports = {
-  up: function (queryInterface, Sequelize) {
-    return queryInterface.bulkInsert('Matches', matchesData);
-  },
+// 'use strict';
+// module.exports = {
+//   up: function (queryInterface, Sequelize) {
+//     return queryInterface.bulkInsert('Matches', matchesData);
+//   },
 
-  down: function (queryInterface, Sequelize) {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
+//   down: function (queryInterface, Sequelize) {
+//     /*
+//       Add reverting commands here.
+//       Return a promise to correctly handle asynchronicity.
 
-      Example:
-      return queryInterface.bulkDelete('Person', null, {});
-    */
-  }
-};
+//       Example:
+//       return queryInterface.bulkDelete('Person', null, {});
+//     */
+//   }
+// };
 
-var matchesData = [{
+var matchesDummy = [{
   "id": 1,
   "dog": 13,
   "user": 8,
@@ -516,3 +516,5 @@ var matchesData = [{
   "user": 1,
   "score": 59
 }];
+
+module.exports = matchesDummy;

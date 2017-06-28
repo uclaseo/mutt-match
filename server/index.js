@@ -2,8 +2,9 @@ const express = require('express'),
   parser = require('body-parser'),
   morgan = require('morgan'),
   path = require('path'),
-  db = require('./models'),
+  db = require('./db'),
   cookieParser = require('cookie-parser');
+  Shelter = reui
 
 const app = express();
 
@@ -14,8 +15,8 @@ app.use(parser.json())
    .use(express.static(path.join(__dirname, '../node_modules')))
    .use('/', require('./routes'));
 
-db.sequelize
-  .authenticate()
+db.authenticate()
+
   .then(function() {
     console.log('Connection successful');
     const port = process.env.PORT || 3000;

@@ -1,21 +1,21 @@
-'use strict';
-module.exports = {
-  up: function (queryInterface, Sequelize) {
-    return queryInterface.bulkInsert('Users', usersData);
-  },
+// 'use strict';
+// module.exports = {
+//   up: function (queryInterface, Sequelize) {
+//     return queryInterface.bulkInsert('Users', usersData);
+//   },
 
-  down: function (queryInterface, Sequelize) {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
+//   down: function (queryInterface, Sequelize) {
+//     /*
+//       Add reverting commands here.
+//       Return a promise to correctly handle asynchronicity.
 
-      Example:
-      return queryInterface.bulkDelete('Person', null, {});
-    */
-  }
-};
+//       Example:
+//       return queryInterface.bulkDelete('Person', null, {});
+//     */
+//   }
+// };
 
-var usersData = [{
+var usersDummy = [{
   "id": 1,
   "name": "Tony Renneke",
   "email": "trenneke0@springer.com",
@@ -406,3 +406,5 @@ var usersData = [{
   "currentDogs": false,
   "currentPets": true
 }];
+
+module.exports = usersDummy;
