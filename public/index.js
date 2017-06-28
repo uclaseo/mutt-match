@@ -1,17 +1,13 @@
-angular.module('mutt-match', ['ui.router', 'auth0.lock', 'ngMaterial'])
+angular.module('mutt-match', ['ui.router', 'ngMaterial'])
 
-.config(['$stateProvider', '$urlServiceProvider', '$locationProvider', 'lockProvider', function($stateProvider, $urlServiceProvider, $locationProvider, lockProvider) {
+.config(['$stateProvider', '$urlServiceProvider', '$locationProvider', function($stateProvider, $urlServiceProvider, $locationProvider) {
 
   $urlServiceProvider.rules.otherwise({ state: 'home' });
 
   $stateProvider
     .state('home', {
       url: '/',
-      component: 'home',
-      resolve: {
-        login: (authService) => authService.login,
-        isAuthenticated: (authService) => authService.isAuthenticated
-      }
+      component: 'home'
     })
     .state('callback', {
       url: '/:jwt',
@@ -40,22 +36,22 @@ angular.module('mutt-match', ['ui.router', 'auth0.lock', 'ngMaterial'])
     });
 
   // auth0 setup
-  lockProvider.init({
-    clientID: 'R6TjzEfP3EdjIfAAcLMOxnsFYzYua1nY',
-    domain: 'max-hoffman.auth0.com',
-    options: {
-      oidcConformant: true,
-      autoclose: true,
-      auth: {
-        responseType: 'id_token token',
-        audience: 'https://max-hoffman.auth0.com/userinfo',
-        redirectUrl: 'http://localhost:3000/',
-        params: {
-          scope: 'openid profile email'
-        }
-      }
-    }
-  });
+  // lockProvider.init({
+  //   clientID: 'R6TjzEfP3EdjIfAAcLMOxnsFYzYua1nY',
+  //   domain: 'max-hoffman.auth0.com',
+  //   options: {
+  //     oidcConformant: true,
+  //     autoclose: true,
+  //     auth: {
+  //       responseType: 'id_token token',
+  //       audience: 'https://max-hoffman.auth0.com/userinfo',
+  //       redirectUrl: 'http://localhost:3000/',
+  //       params: {
+  //         scope: 'openid profile email'
+  //       }
+  //     }
+  //   }
+  // });
 
   // $locationProvider.hashPrefix('');
   // $locationProvider.html5Mode({

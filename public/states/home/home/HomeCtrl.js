@@ -1,5 +1,5 @@
 angular.module('mutt-match')
 
-.controller('HomeCtrl', ['authService', function(authService) {
+.controller('HomeCtrl', function() {
   // authService.handleAuthentication();
-}]);
+});
