@@ -8,12 +8,12 @@ const authCheck = jwt({
   audience: '5Ni7Cxf9IF24IJX51HVbNqlkY78UHP9O'
 });
 
-router.get('/users/:id', controller.findOneUserCtrl);
-router.get('/users/:name', controller.fetchUserByName);
-router.put('/users/:id', controller.updateUserCtrl);
-router.delete('/users/:id', controller.deleteUserCtrl);
-router.get('/users', controller.findAllUsersCtrl);
-router.post('/users', controller.findOrCreateUserCtrl);
+router.get('/users/:id', authCheck, controller.findOneUserCtrl);
+router.get('/users/:name', authCheck, controller.fetchUserByName);
+router.put('/users/:id', authCheck, controller.updateUserCtrl);
+router.delete('/users/:id', authCheck, controller.deleteUserCtrl);
+router.get('/users', authCheck, controller.findAllUsersCtrl);
+router.post('/users', authCheck, controller.findOrCreateUserCtrl);
 
 
 
