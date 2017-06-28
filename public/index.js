@@ -5,14 +5,14 @@ angular.module('mutt-match', ['ui.router', 'ngMaterial'])
 
       authProvider.init({
         domain: 'inseok-ucla.auth0.com',
-        clientID: 'ku4AUn23UfSipuIY4l8e8WovJ10X5XuY'
+        clientID: '5Ni7Cxf9IF24IJX51HVbNqlkY78UHP9O'
       });
       
       jwtInterceptorProvider.tokenGetter = function(store) {
         return store.get('id_token');
       }
 
-      $urlRouterProvider.otherwise('/home');
+      $urlRouterProvider.otherwise('/');
 
       function redirect($q, $injector, $timeout, store, $location) {
         var auth;
@@ -38,7 +38,9 @@ angular.module('mutt-match', ['ui.router', 'ngMaterial'])
   $stateProvider
     .state('home', {
       url: '/',
-      component: 'home'
+      templateUrl: '/states/home/home/home.html',
+      controller: 'HomeCtrl',
+      controllerAs: 'ctrl'
     })
     .state('callback', {
       url: '/:jwt',
