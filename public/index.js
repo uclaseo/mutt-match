@@ -1,4 +1,4 @@
-angular.module('mutt-match', ['ui.router', 'auth0.lock'])
+angular.module('mutt-match', ['ui.router', 'auth0.lock', 'ngMaterial'])
 
 .config(['$stateProvider', '$urlServiceProvider', '$locationProvider', 'lockProvider', function($stateProvider, $urlServiceProvider, $locationProvider, lockProvider) {
 
