@@ -70,41 +70,29 @@ Dog.belongsToMany(User, {
 
 
 
-
-
-const userFriend = db.define('userFriend', {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  }
-});
-
-const userMessage = db.define('userMessage', {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  }
-})
-
 const Message = db.define('message', {
-  message: Sequelize.STRING
+  message: Sequelize.STRING,
+  createdAt: {
+    type: Sequelize.DATEONLY
+  },
+  updatedAt: {
+    type: Sequelize.DATEONLY
+  }
+}, {
+  timestamps: true
 });
 
 User.belongsToMany(User, {
   as: 'friend',
-  through: 'userFriend'
+  through: 'Message'
+});
+Message.belongsTo(User, {
+  as: 'friend'
 })
 
-userMessage.belongsTo(User, {
-  as: 'participant'
-})
-userMessage.belongsTo(Message)
-userMessage.belongsTo(User);
 
-
-
+User.hasMany(Message);
+Message.belongsTo(User);
 
 
 
@@ -116,7 +104,5 @@ module.exports = {
   Dog: Dog,
   User: User,
   User_Dog: User_Dog,
-  Message: Message,
-  userMessage: userMessage,
-  userFriend: userFriend
+  Message: Message
 }

@@ -76,19 +76,37 @@ module.exports = {
   },
 
   sendMessage: function(req, res) {
-    Table.Message.findOrCreate({where: req.body})
-    .then(user => res.send(user))
-    .catch(error => res.send(error));
+    Table.Message.create({
+      message: req.body.message,
+      userId: req.params.sender,
+      friendId: req.params.receiver
+    })
+      .then(message => {
+        res.status(202).send(message);
+      })
+      .catch(err => {
+        res.status(404).send(err);
+      })
   },
 
   getMessage: function(req, res) {
-    Table.User.find({
-      where: {name: req.params.name},
+    Table.Message.findAll({
+      where: {userId: req.params.sender, friendId: req.params.receiver},
+      // include: [{
+      //   model: Table.User,
+      //   attributes: ['name'],
+      // }],
       include: [{
-        mode: Table.Message
+        model: Table.User,
+        as: 'friend'
       }]
+      // order: [[Sequelize.literal('"messages.message"'), 'DESC']]
     })
-    .then(message => res.send(message))
-    .catch(error => res.send(error));
+    .then(message => {
+      res.status(200).send(message);
+    })
+    .catch(error => {
+      res.status(404).send(error);
+    })
   }
 };

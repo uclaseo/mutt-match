@@ -15,9 +15,12 @@ router.delete('/users/:id', controller.deleteUserCtrl);
 router.get('/users', controller.findAllUsersCtrl);
 router.post('/users', controller.findOrCreateUserCtrl);
 
+// send message from one user to another
+router.post('/message/:sender/:receiver', controller.sendMessage);
 
-router.post('/users/:id/message', controller.sendMessage);
-router.get('/users/:id/message', controller.getMessage);
+// get message from one user to another
+router.get('/message/:sender/:receiver', controller.getMessage);
+
 
 
 router.get('/users/:id/matches', controller.findAllMatchesCtrl);
