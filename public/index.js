@@ -59,10 +59,10 @@ angular.module('mutt-match', ['ui.router', 'ngMaterial', 'auth0', 'angular-stora
       url: '/contact',
       component: 'contact'
     })
-    .state('fetching', {
-      url: '/fetching',
-      component: 'fetching'
-    })
+    // .state('fetching', {
+    //   url: '/fetching',
+    //   component: 'fetching'
+    // })
     .state('questionnaire', {
       url: '/questionnaire',
       component: 'questionnaire'

@@ -1,3 +1,7 @@
+html {
+  background-color: white;
+}
+
 body {
   font-family: 'Lora', 'Times New Roman', serif;
   font-size: 20px;
@@ -503,4 +507,16 @@ body {
   text-align: center;
   display: block;
   margin: auto;
+}
+
+.md-input-has-placeholder {
+  display:inline;
+}
+
+md-input-container .md-input {
+  margin: 18px 0px -18px 0px;
+}
+
+.fontSize {
+  font-size: 23px;
 }

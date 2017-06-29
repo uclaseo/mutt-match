@@ -9,7 +9,7 @@ const authCheck = jwt({
 });
 
 router.get('/users/:id', authCheck, controller.findOneUserCtrl);
-router.get('/users/:name', authCheck, controller.fetchUserByName);
+router.get('/users/email/:email', authCheck, controller.fetchUserByEmail);
 router.put('/users/:id', authCheck, controller.updateUserCtrl);
 router.delete('/users/:id', authCheck, controller.deleteUserCtrl);
 router.get('/users', authCheck, controller.findAllUsersCtrl);
