@@ -16,7 +16,6 @@
 // };
 
 var usersDummy = [{
-  "id": 1,
   "name": "Tony Renneke",
   "email": "trenneke0@springer.com",
   "password": "trenneke0@ning.com",
@@ -29,7 +28,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 2,
   "name": "Osmond Filyashin",
   "email": "ofilyashin1@booking.com",
   "password": "ofilyashin1@thetimes.co.uk",
@@ -42,7 +40,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 3,
   "name": "Elfie Farres",
   "email": "efarres2@jigsy.com",
   "password": "efarres2@pen.io",
@@ -55,7 +52,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 4,
   "name": "Laverne Ralfe",
   "email": "lralfe3@yelp.com",
   "password": "lralfe3@people.com.cn",
@@ -68,7 +64,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 5,
   "name": "Edouard Colebourne",
   "email": "ecolebourne4@simplemachines.org",
   "password": "ecolebourne4@naver.com",
@@ -81,7 +76,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 6,
   "name": "Fabian Kimber",
   "email": "fkimber5@nps.gov",
   "password": "fkimber5@i2i.jp",
@@ -94,7 +88,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 7,
   "name": "Neda Andryushchenko",
   "email": "nandryushchenko6@purevolume.com",
   "password": "nandryushchenko6@cdc.gov",
@@ -107,7 +100,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 8,
   "name": "Bernarr Tranckle",
   "email": "btranckle7@hibu.com",
   "password": "btranckle7@nature.com",
@@ -120,7 +112,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 9,
   "name": "Vaclav Ditch",
   "email": "vditch8@about.com",
   "password": "vditch8@webs.com",
@@ -133,7 +124,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 10,
   "name": "Marie-jeanne Hardwich",
   "email": "mhardwich9@nhs.uk",
   "password": "mhardwich9@sciencedaily.com",
@@ -146,7 +136,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 11,
   "name": "Bert Salvadore",
   "email": "bsalvadorea@usnews.com",
   "password": "bsalvadorea@nationalgeographic.com",
@@ -159,7 +148,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 12,
   "name": "Marlin Regi",
   "email": "mregib@nba.com",
   "password": "mregib@bbb.org",
@@ -172,7 +160,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 13,
   "name": "Marcel Favell",
   "email": "mfavellc@gov.uk",
   "password": "mfavellc@tripadvisor.com",
@@ -185,7 +172,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 14,
   "name": "Madelaine Philpin",
   "email": "mphilpind@va.gov",
   "password": "mphilpind@shareasale.com",
@@ -198,7 +184,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 15,
   "name": "Cal Uff",
   "email": "cuffe@sitemeter.com",
   "password": "cuffe@cam.ac.uk",
@@ -211,7 +196,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 16,
   "name": "Wilmer Steane",
   "email": "wsteanef@t.co",
   "password": "wsteanef@wsj.com",
@@ -224,7 +208,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 17,
   "name": "Nadia Gallagher",
   "email": "ngallagherg@nydailynews.com",
   "password": "ngallagherg@bbc.co.uk",
@@ -237,7 +220,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 18,
   "name": "D'arcy Flanaghan",
   "email": "dflanaghanh@deliciousdays.com",
   "password": "dflanaghanh@delicious.com",
@@ -250,7 +232,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 19,
   "name": "Ogdon Lack",
   "email": "olacki@virginia.edu",
   "password": "olacki@latimes.com",
@@ -263,7 +244,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 20,
   "name": "Bryan Sirmond",
   "email": "bsirmondj@ycombinator.com",
   "password": "bsirmondj@si.edu",
@@ -276,7 +256,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 21,
   "name": "Forest Mole",
   "email": "fmolek@usa.gov",
   "password": "fmolek@disqus.com",
@@ -289,7 +268,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 22,
   "name": "Georgianne Shay",
   "email": "gshayl@sciencedaily.com",
   "password": "gshayl@miitbeian.gov.cn",
@@ -302,7 +280,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 23,
   "name": "Phylis Baglin",
   "email": "pbaglinm@earthlink.net",
   "password": "pbaglinm@mtv.com",
@@ -315,7 +292,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 24,
   "name": "Calida Lantry",
   "email": "clantryn@sbwire.com",
   "password": "clantryn@globo.com",
@@ -328,7 +304,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 25,
   "name": "Bink Canning",
   "email": "bcanningo@ehow.com",
   "password": "bcanningo@yale.edu",
@@ -341,7 +316,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 26,
   "name": "Aeriell Vipan",
   "email": "avipanp@thetimes.co.uk",
   "password": "avipanp@paginegialle.it",
@@ -354,7 +328,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 27,
   "name": "Beaufort Rowan",
   "email": "browanq@goo.gl",
   "password": "browanq@bloomberg.com",
@@ -367,7 +340,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 28,
   "name": "Karalynn Thatcham",
   "email": "kthatchamr@google.fr",
   "password": "kthatchamr@goodreads.com",
@@ -380,7 +352,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 29,
   "name": "Alyce Khotler",
   "email": "akhotlers@usnews.com",
   "password": "akhotlers@delicious.com",
@@ -393,7 +364,6 @@ var usersDummy = [{
   "currentDogs": false,
   "currentPets": true
 }, {
-  "id": 30,
   "name": "Wallis Parmiter",
   "email": "wparmitert@theatlantic.com",
   "password": "wparmitert@de.vu",

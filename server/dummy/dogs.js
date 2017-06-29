@@ -24,7 +24,6 @@
 // };
 
 var dogsDummy = [{
-  "id": 1,
   "name": "Sòng",
   "age": 6,
   "shelter": 6,
@@ -35,9 +34,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": false,
   "dogFriendly": true,
-  "petFriendly": true
+  "petFriendly": true,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/1.jpg"
 }, {
-  "id": 2,
   "name": "Pénélope",
   "age": 3,
   "shelter": 1,
@@ -48,9 +47,9 @@ var dogsDummy = [{
   "experienceReq": true,
   "childFriendly": true,
   "dogFriendly": false,
-  "petFriendly": true
+  "petFriendly": true,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/2.jpg"
 }, {
-  "id": 3,
   "name": "Hélèna",
   "age": 6,
   "shelter": 5,
@@ -61,9 +60,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": true,
   "dogFriendly": false,
-  "petFriendly": true
+  "petFriendly": true,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/3.jpg"
 }, {
-  "id": 4,
   "name": "Pò",
   "age": 2,
   "shelter": 10,
@@ -74,9 +73,9 @@ var dogsDummy = [{
   "experienceReq": true,
   "childFriendly": false,
   "dogFriendly": false,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/4.jpg"
 }, {
-  "id": 5,
   "name": "Bérengère",
   "age": 2,
   "shelter": 7,
@@ -87,9 +86,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": false,
   "dogFriendly": false,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/5.jpg"
 }, {
-  "id": 6,
   "name": "Fèi",
   "age": 1,
   "shelter": 10,
@@ -100,9 +99,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": false,
   "dogFriendly": true,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/6.jpg"
 }, {
-  "id": 7,
   "name": "Agnès",
   "age": 5,
   "shelter": 3,
@@ -113,9 +112,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": true,
   "dogFriendly": false,
-  "petFriendly": true
+  "petFriendly": true,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/7.jpg"
 }, {
-  "id": 8,
   "name": "Célia",
   "age": 3,
   "shelter": 1,
@@ -126,9 +125,9 @@ var dogsDummy = [{
   "experienceReq": true,
   "childFriendly": true,
   "dogFriendly": true,
-  "petFriendly": true
+  "petFriendly": true,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/8.jpg"
 }, {
-  "id": 9,
   "name": "Crééz",
   "age": 6,
   "shelter": 3,
@@ -139,9 +138,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": false,
   "dogFriendly": false,
-  "petFriendly": true
+  "petFriendly": true,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/9.jpg"
 }, {
-  "id": 10,
   "name": "Yénora",
   "age": 6,
   "shelter": 5,
@@ -152,9 +151,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": true,
   "dogFriendly": false,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/10.jpg"
 }, {
-  "id": 11,
   "name": "Lyséa",
   "age": 6,
   "shelter": 3,
@@ -165,9 +164,9 @@ var dogsDummy = [{
   "experienceReq": true,
   "childFriendly": true,
   "dogFriendly": false,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/11.jpg"
 }, {
-  "id": 12,
   "name": "Nuó",
   "age": 6,
   "shelter": 4,
@@ -178,9 +177,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": true,
   "dogFriendly": true,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/12.jpg"
 }, {
-  "id": 13,
   "name": "Thérèse",
   "age": 8,
   "shelter": 3,
@@ -191,9 +190,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": false,
   "dogFriendly": false,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/13.jpg"
 }, {
-  "id": 14,
   "name": "Amélie",
   "age": 6,
   "shelter": 10,
@@ -204,9 +203,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": true,
   "dogFriendly": false,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/14.jpg"
 }, {
-  "id": 15,
   "name": "Marie-hélène",
   "age": 1,
   "shelter": 9,
@@ -217,9 +216,9 @@ var dogsDummy = [{
   "experienceReq": true,
   "childFriendly": true,
   "dogFriendly": true,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/15.jpg"
 }, {
-  "id": 16,
   "name": "Kallisté",
   "age": 9,
   "shelter": 4,
@@ -230,9 +229,9 @@ var dogsDummy = [{
   "experienceReq": true,
   "childFriendly": true,
   "dogFriendly": false,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/16.jpg"
 }, {
-  "id": 17,
   "name": "Mà",
   "age": 6,
   "shelter": 3,
@@ -243,9 +242,9 @@ var dogsDummy = [{
   "experienceReq": true,
   "childFriendly": false,
   "dogFriendly": false,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/17.jpg"
 }, {
-  "id": 18,
   "name": "Cléopatre",
   "age": 2,
   "shelter": 2,
@@ -256,9 +255,9 @@ var dogsDummy = [{
   "experienceReq": true,
   "childFriendly": false,
   "dogFriendly": true,
-  "petFriendly": true
+  "petFriendly": true,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/18.jpg"
 }, {
-  "id": 19,
   "name": "Dà",
   "age": 1,
   "shelter": 2,
@@ -269,9 +268,9 @@ var dogsDummy = [{
   "experienceReq": true,
   "childFriendly": true,
   "dogFriendly": true,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/19.jpg"
 }, {
-  "id": 20,
   "name": "Eléonore",
   "age": 6,
   "shelter": 4,
@@ -282,9 +281,9 @@ var dogsDummy = [{
   "experienceReq": true,
   "childFriendly": false,
   "dogFriendly": false,
-  "petFriendly": true
+  "petFriendly": true,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/20.jpg"
 }, {
-  "id": 21,
   "name": "Angèle",
   "age": 3,
   "shelter": 5,
@@ -295,9 +294,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": true,
   "dogFriendly": true,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/21.jpg"
 }, {
-  "id": 22,
   "name": "Börje",
   "age": 3,
   "shelter": 4,
@@ -308,9 +307,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": true,
   "dogFriendly": true,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/22.jpg"
 }, {
-  "id": 23,
   "name": "Maïly",
   "age": 6,
   "shelter": 7,
@@ -321,9 +320,9 @@ var dogsDummy = [{
   "experienceReq": true,
   "childFriendly": false,
   "dogFriendly": true,
-  "petFriendly": true
+  "petFriendly": true,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/23.jpg"
 }, {
-  "id": 24,
   "name": "Adèle",
   "age": 2,
   "shelter": 8,
@@ -334,9 +333,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": false,
   "dogFriendly": true,
-  "petFriendly": true
+  "petFriendly": true,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/24.jpg"
 }, {
-  "id": 25,
   "name": "Cléopatre",
   "age": 3,
   "shelter": 5,
@@ -347,9 +346,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": false,
   "dogFriendly": false,
-  "petFriendly": true
+  "petFriendly": true,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/25.jpg"
 }, {
-  "id": 26,
   "name": "Méghane",
   "age": 6,
   "shelter": 4,
@@ -360,9 +359,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": false,
   "dogFriendly": false,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/26.jpg"
 }, {
-  "id": 27,
   "name": "Noémie",
   "age": 7,
   "shelter": 1,
@@ -373,9 +372,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": false,
   "dogFriendly": true,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/27.jpg"
 }, {
-  "id": 28,
   "name": "Séréna",
   "age": 3,
   "shelter": 2,
@@ -386,9 +385,9 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": false,
   "dogFriendly": false,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/28.jpg"
 }, {
-  "id": 29,
   "name": "Marie-josée",
   "age": 11,
   "shelter": 9,
@@ -399,9 +398,9 @@ var dogsDummy = [{
   "experienceReq": true,
   "childFriendly": true,
   "dogFriendly": true,
-  "petFriendly": true
+  "petFriendly": true,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/29.jpg"
 }, {
-  "id": 30,
   "name": "Nuó",
   "age": 4,
   "shelter": 3,
@@ -412,7 +411,8 @@ var dogsDummy = [{
   "experienceReq": false,
   "childFriendly": false,
   "dogFriendly": true,
-  "petFriendly": false
+  "petFriendly": false,
+  "imageLink": "https://s3-us-west-1.amazonaws.com/mutt-match/images/30.jpg"
 }];
 
 module.exports = dogsDummy;

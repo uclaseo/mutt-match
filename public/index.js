@@ -71,6 +71,12 @@ angular.module('mutt-match', ['ui.router', 'ngMaterial', 'auth0', 'angular-stora
       url: '/logout',
       component: 'logout'
     })
+    .state('addDog', {
+      url: '/addDog',
+      templateUrl: './states/home/addDog/addDog.html',
+      controller: 'addDogCtrl',
+      controllerAs: 'ctrl'
+    })
 
   // auth0 setup
   // lockProvider.init({

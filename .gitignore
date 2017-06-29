@@ -34,3 +34,4 @@ public/bower_components/
 bower
 /config.js
 .DS_Store
+.env
