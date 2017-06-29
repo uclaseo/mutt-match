@@ -8,12 +8,12 @@ const authCheck = jwt({
   audience: '5Ni7Cxf9IF24IJX51HVbNqlkY78UHP9O'
 });
 
-router.get('/users/:id', authCheck, controller.findOneUserCtrl);
-router.get('/users/email/:email', authCheck, controller.fetchUserByEmail);
-router.put('/users/:id', authCheck, controller.updateUserCtrl);
-router.delete('/users/:id', authCheck, controller.deleteUserCtrl);
-router.get('/users', authCheck, controller.findAllUsersCtrl);
-router.post('/users', authCheck, controller.findOrCreateUserCtrl);
+router.get('/users/:id', controller.findOneUserCtrl);
+router.get('/users/email/:email', controller.fetchUserByEmail);
+router.put('/users/:id', controller.updateUserCtrl);
+router.delete('/users/:id', controller.deleteUserCtrl);
+router.get('/users', controller.findAllUsersCtrl);
+router.post('/users', controller.findOrCreateUserCtrl);
 
 
 
@@ -27,7 +27,9 @@ router.get('/users/:id/matches', controller.findAllMatchesCtrl);
 router.get('/dog', controller.findAllDogsCtrl);
 router.get('/dog/:id', controller.findOneDogCtrl);
 
-
 // router.get('/images', dbx.findAllLinksCtrl);
+
+router.post('/shelters/:userId', controller.addShelter);
+router.get('/shelters/:name', controller.fetchShelter);
 
 module.exports = router;

@@ -30,7 +30,6 @@ module.exports = {
     console.log('req.body ' ,req.body)
     Table.User.create(
       {
-        id: 31,
         name: req.body.firstName + ' ' + req.body.lastName,
         city: req.body.city,
         zipcode: req.body.zipCode,
@@ -42,7 +41,8 @@ module.exports = {
         petExperience: req.body.petExperience,
         children: req.body.children,
         currentDogs: req.body.currentDogs,
-        currentPets: req.body.currentPets
+        currentPets: req.body.currentPets,
+        shelter: 1
       }
     )
       .then(user => res.send(user))
@@ -91,10 +91,64 @@ module.exports = {
       console.error('error finding matches ', err);
     })
   },
-  addDog: function(req, res) {
-    
-  },
+
+
   addShelter: function(req, res) {
-    
+    Table.Shelter.create({
+      name: req.body.name,
+      address: req.body.address
+    })
+    .then(() => {
+      Table.Shelter.find({
+        where: { name: req.body.name }
+      })
+      .then((shelter) => {
+        let shelterId = shelter.dataValues.id;
+        Table.User.update({
+          shelterId: shelterId
+        }, { where: { id: req.params.userId }})
+      })
+    })
+    .then(() => {
+      res.status(201).send('successfully added shelter');
+    })
+    .catch((err) => {
+      console.error('error adding shelter ', err);
+    })
+  },
+
+  fetchShelter: function (req, res) {
+    Table.Shelter.find({ where: { name: req.params.name }})
+    .then((shelter) => {
+      res.json({
+        results: shelter
+      })
+    })
+    .catch((err) => {
+      console.error('error finding shelter ', err);
+    })
+  },
+
+  addDog: function(req, res) {
+    Table.Dog.create({
+      name: req.body.name,
+      age: req.body.age,
+      breed: req.body.breed,
+      imageLink: req.body.imageLink,
+      active: req.body.active,
+      grooming: req.body.grooming,
+      size: req.body.size,
+      noise: req.body.noise,
+      experienceReq: req.body.experienceReq,
+      childFriendly: req.body.childFriendly,
+      dogFriendly: req.body.dogFriendly,
+      petFriendly: req.body.petFriendly
+    })
+    .then(() => {
+      res.status(201).send('successfully added a dog');
+    })
+    .catch((err) => {
+      console.error('error adding dog to the database ', err);
+    })
   }
 };
