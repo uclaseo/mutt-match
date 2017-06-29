@@ -46,6 +46,10 @@ var User = db.define('user', {
   currentPets: Sequelize.BOOLEAN
 });
 
+const Message = db.define('message', {
+  message: Sequelize.STRING
+});
+
 const User_Dog = db.define('user_dog', {
   id: {
     type: Sequelize.INTEGER,
@@ -55,7 +59,6 @@ const User_Dog = db.define('user_dog', {
   // user: Sequelize.INTEGER,
   // dog: Sequelize.INTEGER,
   score: Sequelize.INTEGER
-
 });
 
 Shelter.hasMany(Dog);
@@ -68,11 +71,25 @@ Dog.belongsToMany(User, {
   through: User_Dog
 });
 
+Message.belongsTo(User, {
+  as: 'From'
+});
+User.hasOne(Message, {
+  as: 'From'
+});
+
+Message.belongsTo(User, {
+  as: 'To'
+});
+User.hasOne(Message, {
+  as: 'To'
+});
 
 
 module.exports = {
   Shelter: Shelter,
   Dog: Dog,
   User: User,
-  User_Dog: User_Dog
+  User_Dog: User_Dog,
+  Message: Message
 }
