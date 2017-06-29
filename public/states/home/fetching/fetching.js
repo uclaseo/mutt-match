@@ -5,3 +5,4 @@ angular.module('mutt-match')
   controller: 'FetchingCtrl',
   templateUrl: './states/home/fetching/Fetching.html',
 });
+

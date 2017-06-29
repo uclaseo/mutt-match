@@ -27,7 +27,24 @@ module.exports = {
   },
 
   findOrCreateUserCtrl: function(req, res) {
-    Table.User.findOrCreate({ where: req.body })
+    console.log('req.body ' ,req.body)
+    Table.User.create(
+      {
+        id: 31,
+        name: req.body.firstName + ' ' + req.body.lastName,
+        city: req.body.city,
+        zipcode: req.body.zipCode,
+        email: req.body.email,
+        active: req.body.active,
+        grooming: req.body.grooming,
+        size: req.body.size,
+        noise: req.body.noise,
+        petExperience: req.body.petExperience,
+        children: req.body.children,
+        currentDogs: req.body.currentDogs,
+        currentPets: req.body.currentPets
+      }
+    )
       .then(user => res.send(user))
       .catch(error => res.send(error));
   },
@@ -44,9 +61,9 @@ module.exports = {
       .catch(error => res.send(error));
   },
 
-  fetchUserByName: function(req, res) {
+  fetchUserByEmail: function(req, res) {
     Table.User.find({
-      where: { name: req.params.name }
+      where: { email: req.params.email }
     })
       .then((user) => {
         res.json({
@@ -54,7 +71,7 @@ module.exports = {
         })
       })
       .catch((err) => {
-        console.error('error retrieving user by name ', err);
+        console.error('error retrieving user by email ', err);
       })
   },
 
