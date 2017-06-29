@@ -61,6 +61,9 @@ const User_Dog = db.define('user_dog', {
 Shelter.hasMany(Dog);
 Dog.belongsTo(Shelter);
 
+Shelter.hasMany(User);
+User.belongsTo(Shelter);
+
 User.belongsToMany(Dog, {
   through: User_Dog
 });

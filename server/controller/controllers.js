@@ -73,5 +73,11 @@ module.exports = {
     .catch((err) => {
       console.error('error finding matches ', err);
     })
+  },
+  addDog: function(req, res) {
+    
+  },
+  addShelter: function(req, res) {
+    
   }
 };
