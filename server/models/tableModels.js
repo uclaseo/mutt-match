@@ -46,9 +46,6 @@ var User = db.define('user', {
   currentPets: Sequelize.BOOLEAN
 });
 
-const Message = db.define('message', {
-  message: Sequelize.STRING
-});
 
 const User_Dog = db.define('user_dog', {
   id: {
@@ -71,19 +68,47 @@ Dog.belongsToMany(User, {
   through: User_Dog
 });
 
-Message.belongsTo(User, {
-  as: 'From'
-});
-User.hasOne(Message, {
-  as: 'From'
+
+
+
+
+const userFriend = db.define('userFriend', {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  }
 });
 
-Message.belongsTo(User, {
-  as: 'To'
+const userMessage = db.define('userMessage', {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  }
+})
+
+const Message = db.define('message', {
+  message: Sequelize.STRING
 });
-User.hasOne(Message, {
-  as: 'To'
-});
+
+User.belongsToMany(User, {
+  as: 'friend',
+  through: 'userFriend'
+})
+
+userMessage.belongsTo(User, {
+  as: 'participant'
+})
+userMessage.belongsTo(Message)
+userMessage.belongsTo(User);
+
+
+
+
+
+
+
 
 
 module.exports = {
@@ -91,5 +116,7 @@ module.exports = {
   Dog: Dog,
   User: User,
   User_Dog: User_Dog,
-  Message: Message
+  Message: Message,
+  userMessage: userMessage,
+  userFriend: userFriend
 }

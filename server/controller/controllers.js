@@ -73,5 +73,22 @@ module.exports = {
     .catch((err) => {
       console.error('error finding matches ', err);
     })
+  },
+
+  sendMessage: function(req, res) {
+    Table.Message.findOrCreate({where: req.body})
+    .then(user => res.send(user))
+    .catch(error => res.send(error));
+  },
+
+  getMessage: function(req, res) {
+    Table.User.find({
+      where: {name: req.params.name},
+      include: [{
+        mode: Table.Message
+      }]
+    })
+    .then(message => res.send(message))
+    .catch(error => res.send(error));
   }
 };
