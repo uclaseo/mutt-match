@@ -48,7 +48,7 @@ angular.module('mutt-match', ['ui.router', 'ngMaterial', 'auth0', 'angular-stora
       params: { jwt: null }
     })
     .state('matches', {
-      url: '/users/8/matches',
+      url: '/users/matches',
       component: 'matches',
     })
     .state('about', {

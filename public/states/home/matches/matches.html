@@ -13,14 +13,14 @@
   </div>
 </header>
 <!-- main -->
-<div class="post-preview" class="match-preview" ng-repeat="dog in $ctrl.dogs">
+<div class="post-preview" class="match-preview" ng-repeat="dog in $ctrl.dogs | orderBy: '-user_dog.score'">
   <header></header>
   <a href="" ui-sref="">
     <h2 class="post-title">
     <!-- dog pic -->
-      <img class="dog-profile" ng-src="../../mutts/{{dog.id}}.jpg">
+      <img class="dog-profile" ng-src="{{dog.imageLink}}">
       <!-- dog name and match score -->
-        {{$index + 1}}.  {{ dog.name }} <span class="match">{{dog.score}}%</span>
+        {{$index + 1}}.  {{ dog.name }} <span class="match">{{dog.user_dog.score}}%</span>
       </h2>
     <h3 class="post-subtitle">
       <!-- dog details -->
