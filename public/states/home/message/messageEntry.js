@@ -11,11 +11,12 @@ angular.module('mutt-match')
     vm.isTrue = !vm.isTrue;
   };
 
-  function sendMessage(text, to) {
+  function sendMessage(text, to, chatId) {
     console.log('send', text);
     console.log('to', to);
+    console.log('chatId', chatId);
     vm.text = '';
-    messageService.sendMessage(text, to)
+    messageService.replyMessage(text, to, chatId)
     .then((response) => {
       console.log('messageEntry sendMessage success', response);
     })

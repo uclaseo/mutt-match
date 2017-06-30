@@ -222,6 +222,18 @@ findAllMatchesCtrl: function(req, res) {
     .catch((error) => {
       res.send(error);
     })
+  },
+
+  replyMessage: function(req, res) {
+    Table.MessageHistory.create({
+      messages: req.body.message,
+      messageId: req.body.messageId
+    })
+  },
+  getReplyMessages: function(req, res) {
+
   }
+
+
 };
 

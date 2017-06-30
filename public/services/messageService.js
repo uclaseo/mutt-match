@@ -4,6 +4,7 @@ angular.module('mutt-match')
   vm.id;
   vm.getMessages = getMessages;
   vm.sendMessage = sendMessage;
+  vm.replyMessage = replyMessage;
 
   function getMessages() {
     vm.id = store.get('profile').userInfo.data[0].id;
@@ -24,5 +25,18 @@ angular.module('mutt-match')
       .catch((error) => {
         return console.log('messageService error', error);
       });
+  }
+
+  function replyMessage(text, to, chatId) {
+    vm.id = store.get('profile').userInfo.data[0].id;
+    console.log('text: ', text);
+    console.log('chatId: ', chatId);
+    return $http.post(`message/reply/${vm.id}/${to}`, {message: text, messageId: chatId})
+      .then((response) => {
+        return response;
+      })
+      .catch((error) => {
+        return console.log('messageService error', error);
+      })
   }
 }])
