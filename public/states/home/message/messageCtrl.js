@@ -19,6 +19,16 @@ angular.module('mutt-match')
       console.log('error', error);
     })
   };
+  vm.openDialog = function($event) {
+    $mdDialog.show({
+      controller: DialogCtrl,
+      controllerAs: 'ctrl',
+      templateUrl: 'dialog.tmpl.html',
+      parent: angular.element(document.body),
+      targetEvent: $event,
+      clickOutsideToClose:true
+    });
+  };
 
   function getShelters() {
     shelterService.getAllShelters()
@@ -27,8 +37,6 @@ angular.module('mutt-match')
         vm.shelters.push(response.data[i]);
       }
       // vm.shelters = response;
-      console.log('SHELTERS', vm.shelters.data);
-
     })
   }
 }])
