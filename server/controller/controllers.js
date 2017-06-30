@@ -89,9 +89,9 @@ module.exports = {
       })
   },
 
-  getMessage: function(req, res) {
+  getAllMessages: function(req, res) {
     Table.Message.findAll({
-      where: {userId: req.params.sender, toId: req.params.to},
+      where: {toId: req.params.to},
 
       include: [
         {

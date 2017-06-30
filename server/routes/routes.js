@@ -16,7 +16,7 @@ router.get('/users', controller.findAllUsersCtrl);
 router.post('/users', controller.findOrCreateUserCtrl);
 
 router.post('/message/:sender/:to', controller.sendMessage);
-router.get('/message/:to/:sender', controller.getMessage);
+router.get('/message/:to', controller.getAllMessages);
 
 router.get('/message/')
 
