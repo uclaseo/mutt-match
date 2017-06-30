@@ -3,11 +3,6 @@
 angular.module('mutt-match')
 .service('userService', ['$http', 'store', function($http, store) {
 
-  // this.getUserIdFromEmail = function() {
-  //   var email = store.get('profile').email;
-  //   return $http.get(`/users/email/${email}`)
-  // }
-
   this.registerUser = (data) => {
     const user = {
       email: data.email
@@ -23,6 +18,20 @@ angular.module('mutt-match')
       .catch((err) => {
         console.error('registerUser in userService fail ', err);
       })
+  }
+
+
+  this.insertUserDogMatches = (dog) => {
+    const userDog = {
+      score: dog.score,
+      dogId: dog.id,
+      userId: store.get('profile').userInfo.data.id
+    }
+
+    return $http.post('/dogUser', userDog)
+    .then((results) => {
+      console.log(results)
+    })
   }
 
 }]);
