@@ -1,11 +1,10 @@
 angular.module('mutt-match')
 .controller('messageCtrl', ['messageService', function(messageService) {
   const vm = this;
-  vm.click = click;
+  vm.renderMessages = renderMessages;
   vm.messages = [];
 
-
-  function click() {
+  function renderMessages() {
     messageService.getMessages()
     .then((response) => {
       console.log('hello', response);
@@ -18,6 +17,5 @@ angular.module('mutt-match')
     .catch((error) => {
       console.log('error', error);
     })
-    
-  }
+  };
 }])

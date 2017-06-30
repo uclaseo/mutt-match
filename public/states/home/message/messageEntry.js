@@ -1,0 +1,38 @@
+angular.module('mutt-match')
+.controller('messageEntryCtrl', ['messageService', function(messageService) {
+  const vm = this;
+  vm.click = click;
+  vm.sendMessage = sendMessage;
+  vm.isTrue = false;
+  vm.text;
+
+  function click() {
+    console.log('click');
+    vm.isTrue = !vm.isTrue;
+  }
+
+  function sendMessage(text, to) {
+    console.log('send', text);
+    console.log('to', to);
+    vm.text = '';
+    messageService.sendMessage(text, to)
+    .then((response) => {
+      console.log('messageEntry sendMessage success', response);
+    })
+    .catch((error) => {
+      console.log('messageEntry sendMEssage fail', error);
+    });
+
+  }
+}])
+.directive('messageEntry', function() {
+  return {
+    scope: {
+      message: '<'
+    },
+    controller: 'messageEntryCtrl',
+    controllerAs: 'ctrl',
+    bindToController: true,
+    templateUrl: './states/home/message/messageEntry.html'
+  }
+})
