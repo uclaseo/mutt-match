@@ -216,7 +216,7 @@ findAllMatchesCtrl: function(req, res) {
       res.status(200).send(response);
     })
     .catch((error) => {
-      res.send(error));
+      res.send(error);
     })
   }
 };
