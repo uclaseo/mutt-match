@@ -3,9 +3,7 @@
 angular.module('mutt-match')
 
 .service('shelterService', ['$http', '$stateParams', function($http, $stateParams) {
-  var service = {
-    addShelter: function() {
-      return $http.post('/shelters/' + $stateParams.userId)
-    }
+  this.addShelter = function(userId, data) {
+    return $http.post('/shelters/' + userId, data)
   }
 }]);
