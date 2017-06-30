@@ -10,7 +10,9 @@ angular.module('mutt-match')
         address: vm.shelterData.address
       };
       shelterService.addShelter(vm.userId, shelterData)
-      .then(() => {
+      .then((results) => {
+        console.log('results from posting shelter ', results);
+        // shelterService.set('id', results.data.id);
         $state.go('addDog');
       })
       .catch((err) => {

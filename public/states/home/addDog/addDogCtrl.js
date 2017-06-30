@@ -1,6 +1,10 @@
 angular.module('mutt-match')
 
-  .controller('addDogCtrl', [function() {
-    vm = this;
-    vm.addDogData;
+  .controller('addDogCtrl', ['$scope', 'shelterService', function($scope, shelterService) {
+    // vm = this;
+    // // vm.addDogData;
+    // // vm.shelterId;
+    // // // $scope.$watch(() => {
+    // // //   return shelterService.get('id');
+    // // // })
 }]);
