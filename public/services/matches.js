@@ -1,6 +1,6 @@
 angular.module('mutt-match')
 
-.service('matchesService', ['$http', '$log', function($http, $log) {
+.service('matchesService', ['$http', '$log', 'store', 'userService', function($http, $log, store, userService) {
   let id = 8;
 
   let matches = [];
@@ -26,8 +26,23 @@ angular.module('mutt-match')
 
   let mix = ['-mix', '-mix', '']
 
-  this.fetchMatches = function() { // hard coding is necessary -max
-    return $http.get(`/users/${id}/matches`) //hard-coded id for now -nate
+  this.setMatches = function() {
+    // userService.getUserIdFromEmail()
+    // .then(user => {
+    //   console.log(user.data.results)
+    // })
+
+
+
+    
+  }
+
+
+
+  this.fetchMatches = function(id) { 
+    console.log(id)
+    return $http.get(`/users/${id}/matches`) 
+
       // .then(resp => {
 
       //   console.log('resp.data: ', resp.data)

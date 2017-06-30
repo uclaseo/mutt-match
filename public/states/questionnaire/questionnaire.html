@@ -50,7 +50,7 @@
             <div class="form-group col-xs-12 floating-label-form-group controls">
                <md-input-container>
                   <label>zipcode</label>
-                  <input ng-model="$ctrl.questionnaireData.zipCode" required ng-pattern="/^[0-9]{5}$/" md-maxlength="5" type="text" class="form-control" placeholder="Your Zipcode" id="name" required data-validation-required-message="Please fill this out">
+                  <input ng-model="$ctrl.questionnaireData.zipcode" required ng-pattern="/^[0-9]{5}$/" md-maxlength="5" type="text" class="form-control" placeholder="Your Zipcode" id="name" required data-validation-required-message="Please fill this out">
                </md-input-container>
                <p class="help-block text-danger"></p>
             </div>
@@ -60,7 +60,7 @@
          <H2>Please check yes or no...</H2>
          <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls fontSize">
-               <md-checkbox ng-model="$ctrl.questionnaireData.petExperience" aria-label="Checkbox 0">
+               <md-checkbox ng-init="$ctrl.questionnaireData.petExperience='false'" ng-model="$ctrl.questionnaireData.petExperience" aria-label="Checkbox 0">
                   Do you have previous pet experience?
                </md-checkbox>
                <p class="help-block text-danger"></p>
@@ -68,7 +68,7 @@
          </div>
          <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls fontSize">
-               <md-checkbox ng-model="$ctrl.questionnaireData.children" aria-label="Checkbox 1">
+               <md-checkbox ng-init="$ctrl.questionnaireData.children='false'" ng-model="$ctrl.questionnaireData.children" aria-label="Checkbox 1">
                   Do you have children?
                </md-checkbox>
                <p class="help-block text-danger"></p>
@@ -76,7 +76,7 @@
          </div>
          <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls fontSize">
-               <md-checkbox ng-model="$ctrl.questionnaireData.currentDogs" aria-label="Checkbox 2">
+               <md-checkbox ng-init="$ctrl.questionnaireData.currentDogs='false'" ng-model="$ctrl.questionnaireData.currentDogs" aria-label="Checkbox 2">
                   Do you have other dogs?
                </md-checkbox>
                <p class="help-block text-danger"></p>
@@ -84,7 +84,7 @@
          </div>
          <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls fontSize">
-               <md-checkbox ng-model="$ctrl.questionnaireData.currentPets" aria-label="Checkbox 3">
+               <md-checkbox ng-init="$ctrl.questionnaireData.currentPets='false'" ng-model="$ctrl.questionnaireData.currentPets" aria-label="Checkbox 3">
                   Do you have other pets?
                </md-checkbox>
                <p class="help-block text-danger"></p>

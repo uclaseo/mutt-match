@@ -1,8 +1,12 @@
 "use strict";
 
 angular.module('mutt-match')
-
 .service('userService', ['$http', 'store', function($http, store) {
+
+  // this.getUserIdFromEmail = function() {
+  //   var email = store.get('profile').email;
+  //   return $http.get(`/users/email/${email}`)
+  // }
 
   this.registerUser = (data) => {
     const user = {
@@ -20,6 +24,5 @@ angular.module('mutt-match')
         console.error('registerUser in userService fail ', err);
       })
   }
-
 
 }]);
