@@ -1,7 +1,7 @@
 angular.module('mutt-match', ['ui.router', 'ngMaterial', 'auth0', 'angular-storage', 'angular-jwt', 'ngMaterial'])
 
-.config(['$stateProvider', '$urlServiceProvider', '$locationProvider', '$provide', 'authProvider', '$urlRouterProvider', '$httpProvider', 'jwtInterceptorProvider',
-  function($stateProvider, $urlServiceProvider, $locationProvider, $provide, authProvider, $urlRouterProvider, $httpProvider, jwtInterceptorProvider) {
+.config(['$stateProvider', '$urlServiceProvider', '$locationProvider', '$provide', 'authProvider', '$urlRouterProvider', '$httpProvider', 'jwtInterceptorProvider', '$mdThemingProvider',
+  function($stateProvider, $urlServiceProvider, $locationProvider, $provide, authProvider, $urlRouterProvider, $httpProvider, jwtInterceptorProvider, $mdThemingProvider) {
 
       authProvider.init({
         domain: 'inseok-ucla.auth0.com',
@@ -89,6 +89,10 @@ angular.module('mutt-match', ['ui.router', 'ngMaterial', 'auth0', 'angular-stora
       controller: 'messageCtrl',
       controllerAs: 'ctrl'
     })
+
+
+
+    $mdThemingProvider.theme('dark-blue').backgroundPalette('blue').dark();
 
   // auth0 setup
   // lockProvider.init({

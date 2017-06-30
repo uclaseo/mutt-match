@@ -9,7 +9,7 @@ angular.module('mutt-match')
   function click() {
     console.log('click');
     vm.isTrue = !vm.isTrue;
-  }
+  };
 
   function sendMessage(text, to) {
     console.log('send', text);
@@ -22,8 +22,18 @@ angular.module('mutt-match')
     .catch((error) => {
       console.log('messageEntry sendMEssage fail', error);
     });
+  };
 
-  }
+  vm.openDialog = function($event) {
+    $mdDialog.show({
+      controller: DialogCtrl,
+      controllerAs: 'ctrl',
+      templateUrl: 'dialog.tmpl.html',
+      parent: angular.element(document.body),
+      targetEvent: $event,
+      clickOutsideToClose:true
+    });
+  };
 }])
 .directive('messageEntry', function() {
   return {

@@ -8,7 +8,7 @@ angular.module('mutt-match')
     messageService.getMessages()
     .then((response) => {
       console.log('hello', response);
-      for (var i = 0; i < response.data.length; i++) {
+      for (var i = response.data.length - 1; i >= 0; i--) {
         vm.messages.push(response.data[i]);
       }
 
