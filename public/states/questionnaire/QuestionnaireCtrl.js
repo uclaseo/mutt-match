@@ -1,21 +1,12 @@
 angular.module('mutt-match')
 
  .controller('QuestionnaireCtrl', ['questionnaireService','userService', '$log', '$state', 'store', 'matchesService', function(questionnaireService, userService, $log, $state, store, matchesService) {  
-  // if(store.get('profile').email) {
-  //   questionnaireService.getUserInfo(store.get('profile').email)
-  //   .then(userInfo => {
-  //     console.log(userInfo)
-  //   })
-  // }
-
 
   autocomplete = new google.maps.places.Autocomplete(
     document.getElementById('cityName'), {
       types: ['(cities)']
     }
   );
-
-
 
   this.submit = () => { 
     console.log(store.get('profile').userInfo.data.id)
@@ -24,6 +15,8 @@ angular.module('mutt-match')
     this.questionnaireData.children = !this.questionnaireData.children ? false : true;
     this.questionnaireData.currentDogs = !this.questionnaireData.currentDogs ? false : true;
     this.questionnaireData.currentPets = !this.questionnaireData.currentPets ? false : true;
+    this.questionnaireData.currentAlone = !this.questionnaireData.currentAlone ? false : true;
+    this.questionnaireData.currentWeather = !this.questionnaireData.currentWeather ? false : true;
 
     var id = store.get('profile').userInfo.data.id;
     console.log(id)
@@ -38,25 +31,32 @@ angular.module('mutt-match')
         //console.log('userData:' , userData)
         dogsArray.forEach(function(dog) {
           var sum = 0;
-          sum += Math.abs(dog.active - userData.active)
-          sum += Math.abs(dog.size - userData.size)
-          sum += Math.abs(dog.noise - userData.noise)
-          sum += Math.abs(dog.grooming - userData.grooming)
+          sum += Math.abs(dog.active - userData.active) * 1.5;
+          sum += Math.abs(dog.size - userData.size) * 1.5;
+          sum += Math.abs(dog.noise - userData.noise) * 1.5;
+          sum += Math.abs(dog.grooming - userData.grooming);
+          sum += Math.abs(dog.age - userData.currentAge * 2);
 
           if(dog.childFriendly !== userData.children) {
-            sum += 2;
+            sum += 3;
           }
           if(dog.petFriendly !== userData.currentPets) {
-            sum += 2;
+            sum += 1.25;
           }
           if(dog.experienceReq !== userData.petExperience) {
-            sum += 2;
+            sum += 2.25;
           }
           if(dog.dogFriendly !== userData.currentDogs) {
+            sum += 1.75;
+          }
+          if(dog.aloneFriendly !== userData.currentAlone) {
+            sum += 2.25;
+          }
+          if(dog.weatherFriendly !== userData.currentWeather) {
             sum += 2;
           }
 
-          var score = Math.round(100 - (sum * 100 / 24))
+          var score = Math.round(100 - (sum * 100 / 42))
           dog.score = score;
         })
 
