@@ -26,7 +26,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Osmond Filyashin",
   "email": "ofilyashin1@booking.com",
@@ -38,7 +39,8 @@ var usersDummy = [{
   "petExperience": false,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Elfie Farres",
   "email": "efarres2@jigsy.com",
@@ -50,7 +52,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Laverne Ralfe",
   "email": "lralfe3@yelp.com",
@@ -62,7 +65,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Edouard Colebourne",
   "email": "ecolebourne4@simplemachines.org",
@@ -74,7 +78,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Fabian Kimber",
   "email": "fkimber5@nps.gov",
@@ -86,7 +91,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Neda Andryushchenko",
   "email": "nandryushchenko6@purevolume.com",
@@ -98,7 +104,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Bernarr Tranckle",
   "email": "btranckle7@hibu.com",
@@ -110,7 +117,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Vaclav Ditch",
   "email": "vditch8@about.com",
@@ -122,7 +130,8 @@ var usersDummy = [{
   "petExperience": false,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Marie-jeanne Hardwich",
   "email": "mhardwich9@nhs.uk",
@@ -134,7 +143,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Bert Salvadore",
   "email": "bsalvadorea@usnews.com",
@@ -146,7 +156,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Marlin Regi",
   "email": "mregib@nba.com",
@@ -158,7 +169,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Marcel Favell",
   "email": "mfavellc@gov.uk",
@@ -170,7 +182,8 @@ var usersDummy = [{
   "petExperience": false,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Madelaine Philpin",
   "email": "mphilpind@va.gov",
@@ -182,7 +195,8 @@ var usersDummy = [{
   "petExperience": false,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Cal Uff",
   "email": "cuffe@sitemeter.com",
@@ -194,7 +208,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Wilmer Steane",
   "email": "wsteanef@t.co",
@@ -206,7 +221,8 @@ var usersDummy = [{
   "petExperience": false,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Nadia Gallagher",
   "email": "ngallagherg@nydailynews.com",
@@ -218,7 +234,8 @@ var usersDummy = [{
   "petExperience": false,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "D'arcy Flanaghan",
   "email": "dflanaghanh@deliciousdays.com",
@@ -230,7 +247,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Ogdon Lack",
   "email": "olacki@virginia.edu",
@@ -242,7 +260,8 @@ var usersDummy = [{
   "petExperience": false,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Bryan Sirmond",
   "email": "bsirmondj@ycombinator.com",
@@ -254,7 +273,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Forest Mole",
   "email": "fmolek@usa.gov",
@@ -266,7 +286,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Georgianne Shay",
   "email": "gshayl@sciencedaily.com",
@@ -278,7 +299,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Phylis Baglin",
   "email": "pbaglinm@earthlink.net",
@@ -290,7 +312,8 @@ var usersDummy = [{
   "petExperience": false,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Calida Lantry",
   "email": "clantryn@sbwire.com",
@@ -302,7 +325,8 @@ var usersDummy = [{
   "petExperience": false,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Bink Canning",
   "email": "bcanningo@ehow.com",
@@ -314,7 +338,8 @@ var usersDummy = [{
   "petExperience": false,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Aeriell Vipan",
   "email": "avipanp@thetimes.co.uk",
@@ -326,7 +351,8 @@ var usersDummy = [{
   "petExperience": false,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Beaufort Rowan",
   "email": "browanq@goo.gl",
@@ -338,7 +364,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Karalynn Thatcham",
   "email": "kthatchamr@google.fr",
@@ -350,7 +377,8 @@ var usersDummy = [{
   "petExperience": false,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Alyce Khotler",
   "email": "akhotlers@usnews.com",
@@ -362,7 +390,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }, {
   "name": "Wallis Parmiter",
   "email": "wparmitert@theatlantic.com",
@@ -374,7 +403,8 @@ var usersDummy = [{
   "petExperience": true,
   "children": true,
   "currentDogs": false,
-  "currentPets": true
+  "currentPets": true,
+  "shelterId": 1
 }];
 
 module.exports = usersDummy;

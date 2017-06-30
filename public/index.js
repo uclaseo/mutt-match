@@ -77,6 +77,12 @@ angular.module('mutt-match', ['ui.router', 'ngMaterial', 'auth0', 'angular-stora
       controller: 'addDogCtrl',
       controllerAs: 'ctrl'
     })
+    .state('addShelter', {
+      url: '/addShelter',
+      templateUrl: './states/home/addShelter/addShelter.html',
+      controller: 'addShelterCtrl',
+      controllerAs: 'ctrl'
+    })
 
   // auth0 setup
   // lockProvider.init({
