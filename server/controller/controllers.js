@@ -202,6 +202,22 @@ findAllMatchesCtrl: function(req, res) {
     })
     .then(dogUser => res.send(dogUser))
     .catch(error => res.send(error));
+  },
+
+  getAllShelters: function(req, res) {
+    Table.User.findAll({
+      where: {
+        shelterId: {
+          $ne: 1
+        }
+      }
+    })
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.send(error));
+    })
   }
 };
 
