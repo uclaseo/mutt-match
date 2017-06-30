@@ -9,7 +9,6 @@ angular.module('mutt-match')
   // }
 
 
-
   autocomplete = new google.maps.places.Autocomplete(
     document.getElementById('cityName'), {
       types: ['(cities)']
@@ -18,20 +17,26 @@ angular.module('mutt-match')
 
 
 
-  this.submit = () => { //gonna do a lot of shit 
-    console.log(this.questionnaireData)
-    this.questionnaireData.email = store.get('profile').email;
-    // let user = localStorage.getItem('profile');
-    // console.log(JSON.stringify(user))
-    questionnaireService.createUserInfo(this.questionnaireData)
-      .then(user => {
-        console.log(user) 
-        // localStorage.setItem('profile', user.data);
-        // $state.go('matches');
-      })
-      .catch(error => {
-        console.error(error);
-        $state.go('questionnaire');
-      });
+  this.submit = () => { 
+    console.log(store.get('profile').userInfo.data.id)
+    this.questionnaireData.name = this.questionnaireData.firstName + " " + this.questionnaireData.lastName
+    this.questionnaireData.petExperience = !this.questionnaireData.petExperience ? false : true;
+    this.questionnaireData.children = !this.questionnaireData.children ? false : true;
+    this.questionnaireData.currentDogs = !this.questionnaireData.currentDogs ? false : true;
+    this.questionnaireData.currentPets = !this.questionnaireData.currentPets ? false : true;
+
+    var id = store.get('profile').userInfo.data.id;
+    console.log(id)
+
+    questionnaireService.update(id, this.questionnaireData)
+    .then((user) => {
+      console.log(user) 
+      
+      $state.go('matches');
+    })
+    .catch(error => {
+      console.error(error);
+      $state.go('questionnaire');
+    });
   };
  }]);
