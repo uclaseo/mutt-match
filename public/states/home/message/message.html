@@ -18,7 +18,12 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <p>
         <h2 ng-click="ctrl.click()">MESSAGE</h2>
-        <p ng-repeat="message in ctrl.messages" message="message">From {{message.user.name}}<br> {{message.message}}</p>
+        <p ng-repeat="message in ctrl.messages"
+          message="message">
+          From {{message.user.name}}<br>
+           {{message.message}}
+           <button>reply</button>
+        </p>
       </p>
       <hr>
     </div>
