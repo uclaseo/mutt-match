@@ -4,7 +4,7 @@ angular.module('mutt-match')
   vm.id;
   vm.getMessages = getMessages;
   function getMessages() {
-    vm.id = store.get('profile').userInfo.data.id;
+    vm.id = store.get('profile').userInfo.data[0].id;
     return $http.get(`message/${vm.id}`)
       .then((response) => {
         return response;
