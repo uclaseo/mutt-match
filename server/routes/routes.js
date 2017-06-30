@@ -10,6 +10,7 @@ const authCheck = jwt({
 
 router.get('/users/:id', controller.findOneUserCtrl);
 router.get('/users/:name', controller.fetchUserByName);
+router.get('/users/email/:email', controller.fetchUserByEmail);
 router.put('/users/:id', controller.updateUserCtrl);
 router.delete('/users/:id', controller.deleteUserCtrl);
 router.get('/users', controller.findAllUsersCtrl);
@@ -32,7 +33,11 @@ router.get('/users/:id/matches', controller.findAllMatchesCtrl);
 router.get('/dog', controller.findAllDogsCtrl);
 router.get('/dog/:id', controller.findOneDogCtrl);
 
-
 // router.get('/images', dbx.findAllLinksCtrl);
+
+router.post('/shelters/:userId', controller.addShelter);
+router.get('/shelters/:name', controller.fetchShelter);
+
+router.post('/dog', controller.addDog);
 
 module.exports = router;

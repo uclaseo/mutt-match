@@ -1,10 +1,10 @@
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('img/d18.jpg')">
+<header class="intro-header" style="background-image: url('img/d16.jpeg')">
    <div class="container">
       <div class="row">
          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="page-heading">
-               <h1>Tell us about you</h1>
+               <h1>Tell us about your dog that deserves a home</h1>
                <hr class="small">
                <span class="subheading"></span>
             </div>
@@ -22,8 +22,8 @@
          <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
                <md-input-container>
-                  <label>firstName</label>
-                  <input ng-model="$ctrl.questionnaireData.firstName" type="text" class="form-control" placeholder="Your First Name" id="name" required data-validation-required-message="Please fill this out">
+                  <label>dogName</label>
+                  <input ng-model="ctrl.addDogData.name" type="text" class="form-control" placeholder="Dog's name" id="name" required data-validation-required-message="Please fill this out">
                </md-input-container>
                <p class="help-block text-danger"></p>
             </div>
@@ -31,8 +31,8 @@
          <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
                <md-input-container>
-                  <label>lastName</label>
-                  <input ng-model="$ctrl.questionnaireData.lastName" type="text" class="form-control" placeholder="Your Last Name" id="name" required data-validation-required-message="Please fill this out">
+                  <label>dogAge</label>
+                  <input ng-model="ctrl.addDogData.age" type="integer" class="form-control" placeholder="Dog's age" id="name" required data-validation-required-message="Please fill this out">
                </md-input-container>
                <p class="help-block text-danger"></p>
             </div>
@@ -40,8 +40,8 @@
          <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
                <md-input-container>
-                  <label>city</label>
-                  <input ng-model="$ctrl.questionnaireData.city" type="text" class="form-control" placeholder="Your City" id="cityName" required data-validation-required-message="Please fill this out">
+                  <label>dogBreed</label>
+                  <input ng-model="ctrl.addDogData.breed" type="text" class="form-control" placeholder="Breed" id="breed" required data-validation-required-message="Please fill this out">
                </md-input-container>
                <p class="help-block text-danger"></p>
             </div>
@@ -60,32 +60,32 @@
          <H2>Please check yes or no...</H2>
          <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls fontSize">
-               <md-checkbox ng-model="$ctrl.questionnaireData.petExperience" aria-label="Checkbox 0">
-                  Do you have previous pet experience?
+               <md-checkbox ng-model="ctrl.addDogData.experience" aria-label="Checkbox 0">
+                  Is previous pet experience required?
                </md-checkbox>
                <p class="help-block text-danger"></p>
             </div>
          </div>
          <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls fontSize">
-               <md-checkbox ng-model="$ctrl.questionnaireData.children" aria-label="Checkbox 1">
-                  Do you have children?
+               <md-checkbox ng-model="ctrl.addDogData.childFriendly" aria-label="Checkbox 1">
+                  Is this dog child friendly?
                </md-checkbox>
                <p class="help-block text-danger"></p>
             </div>
          </div>
          <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls fontSize">
-               <md-checkbox ng-model="$ctrl.questionnaireData.currentDogs" aria-label="Checkbox 2">
-                  Do you have other dogs?
+               <md-checkbox ng-model="ctrl.addDogData.dogFriendly" aria-label="Checkbox 2">
+                  Is this dog friendly with other dogs?
                </md-checkbox>
                <p class="help-block text-danger"></p>
             </div>
          </div>
          <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls fontSize">
-               <md-checkbox ng-model="$ctrl.questionnaireData.currentPets" aria-label="Checkbox 3">
-                  Do you have other pets?
+               <md-checkbox ng-model="ctrl.addDogData.petFriendly" aria-label="Checkbox 3">
+                  Is this dog pet friendly?
                </md-checkbox>
                <p class="help-block text-danger"></p>
             </div>
@@ -95,31 +95,31 @@
          <H2>On a scale from 1 to 5...</H2>
          <br>
          <div flex="100" layout layout-align="center center">
-            <span class="md-body-12">How active are you?</span>
+            <span class="md-body-12">How active is this dog?</span>
          </div>
          <div layout>
-            <md-slider flex class="md-primary" md-discrete ng-model="$ctrl.questionnaireData.active" step="1" min="1" max="5" aria-label="rating">
+            <md-slider flex class="md-primary" md-discrete ng-model="ctrl.addDogData.active" step="1" min="1" max="5" aria-label="rating">
             </md-slider>
          </div>
          <div flex="100" layout layout-align="center center">
-            <span class="md-body-12">How much grooming are you willing to do?</span>
+            <span class="md-body-12">How much grooming does this dog require?</span>
          </div>
          <div layout>
-            <md-slider flex class="md-primary" md-discrete ng-model="$ctrl.questionnaireData.grooming" step="1" min="1" max="5" aria-label="rating">
+            <md-slider flex class="md-primary" md-discrete ng-model="ctrl.addDogData.grooming" step="1" min="1" max="5" aria-label="rating">
             </md-slider>
          </div>
          <div flex="100" layout layout-align="center center">
-            <span class="md-body-12">Do you prefer a small(1) or big(5) dog?</span>
+            <span class="md-body-12">How big is this dog (1 = small, 5 = very large)?</span>
          </div>
          <div layout>
-            <md-slider flex class="md-primary" md-discrete ng-model="$ctrl.questionnaireData.size" step="1" min="1" max="5" aria-label="rating">
+            <md-slider flex class="md-primary" md-discrete ng-model="ctrl.addDogData.size" step="1" min="1" max="5" aria-label="rating">
             </md-slider>
          </div>
          <div flex="100" layout layout-align="center center">
-            <span class="md-body-12">Does noise bother you?</span>
+            <span class="md-body-12">How noisy is this dog?</span>
          </div>
          <div layout>
-            <md-slider flex class="md-primary" md-discrete ng-model="$ctrl.questionnaireData.noise" step="1" min="1" max="5" aria-label="rating">
+            <md-slider flex class="md-primary" md-discrete ng-model="ctrl.addDogData.noise" step="1" min="1" max="5" aria-label="rating">
             </md-slider>
          </div>
          <br>

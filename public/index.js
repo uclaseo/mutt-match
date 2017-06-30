@@ -59,10 +59,10 @@ angular.module('mutt-match', ['ui.router', 'ngMaterial', 'auth0', 'angular-stora
       url: '/contact',
       component: 'contact'
     })
-    .state('fetching', {
-      url: '/fetching',
-      component: 'fetching'
-    })
+    // .state('fetching', {
+    //   url: '/fetching',
+    //   component: 'fetching'
+    // })
     .state('questionnaire', {
       url: '/questionnaire',
       component: 'questionnaire'
@@ -70,6 +70,18 @@ angular.module('mutt-match', ['ui.router', 'ngMaterial', 'auth0', 'angular-stora
     .state('logout', {
       url: '/logout',
       component: 'logout'
+    })
+    .state('addDog', {
+      url: '/addDog',
+      templateUrl: './states/home/addDog/addDog.html',
+      controller: 'addDogCtrl',
+      controllerAs: 'ctrl'
+    })
+    .state('addShelter', {
+      url: '/addShelter',
+      templateUrl: './states/home/addShelter/addShelter.html',
+      controller: 'addShelterCtrl',
+      controllerAs: 'ctrl'
     })
 
   // auth0 setup

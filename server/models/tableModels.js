@@ -53,13 +53,14 @@ const User_Dog = db.define('user_dog', {
     primaryKey: true,
     autoIncrement: true
   },
-  // user: Sequelize.INTEGER,
-  // dog: Sequelize.INTEGER,
   score: Sequelize.INTEGER
 });
 
 Shelter.hasMany(Dog);
 Dog.belongsTo(Shelter);
+
+Shelter.hasMany(User);
+User.belongsTo(Shelter);
 
 User.belongsToMany(Dog, {
   through: User_Dog

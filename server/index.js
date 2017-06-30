@@ -11,6 +11,8 @@ const express = require('express'),
   matchesDummy = require('./dummy/matches');
   router = require('./routes/routes');
 
+require('dotenv').config();
+
 const app = express();
 
 app.use(parser.json())

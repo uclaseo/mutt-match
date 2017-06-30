@@ -1,23 +1,33 @@
 angular.module('mutt-match')
 
- .controller('QuestionnaireCtrl', ['questionnaireService','userService', '$log', '$state', function(questionnaireService, userService, $log, $state) {  
+ .controller('QuestionnaireCtrl', ['questionnaireService','userService', '$log', '$state', 'store', function(questionnaireService, userService, $log, $state, store) {  
+  // if(store.get('profile').email) {
+  //   questionnaireService.getUserInfo(store.get('profile').email)
+  //   .then(userInfo => {
+  //     console.log(userInfo)
+  //   })
+  // }
 
-  this.submit = () => {
-    var userInfo = {
-      firstName: this.user.firstName,
-      lastName: this.user.lastName,
-      city: this.user.city,
-      zipCode: this.user.postalCode,
+
+
+  autocomplete = new google.maps.places.Autocomplete(
+    document.getElementById('cityName'), {
+      types: ['(cities)']
     }
-    
-    //$state.go('fetching');
-    let user = localStorage.getItem('profile');
-    console.log(user)
-    questionnaireService.update(user, this.questionnaireData)
+  );
+
+
+
+  this.submit = () => { //gonna do a lot of shit 
+    console.log(this.questionnaireData)
+    this.questionnaireData.email = store.get('profile').email;
+    // let user = localStorage.getItem('profile');
+    // console.log(JSON.stringify(user))
+    questionnaireService.createUserInfo(this.questionnaireData)
       .then(user => {
-        console.log(user) //wtf nothing here
-        localStorage.setItem('profile', user.data);
-        $state.go('matches');
+        console.log(user) 
+        // localStorage.setItem('profile', user.data);
+        // $state.go('matches');
       })
       .catch(error => {
         console.error(error);
