@@ -24,7 +24,7 @@ angular.module('mutt-match')
     shelterService.getAllShelters()
     .then((response) => {
       for (var i = 0; i < response.data.length; i++) {
-        vm.shelters.push(response.data[i].name);
+        vm.shelters.push(response.data[i]);
       }
       // vm.shelters = response;
       console.log('SHELTERS', vm.shelters.data);

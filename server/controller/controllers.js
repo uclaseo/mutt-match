@@ -210,7 +210,11 @@ findAllMatchesCtrl: function(req, res) {
         shelterId: {
           $ne: 1
         }
-      }
+      },
+      include: [{
+        model: Table.Shelter,
+        attributes: ['name', 'address']
+      }]
     })
     .then((response) => {
       res.status(200).send(response);
