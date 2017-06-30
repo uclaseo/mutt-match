@@ -83,11 +83,11 @@ const Message = db.define('message', {
 });
 
 User.belongsToMany(User, {
-  as: 'friend',
+  as: 'to',
   through: 'Message'
 });
 Message.belongsTo(User, {
-  as: 'friend'
+  as: 'to'
 })
 
 

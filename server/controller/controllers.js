@@ -79,7 +79,7 @@ module.exports = {
     Table.Message.create({
       message: req.body.message,
       userId: req.params.sender,
-      friendId: req.params.receiver
+      toId: req.params.to
     })
       .then(message => {
         res.status(202).send(message);
@@ -91,15 +91,19 @@ module.exports = {
 
   getMessage: function(req, res) {
     Table.Message.findAll({
-      where: {userId: req.params.sender, friendId: req.params.receiver},
-      // include: [{
-      //   model: Table.User,
-      //   attributes: ['name'],
-      // }],
-      include: [{
-        model: Table.User,
-        as: 'friend'
-      }]
+      where: {userId: req.params.sender, toId: req.params.to},
+
+      include: [
+        {
+          model: Table.User,
+          as: 'to',
+          attributes: ['name']
+        },
+        {
+          model: Table.User,
+          attributes: ['name']
+        }
+      ]
       // order: [[Sequelize.literal('"messages.message"'), 'DESC']]
     })
     .then(message => {
