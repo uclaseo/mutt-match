@@ -33,10 +33,9 @@ angular.module('mutt-match')
       var userData = user.config.data;
       matchesService.getDogs()
       .then((dogs) => {
-        console.log('allDogs Array: ' , dogs.data)
+        //console.log('allDogs Array: ' , dogs.data)
         var dogsArray = dogs.data;
-        console.log('userData:' , userData)
-        var topFiveArray = [];
+        //console.log('userData:' , userData)
         dogsArray.forEach(function(dog) {
           var sum = 0;
           sum += Math.abs(dog.active - userData.active)
@@ -59,23 +58,22 @@ angular.module('mutt-match')
 
           var score = Math.round(100 - (sum * 100 / 24))
           dog.score = score;
-
         })
 
-        dogsArray
-        .sort(function (dog1, dog2) {
+        dogsArray.sort(function (dog1, dog2) {
           return dog2.score - dog1.score;
         })
-        
+    
         console.log(dogsArray)
 
         for(var i = 0; i < 5; i++) {
           userService.insertUserDogMatches(dogsArray[i])
         }
-
       })
-      
-      // $state.go('matches');
+      .then(() => {
+        $state.go('matches');
+      })
+
     })
     .catch(error => {
       console.error(error);

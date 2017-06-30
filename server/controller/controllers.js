@@ -78,7 +78,8 @@ module.exports = {
       })
   },
 
-  findAllMatchesCtrl: function(req, res) {
+findAllMatchesCtrl: function(req, res) {
+  console.log('REQ PARAMS ID: ' , req.params.id)
     Table.User.findAll({
       where: { id: req.params.id },
       include: [{

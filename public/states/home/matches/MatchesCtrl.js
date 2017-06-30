@@ -1,28 +1,15 @@
 angular.module('mutt-match')
 
-.controller('MatchesCtrl', ['$log', 'matchesService', 'imagesService', function($log, matchesService, imagesService) {
+.controller('MatchesCtrl', ['$log', 'matchesService', 'imagesService', 'store', function($log, matchesService, imagesService, store) {
 
   this.dogs = [];
 
-  matchesService.setMatches();
+  var id = store.get('profile').userInfo.data.id
 
-  // matchesService.getUserIdFromEmail()
-  // .then((resp) => {
-  //   matchesService.fetchMatches(resp.data.results.id)
-  //   .then(matches => this.dogs = matches)
-  //   .then(matches => $log.log('DOGS', this.dogs))
-  //   .catch(err => console.error(err));
-  // })
-    
-  this.getDogImage = (id) => {
-    imagesService.get(id)
-      .then(resp => {
-        $log.info('RESP', resp.data);
-        return resp.data;
-      })
-      .catch(err => $log.error(err));
-  }
-
-  // this.getDogImage(3);
+  matchesService.fetchMatches(id)
+  .then((resp) => {
+    var fiveDogMatchesArray = resp.data.results[0].dogs;
+    console.log(fiveDogMatchesArray)
+  })
 
 }]);
