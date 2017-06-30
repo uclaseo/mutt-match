@@ -6,7 +6,7 @@ angular.module('mutt-match')
 
   this.registerUser = (data) => {
     const user = {
-      name: data.email
+      email: data.email
     };
     console.log('this is e-mail from user ', user);
     return $http.post('/users', user)

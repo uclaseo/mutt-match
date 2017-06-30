@@ -30,7 +30,7 @@ module.exports = {
     console.log('req.body ' ,req.body)
     Table.User.create(
       {
-        name: req.body.name,
+        email: req.body.email,
         shelterId: 1
         // city: req.body.city,
         // zipcode: req.body.zipCode,
