@@ -83,6 +83,12 @@ angular.module('mutt-match', ['ui.router', 'ngMaterial', 'auth0', 'angular-stora
       controller: 'addShelterCtrl',
       controllerAs: 'ctrl'
     })
+    .state('message', {
+      url: '/message',
+      templateUrl: './states/home/message/message.html',
+      controller: 'messageCtrl',
+      controllerAs: 'ctrl'
+    })
 
   // auth0 setup
   // lockProvider.init({
