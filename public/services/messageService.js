@@ -1,9 +1,11 @@
 angular.module('mutt-match')
-.service('messageService', ['$http', function($http) {
+.service('messageService', ['$http', 'store', function($http, store) {
   const vm = this;
+  vm.id;
   vm.getMessages = getMessages;
   function getMessages() {
-    return $http.get('message/3')
+    vm.id = store.get('profile').userInfo.data.id;
+    return $http.get(`message/${vm.id}`)
       .then((response) => {
         return response;
       })
