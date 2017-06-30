@@ -1,6 +1,24 @@
-<h1 id="from">From: {{ctrl.message.user.name}}</h1>
-<p>{{ctrl.message.message}}<p>
-  <button ng-click="ctrl.click()">reply</button>
-  <textarea ng-model="ctrl.text" ng-if="ctrl.isTrue" placeholder="enter message">{{ctr.text}}</textarea>
-  <button ng-if="ctrl.isTrue" ng-click="ctrl.sendMessage(ctrl.text, ctrl.message.userId)">send</button>
-
+<p>
+<md-content class="md-padding" layout-xs="column" layout="row">
+    <div flex-xl flex-gt-xl="50" layout="column">
+      <md-card md-theme="{{'dark-blue'}}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{ctrl.message.user.name}}</span>
+            <span class="md-subhead">{{ctrl.message.message}}</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-input-container class="md-block">
+          <label>input message</label>
+          <textarea rows="5" md-select-on-focus ng-model="ctrl.text">{{ctrl.text}}</textarea>
+        </md-input-container>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="ctrl.sendMessage(ctrl.text, ctrl.message.userId)">Reply</md-button>
+        </md-card-actions>
+      </md-card>
+    </div>
+</md-content>
+</p>
