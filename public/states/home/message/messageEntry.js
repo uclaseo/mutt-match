@@ -1,5 +1,5 @@
 angular.module('mutt-match')
-.controller('messageEntryCtrl', function() {
+.controller('messageEntryCtrl', ['messageService', function(messageService) {
   const vm = this;
   vm.click = click;
   vm.sendMessage = sendMessage;
@@ -11,11 +11,20 @@ angular.module('mutt-match')
     vm.isTrue = !vm.isTrue;
   }
 
-  function sendMessage(text) {
+  function sendMessage(text, to) {
     console.log('send', text);
+    console.log('to', to);
     vm.text = '';
+    messageService.sendMessage(text, to)
+    .then((response) => {
+      console.log('messageEntry sendMessage success', response);
+    })
+    .catch((error) => {
+      console.log('messageEntry sendMEssage fail', error);
+    });
+
   }
-})
+}])
 .directive('messageEntry', function() {
   return {
     scope: {

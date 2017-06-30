@@ -2,5 +2,5 @@
 <p>{{ctrl.message.message}}<p>
   <button ng-click="ctrl.click()">reply</button>
   <textarea ng-model="ctrl.text" ng-if="ctrl.isTrue" placeholder="enter message">{{ctr.text}}</textarea>
-  <button ng-if="ctrl.isTrue" ng-click="ctrl.sendMessage(ctrl.text)">send</button>
+  <button ng-if="ctrl.isTrue" ng-click="ctrl.sendMessage(ctrl.text, ctrl.message.userId)">send</button>
 
