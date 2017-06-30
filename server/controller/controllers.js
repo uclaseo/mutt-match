@@ -183,7 +183,8 @@ findAllMatchesCtrl: function(req, res) {
       experienceReq: req.body.experienceReq,
       childFriendly: req.body.childFriendly,
       dogFriendly: req.body.dogFriendly,
-      petFriendly: req.body.petFriendly
+      petFriendly: req.body.petFriendly,
+      shelterId: req.params.shelterId
     })
     .then(() => {
       res.status(201).send('successfully added a dog');
