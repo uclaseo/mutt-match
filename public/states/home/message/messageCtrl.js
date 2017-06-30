@@ -11,7 +11,6 @@ angular.module('mutt-match')
       for (var i = response.data.length - 1; i >= 0; i--) {
         vm.messages.push(response.data[i]);
       }
-
       console.log(vm.messages);
     })
     .catch((error) => {
