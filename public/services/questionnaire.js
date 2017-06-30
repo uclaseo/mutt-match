@@ -1,7 +1,7 @@
 angular.module('mutt-match')
   .service('questionnaireService', ['$http', '$log', function($http, $log) {
 
-    this.update = (user, data) =>  $http.put(`/users/${user.id}`, data);
+    this.update = (id, data) =>  $http.put(`/users/${id}`, data);
 
     this.createUserInfo = (data) => {
       return $http.post('/users', data)

@@ -27,13 +27,10 @@ angular.module('mutt-match')
   let mix = ['-mix', '-mix', '']
 
   this.setMatches = function() {
-
-
-
-    userService.getUserIdFromEmail()
-    .then(user => {
-      console.log(user.data.results)
-    })
+    // userService.getUserIdFromEmail()
+    // .then(user => {
+    //   console.log(user.data.results)
+    // })
 
 
 

@@ -51,6 +51,8 @@ module.exports = {
   },
 
   updateUserCtrl: function(req, res) {
+    console.log('req.body ' ,req.body)
+    console.log('REQ ID: ' , req.params.id)
     Table.User.update(req.body, { where: { id: req.params.id } })
       .then(user => res.sendStatus(201, user))
       .catch(error => res.send(error));
