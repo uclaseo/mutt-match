@@ -1,9 +1,31 @@
 
 
 
-       <p>
+       <p ng-click="ctrl.showText()">
           {{ctrl.shelter.name}}<br>
           {{ctrl.shelter.shelter.name}}<br>
           {{ctrl.shelter.shelter.address}}</p>
-          
         </p>
+        <p>
+    <div flex-xl flex-gt-xl="50" layout="column" ng-if="ctrl.isTrue">
+      <md-card md-theme="{{'dark-blue'}}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">To {{ctrl.shelter.name}}</span>
+            <span class="md-subhead">{{ctrl.shelter.shelter.name}}</span>
+            <span class="md-subhead">{{ctrl.shelter.shelter.address}}</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-input-container class="md-block">
+          <label>input message</label>
+          <textarea rows="5" md-select-on-focus ng-model="ctrl.text">{{ctrl.text}}</textarea>
+        </md-input-container>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="ctrl.sendMessage(ctrl.text, ctrl.id)">Send</md-button>
+        </md-card-actions>
+      </md-card>
+    </div>
+</p>
