@@ -25,7 +25,7 @@ angular.module('mutt-match')
     const userDog = {
       score: dog.score,
       dogId: dog.id,
-      userId: store.get('profile').userInfo.data.id
+      userId: store.get('profile').userInfo.data[0].id
     }
 
     return $http.post('/dogUser', userDog)

@@ -18,14 +18,14 @@ angular.module('mutt-match')
 
 
   this.submit = () => { 
-    console.log(store.get('profile').userInfo.data.id)
+    console.log(store.get('profile').userInfo.data[0].id)
     this.questionnaireData.name = this.questionnaireData.firstName + " " + this.questionnaireData.lastName
     this.questionnaireData.petExperience = !this.questionnaireData.petExperience ? false : true;
     this.questionnaireData.children = !this.questionnaireData.children ? false : true;
     this.questionnaireData.currentDogs = !this.questionnaireData.currentDogs ? false : true;
     this.questionnaireData.currentPets = !this.questionnaireData.currentPets ? false : true;
 
-    var id = store.get('profile').userInfo.data.id;
+    var id = store.get('profile').userInfo.data[0].id;
     console.log(id)
 
     questionnaireService.update(id, this.questionnaireData)

@@ -2,7 +2,7 @@ angular.module('mutt-match')
 
   .controller('addShelterCtrl', ['shelterService', 'store', '$state', function(shelterService, store, $state) {
     vm = this;
-    vm.userId = store.get('profile').userInfo.data.id;
+    vm.userId = store.get('profile').userInfo.data[0].id;
 
     vm.shelterClick = () => { 
       let shelterData = {
