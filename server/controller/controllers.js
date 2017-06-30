@@ -1,4 +1,5 @@
 const Table = require('../models/tableModels');
+const minio = require('minio');
 
 module.exports = {
 
@@ -203,6 +204,10 @@ findAllMatchesCtrl: function(req, res) {
     })
     .then(dogUser => res.send(dogUser))
     .catch(error => res.send(error));
+  },
+
+  getPresignedUrl: function(req, res) {
+
   }
 };
 
