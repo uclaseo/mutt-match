@@ -128,6 +128,8 @@ module.exports = {
     })
     .catch(error => {
       res.status(404).send(error);
+    })
+  },
 
   addShelter: function(req, res) {
     Table.Shelter.create({
