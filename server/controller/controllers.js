@@ -28,10 +28,9 @@ module.exports = {
 
   findOrCreateUserCtrl: function(req, res) {
     console.log('req.body ' ,req.body)
-    Table.User.create(
-      {
-        email: req.body.email,
-        shelterId: 1
+    Table.User.findOrCreate({
+        defaults: { shelterId: 1 }, 
+        where: { email: req.body.email }
         //name: req.body.firstName + ' ' + req.body.lastName,
         // city: req.body.city,
         // zipcode: req.body.zipCode,
@@ -44,8 +43,7 @@ module.exports = {
         // children: req.body.children,
         // currentDogs: req.body.currentDogs,
         // currentPets: req.body.currentPets
-      }
-    )
+      })
       .then(user => res.send(user))
       .catch(error => res.send(error));
   },
