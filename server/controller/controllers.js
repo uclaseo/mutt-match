@@ -139,7 +139,8 @@ module.exports = {
       name: req.body.name,
       address: req.body.address
     })
-    .then(() => {
+    .then((shelter) => {
+      res.send(shelter);
       Table.Shelter.find({
         where: { name: req.body.name }
       })
@@ -150,8 +151,8 @@ module.exports = {
         }, { where: { id: req.params.userId }})
       })
     })
-    .then(() => {
-      res.status(201).send('successfully added shelter');
+    .then((shelter) => {
+      console.log('successfully added shelter');
     })
     .catch((err) => {
       console.error('error adding shelter ', err);

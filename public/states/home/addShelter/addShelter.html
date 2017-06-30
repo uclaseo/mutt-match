@@ -32,7 +32,7 @@
             <div class="form-group col-xs-12 floating-label-form-group controls">
                <md-input-container>
                   <label>shelterAddress</label>
-                  <input ng-model="$ctrl.shelterData.address" type="text" class="form-control" placeholder="Your shelter address" id="name" required data-validation-required-message="Please fill this out">
+                  <input ng-model="ctrl.shelterData.address" type="text" class="form-control" placeholder="Your shelter address" id="name" required data-validation-required-message="Please fill this out">
                </md-input-container>
                <p class="help-block text-danger"></p>
             </div>
@@ -41,7 +41,7 @@
          <div id="success"></div>
          <div class="row">
             <div class="form-group col-xs-12">
-               <md-button class="md-raised md-primary" ng-click="ctrl.addShelter()">Submit</md-button>
+               <md-button class="md-raised md-primary" ng-click="ctrl.shelterClick()">Submit</md-button>
             </div>
          </div>
       </div>
