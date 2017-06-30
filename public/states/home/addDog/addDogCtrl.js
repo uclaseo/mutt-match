@@ -1,5 +1,6 @@
 angular.module('mutt-match')
 
-.controller('AboutCtrl', [function() {
-
+  .controller('addDogCtrl', [function() {
+    vm = this;
+    vm.addDogData;
 }]);
