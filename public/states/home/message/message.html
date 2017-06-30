@@ -19,7 +19,7 @@
       <p>
         <h2 ng-click="ctrl.renderMessages(); ctrl.getShelters()">MESSAGE</h2>
         <shelter-entry ng-repeat="shelter in ctrl.shelters track by $index" shelter="shelter"></shelter-entry>
-
+<h1 id="from" ng-if="ctrl.isTrue">-----------------------------------------------------------------</h1>
            <message-entry ng-repeat="message in ctrl.messages" message="message"></message-entry>
         </p>
       </p>

@@ -5,8 +5,10 @@ angular.module('mutt-match')
   vm.messages = [];
   vm.shelters = [];
   vm.getShelters = getShelters;
+  vm.isTrue = false;
 
   function renderMessages() {
+    vm.isTrue = !vm.isTrue;
     messageService.getMessages()
     .then((response) => {
       console.log('hello', response);
