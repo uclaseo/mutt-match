@@ -30,19 +30,19 @@ module.exports = {
     console.log('req.body ' ,req.body)
     Table.User.create(
       {
-        name: req.body.firstName + ' ' + req.body.lastName,
-        city: req.body.city,
-        zipcode: req.body.zipCode,
-        email: req.body.email,
-        active: req.body.active,
-        grooming: req.body.grooming,
-        size: req.body.size,
-        noise: req.body.noise,
-        petExperience: req.body.petExperience,
-        children: req.body.children,
-        currentDogs: req.body.currentDogs,
-        currentPets: req.body.currentPets,
-        shelter: 1
+        name: req.body.name,
+        shelterId: 1
+        // city: req.body.city,
+        // zipcode: req.body.zipCode,
+        // email: req.body.email,
+        // active: req.body.active,
+        // grooming: req.body.grooming,
+        // size: req.body.size,
+        // noise: req.body.noise,
+        // petExperience: req.body.petExperience,
+        // children: req.body.children,
+        // currentDogs: req.body.currentDogs,
+        // currentPets: req.body.currentPets
       }
     )
       .then(user => res.send(user))

@@ -32,4 +32,6 @@ router.get('/dog/:id', controller.findOneDogCtrl);
 router.post('/shelters/:userId', controller.addShelter);
 router.get('/shelters/:name', controller.fetchShelter);
 
+router.post('/dog', controller.addDog);
+
 module.exports = router;
