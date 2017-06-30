@@ -5,9 +5,6 @@ angular.module('mutt-match')
 
     this.createUserInfo = (data) => {
       return $http.post('/users', data)
-      .then((response) => {
-      console.log('getUserInfo in userService success', response);
-      })
     }
 
   }]);

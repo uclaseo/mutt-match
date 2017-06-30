@@ -9,29 +9,33 @@ angular.module('mutt-match')
   // }
 
 
-
   autocomplete = new google.maps.places.Autocomplete(
     document.getElementById('cityName'), {
       types: ['(cities)']
     }
   );
 
+  this.submit = () => { 
+    this.questionnaireData.petExperience = !this.questionnaireData.petExperience ? false : true;
+    this.questionnaireData.children = !this.questionnaireData.children ? false : true;
+    this.questionnaireData.currentDogs = !this.questionnaireData.currentDogs ? false : true;
+    this.questionnaireData.currentPets = !this.questionnaireData.currentPets ? false : true;
 
-
-  this.submit = () => { //gonna do a lot of shit 
     console.log(this.questionnaireData)
     this.questionnaireData.email = store.get('profile').email;
     // let user = localStorage.getItem('profile');
     // console.log(JSON.stringify(user))
-    questionnaireService.createUserInfo(this.questionnaireData)
-      .then(user => {
+    userService.getUserIdFromEmail()
+    .then((user) => {
+      questionnaireService.update(user.data.results.id, this.questionnaireData)
+      .then((user) => {
         console.log(user) 
-        // localStorage.setItem('profile', user.data);
-        // $state.go('matches');
+        $state.go('matches');
       })
       .catch(error => {
         console.error(error);
         $state.go('questionnaire');
       });
+    })
   };
  }]);

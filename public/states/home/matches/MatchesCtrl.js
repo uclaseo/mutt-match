@@ -4,11 +4,16 @@ angular.module('mutt-match')
 
   this.dogs = [];
 
-  matchesService.fetchMatches()
-    .then(matches => this.dogs = matches)
-    .then(matches => $log.log('DOGS', this.dogs))
-    .catch(err => console.error(err));
+  matchesService.setMatches();
 
+  // matchesService.getUserIdFromEmail()
+  // .then((resp) => {
+  //   matchesService.fetchMatches(resp.data.results.id)
+  //   .then(matches => this.dogs = matches)
+  //   .then(matches => $log.log('DOGS', this.dogs))
+  //   .catch(err => console.error(err));
+  // })
+    
   this.getDogImage = (id) => {
     imagesService.get(id)
       .then(resp => {

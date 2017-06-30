@@ -1,11 +1,11 @@
 "use strict";
 
 angular.module('mutt-match')
+.service('userService', ['$http', 'store', function($http, store) {
 
-.service('userService', [ function() {
-  var currentUser = null;
-  return {
-    get: () => currentUser,
-    set: (user) => currentUser = user
-  };
+  this.getUserIdFromEmail = function() {
+    var email = store.get('profile').email;
+    return $http.get(`/users/email/${email}`)
+  }
+
 }]);
