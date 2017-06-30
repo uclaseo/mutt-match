@@ -26,13 +26,14 @@ angular.module('mutt-match')
 
   let mix = ['-mix', '-mix', '']
 
+  this.getDogs = function() {
+    return $http.get('/dog');
+  }
+
+
+
   this.setMatches = function() {
-    // userService.getUserIdFromEmail()
-    // .then(user => {
-    //   console.log(user.data.results)
-    // })
-
-
+  
 
     
   }

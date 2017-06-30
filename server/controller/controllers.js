@@ -153,5 +153,17 @@ module.exports = {
     .catch((err) => {
       console.error('error adding dog to the database ', err);
     })
+  },
+
+  addUserDogMatch: function(req, res) {
+    console.log(req.body)
+    Table.User_Dog.create({
+      score: req.body.score,
+      userId: req.body.userId,
+      dogId: req.body.dogId
+    })
+    .then(dogUser => res.send(dogUser))
+    .catch(error => res.send(error));
   }
 };
+

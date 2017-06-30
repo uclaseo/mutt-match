@@ -34,4 +34,7 @@ router.get('/shelters/:name', controller.fetchShelter);
 
 router.post('/dog', controller.addDog);
 
+router.post('/dogUser', controller.addUserDogMatch);
+
+
 module.exports = router;
