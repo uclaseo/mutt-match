@@ -95,6 +95,44 @@ module.exports = {
     })
   },
 
+  sendMessage: function(req, res) {
+    Table.Message.create({
+      message: req.body.message,
+      userId: req.params.sender,
+      toId: req.params.to
+    })
+      .then(message => {
+        res.status(202).send(message);
+      })
+      .catch(err => {
+        res.status(404).send(err);
+      })
+  },
+
+  getAllMessages: function(req, res) {
+    Table.Message.findAll({
+      where: {toId: req.params.to},
+
+      include: [
+        {
+          model: Table.User,
+          as: 'to',
+          attributes: ['name']
+        },
+        {
+          model: Table.User,
+          attributes: ['name']
+        }
+      ]
+      // order: [[Sequelize.literal('"messages.message"'), 'DESC']]
+    })
+    .then(message => {
+      res.status(200).send(message);
+    })
+    .catch(error => {
+      res.status(404).send(error);
+    })
+  },
 
   addShelter: function(req, res) {
     Table.Shelter.create({

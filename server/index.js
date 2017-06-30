@@ -31,6 +31,7 @@ db.authenticate()
   .then(() => Table.Dog.bulkCreate(dogsDummy))
   .then(() => Table.User.bulkCreate(usersDummy))
   .then(() => Table.User_Dog.bulkCreate(matchesDummy))
+  .then(() => Table.Message.sync())
   .then(function() {
     console.log('Connection successful');
     const port = process.env.PORT || 3000;
