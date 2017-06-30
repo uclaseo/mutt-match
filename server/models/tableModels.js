@@ -71,7 +71,7 @@ Dog.belongsToMany(User, {
 
 
 const Message = db.define('message', {
-  message: Sequelize.STRING,
+  message: Sequelize.TEXT,
   createdAt: {
     type: Sequelize.DATEONLY
   },
