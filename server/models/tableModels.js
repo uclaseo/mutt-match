@@ -97,6 +97,21 @@ Message.belongsTo(User, {
   as: 'to'
 })
 
+const MessageHistory = db.define('messageHistory', {
+  messages: Sequelize.TEXT,
+  createdAt: {
+    type: Sequelize.DATEONLY
+  },
+  updatedAt: {
+    type: Sequelize.DATEONLY
+  }
+}, {
+  timestamps: true
+})
+
+MessageHistory.belongsTo(Message);
+Message.hasMany(MessageHistory);
+
 
 User.hasMany(Message);
 Message.belongsTo(User);
@@ -111,5 +126,6 @@ module.exports = {
   Dog: Dog,
   User: User,
   User_Dog: User_Dog,
-  Message: Message
+  Message: Message,
+  MessageHistory: MessageHistory
 }

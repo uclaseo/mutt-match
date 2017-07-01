@@ -25,13 +25,14 @@ app.use(parser.json())
 db.authenticate()
   .then(() => Table.Shelter.sync({ force: true }))
   .then(() => Table.Dog.sync({ force: true }))
-  .then(() => Table.User.sync({ force: true }))
+  .then(() => Table.User.sync({force: true}))
   .then(() => Table.User_Dog.sync({ force: true }))
   .then(() => Table.Shelter.bulkCreate(sheltersDummy))
   .then(() => Table.Dog.bulkCreate(dogsDummy))
   .then(() => Table.User.bulkCreate(usersDummy))
   .then(() => Table.User_Dog.bulkCreate(matchesDummy))
   .then(() => Table.Message.sync())
+  .then(() => Table.MessageHistory.sync())
   .then(function() {
     console.log('Connection successful');
     const port = process.env.PORT || 3000;
