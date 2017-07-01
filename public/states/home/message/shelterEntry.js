@@ -25,7 +25,7 @@ angular.module('mutt-match')
     console.log('send', text);
     console.log('to', to);
     vm.text = '';
-    messageService.sendMessage(text, to)
+    return messageService.sendMessage(text, to)
     .then((response) => {
       console.log('messageEntry sendMessage success', response);
     })
