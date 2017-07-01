@@ -33,6 +33,10 @@ angular.module('mutt-match')
     console.log('chatId: ', chatId);
     return $http.post(`message/reply/${vm.id}/${to}`, {message: text, messageId: chatId})
       .then((response) => {
+        $http.get(`message/reply/${vm.id}/${chatId}`)
+          .then((response) => {
+          console.log('GETMESSAGESSSS', response);
+        })
         return response;
       })
       .catch((error) => {

@@ -229,9 +229,22 @@ findAllMatchesCtrl: function(req, res) {
       messages: req.body.message,
       messageId: req.body.messageId
     })
+    .then((response) => {
+      res.send(response);
+    })
   },
   getReplyMessages: function(req, res) {
-
+    Table.MessageHistory.findAll({
+      where: {
+        messageId: req.params.chatId
+      },
+      include: [{
+        model: Table.Message
+      }]
+    })
+    .then((response) => {
+      res.send(response);
+    })
   }
 
 
