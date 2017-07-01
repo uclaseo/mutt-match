@@ -24,7 +24,10 @@ const Dog = db.define('dog', {
   experienceReq: Sequelize.BOOLEAN,
   childFriendly: Sequelize.BOOLEAN,
   dogFriendly: Sequelize.BOOLEAN,
-  petFriendly: Sequelize.BOOLEAN
+  petFriendly: Sequelize.BOOLEAN,
+  sex: Sequelize.STRING,
+  aloneFriendly: Sequelize.BOOLEAN,
+  weatherFriendly: Sequelize.BOOLEAN
 });
 
 
@@ -43,7 +46,10 @@ var User = db.define('user', {
   petExperience: Sequelize.BOOLEAN,
   children: Sequelize.BOOLEAN,
   currentDogs: Sequelize.BOOLEAN,
-  currentPets: Sequelize.BOOLEAN
+  currentPets: Sequelize.BOOLEAN,
+  currentAlone: Sequelize.BOOLEAN,
+  currentWeather: Sequelize.BOOLEAN,
+  currentAge: Sequelize.INTEGER
 });
 
 

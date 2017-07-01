@@ -81,7 +81,10 @@ findAllMatchesCtrl: function(req, res) {
     Table.User.findAll({
       where: { id: req.params.id },
       include: [{
-        model: Table.Dog
+        model: Table.Dog,
+        include: [{
+          model: Table.Shelter
+        }]
       }]
     })
     .then((dogs) => {
@@ -203,6 +206,15 @@ findAllMatchesCtrl: function(req, res) {
     })
     .then(dogUser => res.send(dogUser))
     .catch(error => res.send(error));
+  },
+
+  deleteAllMatches: function(req, res) {
+    Table.User_Dog.destroy({ where: { userId: req.params.userId } })
+      .then(user => res.sendStatus(200, user))
+      .catch(error => res.send(error));
   }
+
 };
+
+  
 

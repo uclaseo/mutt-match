@@ -6,8 +6,9 @@ angular.module('mutt-match')
 
   matchesService.fetchMatches(id)
   .then((resp) => {
-    this.dogs = resp.data.results[0].dogs;
-    console.log(this.dogs)
+    //console.log(resp.data.results[0].dogs)
+      this.dogs = resp.data.results[0].dogs;
+    //console.log(this.dogs)
   })
 
 }]);
