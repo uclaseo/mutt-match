@@ -18,6 +18,7 @@ angular.module('mutt-match')
     console.log('to', to);
     console.log('chatId', chatId);
     vm.text = '';
+    vm.history.push(text);
     messageService.replyMessage(text, to, chatId)
     .then((response) => {
       console.log('messageEntry sendMessage success', response);
