@@ -2,10 +2,11 @@
 
 angular.module('mutt-match')
 
-.service('shelterService', ['$http', '$stateParams', function($http, $stateParams) {
+.service('shelterService', ['$http', '$stateParams', 'store', function($http, $stateParams, store) {
 
   var shelterId;
   var shelters = [];
+  this.shelterId = store.get('profile').userInfo.data[0].shelterId;
 
   this.addShelter = function(userId, data) {
     return $http.post('/shelters/' + userId, data)

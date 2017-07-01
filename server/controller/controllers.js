@@ -1,4 +1,18 @@
 const Table = require('../models/tableModels');
+const envVals = require('../../config.js');  
+const AWS = require('aws-sdk');
+AWS.config = new AWS.Config();
+AWS.config.region = 'us-west-1';
+AWS.config.accessKeyId = envVals.AWS_ACCESS_KEY;
+AWS.config.secretAccessKey = envVals.AWS_SECRET_ACCESS_KEY;
+const Minio = require('minio');
+
+// AWS.config.update({
+//   accessKeyId: config.AWS_ACCESS_KEY,
+//   secretAccessKey: config.AWS_SECRET_KEY,
+//   signatureVersion: 'v',
+//   region: 'us-west-1'
+// });
 
 module.exports = {
 
@@ -265,6 +279,28 @@ findAllMatchesCtrl: function(req, res) {
     .then(response => {
       res.send(response);
     })
+  getPresignedUrl: function(req, res) {
+
+    console.log(envVals.AWS_ACCESS_KEY, envVals.AWS_SECRET_ACCESS_KEY)
+   
+// ---------------------------------
+// now say you want fetch a URL for an object named `objectName`
+    var s3 = new AWS.S3({
+      signatureVersion: 'v4'
+    });
+    var s3_params = {
+      Bucket: envVals.S3_BUCKET,
+      Key: req.params.file,
+      Expires: 250,
+
+    };
+    s3.getSignedUrl('putObject', s3_params, function (err, signedUrl) {
+      // send signedUrl back to client
+      if(err) console.log(err);
+      console.log(signedUrl);
+      res.send(signedUrl);
+      // [...]
+    });
   }
 
 
