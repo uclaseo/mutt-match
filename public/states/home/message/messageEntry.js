@@ -7,6 +7,7 @@ angular.module('mutt-match')
   vm.isTrue = false;
   vm.text;
   vm.history = [];
+  vm.showTrue = true;
 
   function click() {
     console.log('click');
@@ -49,6 +50,7 @@ angular.module('mutt-match')
         vm.history.push(response.data[i].messages);
       }
       console.log('FINALLLL HISTORY MESSSSSAGE', vm.history);
+      vm.showTrue = !vm.showTrue;
     })
   }
 }])
