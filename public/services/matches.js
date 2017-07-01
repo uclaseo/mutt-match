@@ -13,5 +13,9 @@ angular.module('mutt-match')
     return $http.get(`/users/${id}/matches`)
   };
 
+  this.deleteMatches = function(id) {
+    return $http.post(`deleteMatches/${id}`)
+  }
+
 
 }]);

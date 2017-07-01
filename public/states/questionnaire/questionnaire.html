@@ -101,17 +101,17 @@
          <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls fontSize">
                <md-checkbox ng-init="$ctrl.questionnaireData.currentWeather='false'" ng-model="$ctrl.questionnaireData.currentWeather" aria-label="Checkbox 5">
-                  Do you live where it is really hot or really cold?
+                  Do you live where the weather is really hot or cold?
                </md-checkbox>
                <p class="help-block text-danger"></p>
             </div>
          </div>
          <br>
          <!-- scale of 1-5 -->
-         <H2>On a scale from 1 to 5...(1 least, 5 most)</H2>
+         <H2>On a scale from 1(little) to 5(a lot)... </H2>
          <br>
          <div flex="100" layout layout-align="center center">
-            <span class="md-body-12">How old would you like your dog to be? (1)puppy (5)senior)</span>
+            <span class="md-body-12">How old would you like your dog to be? (1)puppy (5)senior</span>
          </div>
          <div layout>
             <md-slider flex class="md-primary" md-discrete ng-model="$ctrl.questionnaireData.currentAge" step="1" min="1" max="5" aria-label="rating">
@@ -125,21 +125,21 @@
             </md-slider>
          </div>
          <div flex="100" layout layout-align="center center">
-            <span class="md-body-12">How much grooming are you willing to do?</span>
+            <span class="md-body-12">How much grooming /cleaning up are you willing to do?</span>
          </div>
          <div layout>
             <md-slider flex class="md-primary" md-discrete ng-model="$ctrl.questionnaireData.grooming" step="1" min="1" max="5" aria-label="rating">
             </md-slider>
          </div>
          <div flex="100" layout layout-align="center center">
-            <span class="md-body-12">Do you prefer a small or a big dog?</span>
+            <span class="md-body-12">What size dog would you prefer?</span>
          </div>
          <div layout>
             <md-slider flex class="md-primary" md-discrete ng-model="$ctrl.questionnaireData.size" step="1" min="1" max="5" aria-label="rating">
             </md-slider>
          </div>
          <div flex="100" layout layout-align="center center">
-            <span class="md-body-12">Does noise bother you?</span>
+            <span class="md-body-12">Do you care about noise level?</span>
          </div>
          <div layout>
             <md-slider flex class="md-primary" md-discrete ng-model="$ctrl.questionnaireData.noise" step="1" min="1" max="5" aria-label="rating">

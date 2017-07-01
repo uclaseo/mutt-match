@@ -26,7 +26,7 @@
 var dogsDummy = [{
   "name": "In-sòck",
   "age": 4,
-  "shelter": 6,
+  "shelterId": 6,
   "active": 4,
   "grooming": 2,
   "size": 4,
@@ -43,7 +43,7 @@ var dogsDummy = [{
 }, {
   "name": "JoshuaBäa",
   "age": 5,
-  "shelter": 3,
+  "shelterId": 3,
   "active": 4,
   "grooming": 3,
   "size": 2,
@@ -60,7 +60,7 @@ var dogsDummy = [{
 }, {
   "name": "Jòshi",
   "age": 4,
-  "shelter": 5,
+  "shelterId": 5,
   "active": 5,
   "grooming": 3,
   "size": 4,
@@ -77,7 +77,7 @@ var dogsDummy = [{
 }, {
   "name": "Jason",
   "age": 6,
-  "shelter": 8,
+  "shelterId": 8,
   "active": 5,
   "grooming": 5,
   "size": 4,
@@ -94,7 +94,7 @@ var dogsDummy = [{
 }, {
   "name": "JSÖN",
   "age": 2,
-  "shelter": 7,
+  "shelterId": 7,
   "active": 4,
   "grooming": 4,
   "size": 3,
@@ -111,7 +111,7 @@ var dogsDummy = [{
 }, {
   "name": "Insück",
   "age": 3,
-  "shelter": 10,
+  "shelterId": 10,
   "active": 4,
   "grooming": 3,
   "size": 3,
@@ -128,7 +128,7 @@ var dogsDummy = [{
 }, {
   "name": "Maāxipadasus",
   "age": 3,
-  "shelter": 3,
+  "shelterId": 3,
   "active": 4,
   "grooming": 4,
   "size": 3,
@@ -145,7 +145,7 @@ var dogsDummy = [{
 }, {
   "name": "MichealHrdLemonade",
   "age": 6,
-  "shelter": 5,
+  "shelterId": 5,
   "active": 4,
   "grooming": 2,
   "size": 2,
@@ -162,7 +162,7 @@ var dogsDummy = [{
 }, {
   "name": "Max-Min",
   "age": 4,
-  "shelter": 7,
+  "shelterId": 7,
   "active": 5,
   "grooming": 3,
   "size": 2,
@@ -179,7 +179,7 @@ var dogsDummy = [{
 }, {
   "name": "Micháel-a",
   "age": 6,
-  "shelter": 5,
+  "shelterId": 5,
   "active": 2,
   "grooming": 5,
   "size": 5,
@@ -196,7 +196,7 @@ var dogsDummy = [{
 }, {
   "name": "Jonny-Boy",
   "age": 3,
-  "shelter": 3,
+  "shelterId": 3,
   "active": 5,
   "grooming": 4,
   "size": 2,
@@ -213,7 +213,7 @@ var dogsDummy = [{
 }, {
   "name": "Jóna-thin",
   "age": 4,
-  "shelter": 4,
+  "shelterId": 4,
   "active": 5,
   "grooming": 4,
   "size": 3,
@@ -230,7 +230,7 @@ var dogsDummy = [{
 }, {
   "name": "Kay's Jewellers",
   "age": 9,
-  "shelter": 3,
+  "shelterId": 3,
   "active": 5,
   "grooming": 5,
   "size": 4,
@@ -247,7 +247,7 @@ var dogsDummy = [{
 }, {
   "name": "Ô-Kay",
   "age": 6,
-  "shelter": 10,
+  "shelterId": 10,
   "active": 2,
   "grooming": 3,
   "size": 2,
@@ -264,7 +264,7 @@ var dogsDummy = [{
 }, {
   "name": "Will-I-Am",
   "age": 1,
-  "shelter": 5,
+  "shelterId": 5,
   "active": 4,
   "grooming": 3,
   "size": 2,
@@ -281,7 +281,7 @@ var dogsDummy = [{
 }, {
   "name": "Williámma",
   "age": 9,
-  "shelter": 4,
+  "shelterId": 4,
   "active": 5,
   "grooming": 5,
   "size": 2,
@@ -298,7 +298,7 @@ var dogsDummy = [{
 }, {
   "name": "Luwis-van-Feethoven",
   "age": 6,
-  "shelter": 3,
+  "shelterId": 3,
   "active": 4,
   "grooming": 2,
   "size": 2,
@@ -315,7 +315,7 @@ var dogsDummy = [{
 }, {
   "name": "Lewéiner",
   "age": 5,
-  "shelter": 2,
+  "shelterId": 2,
   "active": 5,
   "grooming": 2,
   "size": 3,
@@ -332,7 +332,7 @@ var dogsDummy = [{
 }, {
   "name": "Shóe",
   "age": 8,
-  "shelter": 2,
+  "shelterId": 2,
   "active": 5,
   "grooming": 3,
   "size": 2,
@@ -349,7 +349,7 @@ var dogsDummy = [{
 }, {
   "name": "Shololol",
   "age": 2,
-  "shelter": 4,
+  "shelterId": 4,
   "active": 4,
   "grooming": 3,
   "size": 1,
@@ -366,7 +366,7 @@ var dogsDummy = [{
 }, {
   "name": "Check-Nâte",
   "age": 3,
-  "shelter": 5,
+  "shelterId": 5,
   "active": 2,
   "grooming": 5,
   "size": 2,
@@ -383,7 +383,7 @@ var dogsDummy = [{
 }, {
   "name": "Ivana-Natę",
   "age": 6,
-  "shelter": 4,
+  "shelterId": 4,
   "active": 5,
   "grooming": 5,
   "size": 3,
@@ -400,7 +400,7 @@ var dogsDummy = [{
 }, {
   "name": "Coward Hhen",
   "age": 6,
-  "shelter": 7,
+  "shelterId": 7,
   "active": 5,
   "grooming": 3,
   "size": 3,
@@ -418,7 +418,7 @@ var dogsDummy = [{
 }, {
   "name": "Wård-a-Ho",
   "age": 1,
-  "shelter": 8,
+  "shelterId": 8,
   "active": 4,
   "grooming": 3,
   "size": 1,
@@ -435,7 +435,7 @@ var dogsDummy = [{
 }, {
   "name": "J?",
   "age": 1,
-  "shelter": 5,
+  "shelterId": 5,
   "active": 4,
   "grooming": 3,
   "size": 1,
@@ -452,7 +452,7 @@ var dogsDummy = [{
 }, {
   "name": "Jay's Son",
   "age": 5,
-  "shelter": 4,
+  "shelterId": 4,
   "active": 2,
   "grooming": 2,
   "size": 1,
@@ -469,7 +469,7 @@ var dogsDummy = [{
 }, {
   "name": "Adewhãle",
   "age": 4,
-  "shelter": 7,
+  "shelterId": 7,
   "active": 1,
   "grooming": 1,
   "size": 4,
@@ -486,7 +486,7 @@ var dogsDummy = [{
 }, {
   "name": "Kevin?",
   "age": 3,
-  "shelter": 2,
+  "shelterId": 2,
   "active": 4,
   "grooming": 1,
   "size": 4,
@@ -503,7 +503,7 @@ var dogsDummy = [{
 }, {
   "name": "Alex-is Texas",
   "age": 4,
-  "shelter": 9,
+  "shelterId": 9,
   "active": 2,
   "grooming": 4,
   "size": 2,
@@ -520,7 +520,7 @@ var dogsDummy = [{
 }, {
   "name": "Ricky-nd-Morty",
   "age": 1,
-  "shelter": 3,
+  "shelterId": 3,
   "active": 3,
   "grooming": 3,
   "size": 1,
@@ -537,7 +537,7 @@ var dogsDummy = [{
 }, {
   "name": "Kan-t Do it",
   "age": 2,
-  "shelter": 8,
+  "shelterId": 8,
   "active": 3,
   "grooming": 2,
   "size": 2,
@@ -554,7 +554,7 @@ var dogsDummy = [{
 }, {
   "name": "Hugoes There",
   "age": 6,
-  "shelter": 11,
+  "shelterId": 11,
   "active": 4,
   "grooming": 5,
   "size": 2,
@@ -571,7 +571,7 @@ var dogsDummy = [{
 }, {
   "name": "Mariano 'no?ok:' Okpalefe",
   "age": 1,
-  "shelter": 9,
+  "shelterId": 9,
   "active": 2,
   "grooming": 2,
   "size": 1,
@@ -588,7 +588,7 @@ var dogsDummy = [{
 }, {
   "name": "Alexandre 'The Great' Kim",
   "age": 3,
-  "shelter": 5,
+  "shelterId": 5,
   "active": 5,
   "grooming": 3,
   "size": 2,
@@ -605,7 +605,7 @@ var dogsDummy = [{
 }, {
   "name": "Lewis BraceyFace",
   "age": 2,
-  "shelter": 7,
+  "shelterId": 7,
   "active": 5,
   "grooming": 5,
   "size": 5,
@@ -622,7 +622,7 @@ var dogsDummy = [{
 }, {
   "name": "Michaela Cheng",
   "age": 1,
-  "shelter": 10,
+  "shelterId": 10,
   "active": 5,
   "grooming": 5,
   "size": 4,
@@ -639,7 +639,7 @@ var dogsDummy = [{
 }, {
   "name": "Nathan 'extretes' Dunn",
   "age": 1,
-  "shelter": 11,
+  "shelterId": 11,
   "active": 5,
   "grooming": 5,
   "size": 3,
@@ -656,7 +656,7 @@ var dogsDummy = [{
 }, {
   "name": "Jonathan Pee",
   "age": 1,
-  "shelter": 8,
+  "shelterId": 8,
   "active": 4,
   "grooming": 4,
   "size": 3,
@@ -673,7 +673,7 @@ var dogsDummy = [{
 }, {
   "name": "Leather Dirrey",
   "age": 1,
-  "shelter": 2,
+  "shelterId": 2,
   "active": 3,
   "grooming": 5,
   "size": 2,
@@ -690,7 +690,7 @@ var dogsDummy = [{
 }, {
   "name": "Haimei Mendoza",
   "age": 6,
-  "shelter": 8,
+  "shelterId": 8,
   "active": 2,
   "grooming": 4,
   "size": 1,
@@ -707,7 +707,7 @@ var dogsDummy = [{
 }, {
   "name": "Just-in Kang",
   "age": 6,
-  "shelter": 11,
+  "shelterId": 11,
   "active": 3,
   "grooming": 1,
   "size": 4,
@@ -724,7 +724,7 @@ var dogsDummy = [{
 }, {
   "name": "Ken Agucci",
   "age": 1,
-  "shelter": 4,
+  "shelterId": 4,
   "active": 3,
   "grooming": 1,
   "size": 4,
@@ -741,7 +741,7 @@ var dogsDummy = [{
 }, {
   "name": "Mix Scoffman",
   "age": 200,
-  "shelter": 7,
+  "shelterId": 7,
   "active": 5,
   "grooming": 1,
   "size": 1,
@@ -758,7 +758,7 @@ var dogsDummy = [{
 }, {
   "name": "Zach 'Bronze' Carr",
   "age": 2,
-  "shelter": 9,
+  "shelterId": 9,
   "active": 3,
   "grooming": 3,
   "size": 5,
@@ -775,7 +775,7 @@ var dogsDummy = [{
 }, {
   "name": "Yuriy 'really' Lemberg",
   "age": 1,
-  "shelter": 6,
+  "shelterId": 6,
   "active": 5,
   "grooming": 5,
   "size": 3,
@@ -792,7 +792,7 @@ var dogsDummy = [{
 }, {
   "name": "William 'Big' Wang",
   "age": 5,
-  "shelter": 2,
+  "shelterId": 2,
   "active": 5,
   "grooming": 5,
   "size": 4,
@@ -809,7 +809,7 @@ var dogsDummy = [{
 }, {
   "name": "Sho 'MoFo' Nguyen",
   "age": 3,
-  "shelter": 3,
+  "shelterId": 3,
   "active": 2,
   "grooming": 1,
   "size": 1,
@@ -826,7 +826,7 @@ var dogsDummy = [{
 }, {
   "name": "Regina 'Serious' Lee",
   "age": 9,
-  "shelter": 11,
+  "shelterId": 11,
   "active": 2,
   "grooming": 5,
   "size": 3,
@@ -843,7 +843,7 @@ var dogsDummy = [{
 }, {
   "name": "Hugo Dominatrix",
   "age": 3,
-  "shelter": 9,
+  "shelterId": 9,
   "active": 4,
   "grooming": 2,
   "size": 3,
@@ -860,7 +860,7 @@ var dogsDummy = [{
 }, {
   "name": "Joshua 'Inside' Bahrs",
   "age": 12,
-  "shelter": 7,
+  "shelterId": 7,
   "active": 3,
   "grooming": 2,
   "size": 1,

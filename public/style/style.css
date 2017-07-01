@@ -522,5 +522,9 @@ md-input-container .md-input {
 }
 
 #from {
-  color: black
+  color: black;
+}
+
+.dogSize {
+  width:400px;
 }
