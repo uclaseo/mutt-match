@@ -3,25 +3,30 @@ angular.module('mutt-match')
   const vm = this;
   vm.click = click;
   vm.sendMessage = sendMessage;
+  vm.getHistory = getHistory;
   vm.isTrue = false;
   vm.text;
+  vm.history = [];
 
   function click() {
     console.log('click');
     vm.isTrue = !vm.isTrue;
   };
 
-  function sendMessage(text, to) {
+  function sendMessage(text, to, chatId) {
     console.log('send', text);
     console.log('to', to);
+    console.log('chatId', chatId);
     vm.text = '';
-    messageService.sendMessage(text, to)
+    vm.history.push(text);
+    messageService.replyMessage(text, to, chatId)
     .then((response) => {
       console.log('messageEntry sendMessage success', response);
     })
     .catch((error) => {
       console.log('messageEntry sendMEssage fail', error);
     });
+    console.log('VM.MESSAGE', vm.message.id);
   };
 
   vm.openDialog = function($event) {
@@ -34,6 +39,18 @@ angular.module('mutt-match')
       clickOutsideToClose:true
     });
   };
+
+  function getHistory() {
+    console.log('hello');
+    messageService.getMessageHistory(vm.message.id)
+    .then(response => {
+      console.log('FINALLY HISTORYYYYYYY', response);
+      for (var i = 0; i < response.data.length; i++) {
+        vm.history.push(response.data[i].messages);
+      }
+      console.log('FINALLLL HISTORY MESSSSSAGE', vm.history);
+    })
+  }
 }])
 .directive('messageEntry', function() {
   return {

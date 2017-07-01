@@ -27,7 +27,7 @@ var usersDummy = [{
   "children": true,
   "currentDogs": false,
   "currentPets": true,
-  "shelterId": 1
+  "shelterId": 2
 }, {
   "name": "Osmond Filyashin",
   "email": "ofilyashin1@booking.com",
@@ -40,7 +40,7 @@ var usersDummy = [{
   "children": true,
   "currentDogs": false,
   "currentPets": true,
-  "shelterId": 1
+  "shelterId": 2
 }, {
   "name": "Elfie Farres",
   "email": "efarres2@jigsy.com",
@@ -53,7 +53,7 @@ var usersDummy = [{
   "children": true,
   "currentDogs": false,
   "currentPets": true,
-  "shelterId": 1
+  "shelterId": 3
 }, {
   "name": "Laverne Ralfe",
   "email": "lralfe3@yelp.com",
@@ -66,7 +66,7 @@ var usersDummy = [{
   "children": true,
   "currentDogs": false,
   "currentPets": true,
-  "shelterId": 1
+  "shelterId": 4
 }, {
   "name": "Edouard Colebourne",
   "email": "ecolebourne4@simplemachines.org",
@@ -118,7 +118,7 @@ var usersDummy = [{
   "children": true,
   "currentDogs": false,
   "currentPets": true,
-  "shelterId": 1
+  "shelterId": 5
 }, {
   "name": "Vaclav Ditch",
   "email": "vditch8@about.com",

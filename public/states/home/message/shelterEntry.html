@@ -1,14 +1,19 @@
-<p>
-    <div flex-xl flex-gt-xl="50" layout="column">
+
+
+
+       <p ng-click="ctrl.showText()">
+          {{ctrl.shelter.name}}<br>
+          {{ctrl.shelter.shelter.name}}<br>
+          {{ctrl.shelter.shelter.address}}</p>
+        </p>
+        <p>
+    <div flex-xl flex-gt-xl="50" layout="column" ng-if="ctrl.isTrue">
       <md-card md-theme="{{'dark-blue'}}" md-theme-watch>
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline">{{ctrl.message.to.name}}</span>
-            <span class="md-subhead">{{ctrl.message.message}}</span>
-            <span class="md-subhead">{{ctrl.message.createdAt}}</span>
-            <span class="md-subhead" ng-repeat="history in ctrl.history track by $index" histry="history">{{history}}</span>
-
-            <md-button ng-click="ctrl.getHistory()">show</md-button>
+            <span class="md-headline">To {{ctrl.shelter.name}}</span>
+            <span class="md-subhead">{{ctrl.shelter.shelter.name}}</span>
+            <span class="md-subhead">{{ctrl.shelter.shelter.address}}</span>
           </md-card-title-text>
           <md-card-title-media>
             <div class="md-media-md card-media"></div>
@@ -19,7 +24,7 @@
           <textarea rows="5" md-select-on-focus ng-model="ctrl.text">{{ctrl.text}}</textarea>
         </md-input-container>
         <md-card-actions layout="row" layout-align="end center">
-          <md-button ng-click="ctrl.sendMessage(ctrl.text, ctrl.message.userId, ctrl.message.id)">Reply</md-button>
+          <md-button ng-click="ctrl.sendMessage(ctrl.text, ctrl.shelter.id)">Send</md-button>
         </md-card-actions>
       </md-card>
     </div>

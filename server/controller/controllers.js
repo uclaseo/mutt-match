@@ -113,18 +113,17 @@ findAllMatchesCtrl: function(req, res) {
 
   getAllMessages: function(req, res) {
     Table.Message.findAll({
-      where: {toId: req.params.to},
-
+      where: {userId: req.params.to},
       include: [
         {
           model: Table.User,
           as: 'to',
           attributes: ['name']
-        },
-        {
-          model: Table.User,
-          attributes: ['name']
         }
+        // {
+        //   model: Table.User,
+        //   attributes: ['name']
+        // }
       ]
       // order: [[Sequelize.literal('"messages.message"'), 'DESC']]
     })
@@ -212,7 +211,62 @@ findAllMatchesCtrl: function(req, res) {
     Table.User_Dog.destroy({ where: { userId: req.params.userId } })
       .then(user => res.sendStatus(200, user))
       .catch(error => res.send(error));
+  },
+
+  getAllShelters: function(req, res) {
+    Table.User.findAll({
+      where: {
+        shelterId: {
+          $ne: 1
+        }
+      },
+      include: [{
+        model: Table.Shelter,
+        attributes: ['name', 'address']
+      }]
+    })
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.send(error);
+    })
+  },
+
+  replyMessage: function(req, res) {
+    Table.MessageHistory.create({
+      messages: req.body.message,
+      messageId: req.body.messageId
+    })
+    .then((response) => {
+      res.send(response);
+    })
+  },
+  getReplyMessages: function(req, res) {
+    Table.MessageHistory.findAll({
+      where: {
+        messageId: req.params.chatId
+      },
+      include: [{
+        model: Table.Message
+      }]
+    })
+    .then((response) => {
+      res.send(response);
+    })
+  },
+  
+  getHistory: function(req, res) {
+    Table.MessageHistory.findAll({
+      where: {
+        messageId: req.params.messageId
+      }
+    })
+    .then(response => {
+      res.send(response);
+    })
   }
+
 
 };
 

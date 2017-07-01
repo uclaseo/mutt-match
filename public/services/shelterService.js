@@ -4,7 +4,8 @@ angular.module('mutt-match')
 
 .service('shelterService', ['$http', '$stateParams', function($http, $stateParams) {
 
-  this.shelterId = 1;
+  var shelterId;
+  var shelters = [];
 
   this.addShelter = function(userId, data) {
     return $http.post('/shelters/' + userId, data)
@@ -14,4 +15,17 @@ angular.module('mutt-match')
     return $http.post('/dog/' + this.shelterId, data)
   }
 
+  this.getAllShelters = function() {
+    return $http.get('/shelters')
+      .then((response) => {
+        console.log('THIS IS RESPONSE', response);
+        shelters = response;
+        return response;
+      })
+      .catch((error) => {
+        return error;
+      })
+  }
+
+  // this.addDog = function
 }]);
