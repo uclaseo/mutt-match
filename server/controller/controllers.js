@@ -279,6 +279,8 @@ findAllMatchesCtrl: function(req, res) {
     .then(response => {
       res.send(response);
     })
+  },
+
   getPresignedUrl: function(req, res) {
 
     console.log(envVals.AWS_ACCESS_KEY, envVals.AWS_SECRET_ACCESS_KEY)
@@ -302,7 +304,6 @@ findAllMatchesCtrl: function(req, res) {
       // [...]
     });
   }
-
 
 };
 
