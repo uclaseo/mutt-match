@@ -110,7 +110,7 @@ findAllMatchesCtrl: function(req, res) {
 
   getAllMessages: function(req, res) {
     Table.Message.findAll({
-      where: {toId: req.params.to},
+      where: {userId: req.params.to},
 
       include: [
         {
