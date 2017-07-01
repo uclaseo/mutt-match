@@ -241,22 +241,6 @@ findAllMatchesCtrl: function(req, res) {
       res.send(signedUrl);
       // [...]
     });
-
-
-
-    // var file = req.params.file;
-    // var s3Client = new Minio.Client({
-    //   endpoint: 's3.amazonaws.com',
-    //   accessKey: config.AWS_ACCESS_KEY,
-    //   secretKey: config.AWS_SECRET_ACCESS_KEY,
-    //   secure: true
-    // })
-    // console.log('is this runnign');
-    // var presignedUrl = s3Client.presignedPutObject('mutt-match', file, 1000, function (e, presignedUrl) {
-    //   if (e) return console.log(e)
-    //   console.log(presignedUrl);
-    // })
-
   }
 };
 
