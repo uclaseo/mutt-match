@@ -1,11 +1,15 @@
-angular.module('mutt-match', ['ui.router', 'ngMaterial', 'auth0', 'angular-storage', 'angular-jwt', 'ngMaterial'])
+angular.module('mutt-match', ['ui.router', 'ngMaterial', 'auth0', 'angular-storage', 'angular-jwt', 'ngMaterial', 'ngFileUpload'])
 
-.config(['$stateProvider', '$urlServiceProvider', '$locationProvider', '$provide', 'authProvider', '$urlRouterProvider', '$httpProvider', 'jwtInterceptorProvider', '$mdThemingProvider',
-  function($stateProvider, $urlServiceProvider, $locationProvider, $provide, authProvider, $urlRouterProvider, $httpProvider, jwtInterceptorProvider, $mdThemingProvider) {
+.config(['$stateProvider', '$urlServiceProvider', '$locationProvider', '$provide', 'authProvider', '$urlRouterProvider', '$httpProvider', 'jwtInterceptorProvider', '$mdThemingProvider', 'jwtOptionsProvider',
+  function($stateProvider, $urlServiceProvider, $locationProvider, $provide, authProvider, $urlRouterProvider, $httpProvider, jwtInterceptorProvider, $mdThemingProvider, jwtOptionsProvider) {
 
       authProvider.init({
         domain: 'inseok-ucla.auth0.com',
         clientID: '5Ni7Cxf9IF24IJX51HVbNqlkY78UHP9O'
+      });
+
+      jwtOptionsProvider.config({
+        whiteListedDomains: ['angular-file-upload-cors-srv.appspot.com', 'localhost']
       });
       
       jwtInterceptorProvider.tokenGetter = function(store) {

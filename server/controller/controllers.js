@@ -1,5 +1,18 @@
 const Table = require('../models/tableModels');
-const minio = require('minio');
+const envVals = require('../../config.js');  
+const AWS = require('aws-sdk');
+AWS.config = new AWS.Config();
+AWS.config.region = 'us-west-1';
+AWS.config.accessKeyId = envVals.AWS_ACCESS_KEY;
+AWS.config.secretAccessKey = envVals.AWS_SECRET_ACCESS_KEY;
+const Minio = require('minio');
+
+// AWS.config.update({
+//   accessKeyId: config.AWS_ACCESS_KEY,
+//   secretAccessKey: config.AWS_SECRET_KEY,
+//   signatureVersion: 'v',
+//   region: 'us-west-1'
+// });
 
 module.exports = {
 
@@ -207,6 +220,39 @@ findAllMatchesCtrl: function(req, res) {
   },
 
   getPresignedUrl: function(req, res) {
+
+    console.log(envVals.AWS_ACCESS_KEY, envVals.AWS_SECRET_ACCESS_KEY)
+   
+// ---------------------------------
+// now say you want fetch a URL for an object named `objectName`
+    var s3 = new AWS.S3();
+    var s3_params = {
+      Bucket: envVals.S3_BUCKET,
+      Key: req.params.file,
+      Expires: 60
+    };
+    s3.getSignedUrl('putObject', s3_params, function (err, signedUrl) {
+      // send signedUrl back to client
+      if(err) console.log(err);
+      console.log(signedUrl);
+      res.send(signedUrl);
+      // [...]
+    });
+
+
+
+    // var file = req.params.file;
+    // var s3Client = new Minio.Client({
+    //   endpoint: 's3.amazonaws.com',
+    //   accessKey: config.AWS_ACCESS_KEY,
+    //   secretKey: config.AWS_SECRET_ACCESS_KEY,
+    //   secure: true
+    // })
+    // console.log('is this runnign');
+    // var presignedUrl = s3Client.presignedPutObject('mutt-match', file, 1000, function (e, presignedUrl) {
+    //   if (e) return console.log(e)
+    //   console.log(presignedUrl);
+    // })
 
   }
 };

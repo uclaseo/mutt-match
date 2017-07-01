@@ -41,5 +41,7 @@ router.post('/dog/:shelterId', controller.addDog);
 
 router.post('/dogUser', controller.addUserDogMatch);
 
+router.post('/upload/:file', controller.getPresignedUrl);
+
 
 module.exports = router;

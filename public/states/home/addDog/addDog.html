@@ -114,6 +114,12 @@
             </md-slider>
          </div>
          <br>
+          <h4>Upload a picture of the dog</h4>
+          <button class="button" ngf-select="upload($file)">Upload on file select</button>
+        
+          <br><br>
+          File:
+          <div style="font:smaller">{{ctrl.f.name}} {{ctrl.errFile.name}} {{ctrl.errFile.$error}} {{ctrl.errFile.$errorParam}}</div>
          <div id="success"></div>
          <div class="row">
             <div class="form-group col-xs-12">
