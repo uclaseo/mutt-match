@@ -225,11 +225,14 @@ findAllMatchesCtrl: function(req, res) {
    
 // ---------------------------------
 // now say you want fetch a URL for an object named `objectName`
-    var s3 = new AWS.S3();
+    var s3 = new AWS.S3({
+      signatureVersion: 'v4'
+    });
     var s3_params = {
       Bucket: envVals.S3_BUCKET,
       Key: req.params.file,
-      Expires: 60
+      Expires: 250,
+
     };
     s3.getSignedUrl('putObject', s3_params, function (err, signedUrl) {
       // send signedUrl back to client
