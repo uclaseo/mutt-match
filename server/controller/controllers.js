@@ -117,15 +117,38 @@ findAllMatchesCtrl: function(req, res) {
           model: Table.User,
           as: 'to',
           attributes: ['name']
-        },
-        {
-          model: Table.User,
-          attributes: ['name']
         }
+        // {
+        //   model: Table.User,
+        //   attributes: ['name']
+        // }
       ]
       // order: [[Sequelize.literal('"messages.message"'), 'DESC']]
     })
     .then(message => {
+      var messageIds = [];
+      var messageHistory = [];
+      // console.log('message', message[0].dataValues.id);
+      for (var i = 0; i < message.length; i++) {
+        messageIds.push(message[i].dataValues.id);
+      }
+      console.log('MESSAGE IDS', messageIds);
+      for (var j = 0; j < messageIds.length; j++) {
+        Table.MessageHistory.findAll({
+          where: {messageId: messageIds[j]},
+          include: [
+            {
+              model: Table.Message,
+              attributes: ['message']
+            }
+          ]
+        })
+        .then(messages => {
+          console.log('messages[0].dataValues.messages', messages[0].dataValues.messages);
+          messageHistory.push(message[0].dataValues.messages);
+        })
+      }
+      console.log('MESSAGE HISTORYYYYYY', messageHistory);
       res.status(200).send(message);
     })
     .catch(error => {
@@ -243,6 +266,17 @@ findAllMatchesCtrl: function(req, res) {
       }]
     })
     .then((response) => {
+      res.send(response);
+    })
+  },
+  
+  getHistory: function(req, res) {
+    Table.MessageHistory.findAll({
+      where: {
+        messageId: req.params.messageId
+      }
+    })
+    .then(response => {
       res.send(response);
     })
   }

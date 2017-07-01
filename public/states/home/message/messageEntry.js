@@ -3,8 +3,10 @@ angular.module('mutt-match')
   const vm = this;
   vm.click = click;
   vm.sendMessage = sendMessage;
+  vm.getHistory = getHistory;
   vm.isTrue = false;
   vm.text;
+  vm.history = [];
 
   function click() {
     console.log('click');
@@ -23,6 +25,7 @@ angular.module('mutt-match')
     .catch((error) => {
       console.log('messageEntry sendMEssage fail', error);
     });
+    console.log('VM.MESSAGE', vm.message.id);
   };
 
   vm.openDialog = function($event) {
@@ -35,6 +38,18 @@ angular.module('mutt-match')
       clickOutsideToClose:true
     });
   };
+
+  function getHistory() {
+    console.log('hello');
+    messageService.getMessageHistory(vm.message.id)
+    .then(response => {
+      console.log('FINALLY HISTORYYYYYYY', response);
+      for (var i = 0; i < response.data.length; i++) {
+        vm.history.push(response.data[i].messages);
+      }
+      console.log('FINALLLL HISTORY MESSSSSAGE', vm.history);
+    })
+  }
 }])
 .directive('messageEntry', function() {
   return {

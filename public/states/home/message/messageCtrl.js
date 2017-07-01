@@ -2,9 +2,10 @@ angular.module('mutt-match')
 .controller('messageCtrl', ['messageService', 'shelterService', function(messageService, shelterService) {
   const vm = this;
   vm.renderMessages = renderMessages;
+  vm.getShelters = getShelters;
+  vm.getMessageHistory = getMessageHistory;
   vm.messages = [];
   vm.shelters = [];
-  vm.getShelters = getShelters;
   vm.isTrue = false;
 
   function renderMessages() {
@@ -16,6 +17,19 @@ angular.module('mutt-match')
         vm.messages.push(response.data[i]);
       }
       console.log(vm.messages);
+
+      var messageIds = [];
+      for (var j = 0; j < response.data.length; j++) {
+        messageIds.push(response.data[j].id);
+        console.log(messageIds);
+      }
+
+      messageService.getMessageHistory(messageIds)
+
+
+
+
+
     })
     .catch((error) => {
       console.log('error', error);
@@ -40,5 +54,10 @@ angular.module('mutt-match')
       }
       // vm.shelters = response;
     })
+  }
+
+  function getMessageHistory() {
+    console.log('hi');
+    messageService.getMessageHistory()
   }
 }])

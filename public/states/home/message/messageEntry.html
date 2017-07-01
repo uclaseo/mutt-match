@@ -6,6 +6,9 @@
             <span class="md-headline">{{ctrl.message.user.name}}</span>
             <span class="md-subhead">{{ctrl.message.message}}</span>
             <span class="md-subhead">{{ctrl.message.createdAt}}</span>
+            <span class="md-subhead" ng-repeat="history in ctrl.history" histry="history">{{history}}</span>
+
+            <md-button ng-click="ctrl.getHistory()">show</md-button>
           </md-card-title-text>
           <md-card-title-media>
             <div class="md-media-md card-media"></div>

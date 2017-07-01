@@ -5,11 +5,13 @@ angular.module('mutt-match')
   vm.getMessages = getMessages;
   vm.sendMessage = sendMessage;
   vm.replyMessage = replyMessage;
+  vm.getMessageHistory = getMessageHistory;
 
   function getMessages() {
     vm.id = store.get('profile').userInfo.data[0].id;
     return $http.get(`message/${vm.id}`)
       .then((response) => {
+
         return response;
       })
       .catch((error) => {
@@ -41,6 +43,16 @@ angular.module('mutt-match')
       })
       .catch((error) => {
         return console.log('messageService error', error);
+      })
+  }
+
+  function getMessageHistory(messageIds) {
+    console.log('hi');
+    console.log('messageIds', messageIds);
+    return $http.get(`message/reply/${messageIds}`)
+      .then(response => {
+        console.log(response);
+        return response;
       })
   }
 }])

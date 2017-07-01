@@ -19,6 +19,7 @@ router.post('/message/:sender/:to', controller.sendMessage);
 router.get('/message/:to', controller.getAllMessages);
 router.post('/message/reply/:sender/:to', controller.replyMessage);
 router.get('/message/reply/:to/:chatId', controller.getReplyMessages);
+router.get('/message/reply/:messageId', controller.getHistory);
 
 router.get('/message', controller.getAllMessages);
 router.get('/shelters', controller.getAllShelters);
